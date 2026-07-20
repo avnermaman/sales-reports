@@ -36,7 +36,7 @@
 </head>
 <body>
 <h1>📞 Sales Call Report — Monday, July 20, 2026</h1>
-<div class="sub">Eden Dadi &amp; Eliezer Lev · Aircall (DI Team line) · Times shown in Israel time (UTC+3)</div>
+<div class="sub">Eden Dadi (shift 10:00–17:00) &amp; Eliezer Lev (shift 17:00–21:30) · Aircall (DI Team line) · Times in Israel time (UTC+3) · Daily target per rep: <b style="color:var(--amber)">50 calls · 120 min</b></div>
 
 <div class="note">⚠️ Call transcripts / AI summaries are not enabled on this Aircall account (Conversation Intelligence add-on), so insights below are based on call metadata: connect rates, durations, timing, and redial patterns.</div>
 
@@ -47,6 +47,11 @@
   <div class="card kpi"><div class="label">Avg Min / Call</div><div class="value">3.5</div><div class="split"><b class="e">Eden 4.1</b> · <b class="l">Eliezer 2.4</b></div></div>
   <div class="card kpi"><div class="label">Avg Min / Answered</div><div class="value">5.7</div><div class="split"><b class="e">Eden 7.1</b> · <b class="l">Eliezer 3.4</b></div></div>
   <div class="card kpi"><div class="label">Longest Call</div><div class="value">46m</div><div class="split"><b class="e">Eden</b> outbound, 09:54 UTC</div></div>
+</div>
+
+<div class="card" style="margin-bottom:20px;">
+  <h3>🎯 Daily Targets — 50 calls &amp; 120 min per rep</h3>
+  <div id="targets"></div>
 </div>
 
 <div class="grid charts">
@@ -70,8 +75,8 @@
   <div class="card">
     <div class="head"><span class="dot" style="background:var(--eden)"></span><h3 style="margin:0">Recommendations — Eden Dadi</h3></div>
     <ul>
-      <li><b>Manage the marathon calls.</b> Two calls (46 min and 17.7 min) consumed 53% of her total talk time. If these are qualified deals, great — but consider booking structured follow-ups instead of single mega-calls, freeing time for more prospects.</li>
-      <li><b>Fix the 16:00 burst pattern.</b> 14 of 29 dials were packed into 16:01–16:56 with a 43% connect rate and many short unanswered rings. Spreading these across the dead zone (14:00–16:00, where she made only 1 call) should lift connects.</li>
+      <li><b>Targets: 29/50 calls (58%) but 118.7/120 min (99%).</b> She nearly hit the minutes target, but two marathon calls (46 min + 17.7 min = 53% of her talk time) did most of it while call count fell far short. Book structured follow-ups instead of single mega-calls to free capacity for ~20 more dials.</li>
+      <li><b>Fix the end-of-shift crunch.</b> 14 of 29 dials were crammed into the last hour (16:01–16:56) with a 43% connect rate, while 14:00–16:00 had just 1 call. Spreading dials across the afternoon should lift both volume and connects.</li>
       <li><b>Stop triple-dialing the same number back-to-back.</b> 054-301-7157 was dialed 3× unanswered within minutes; the prospect then called back and reached no one (57s + 4s inbound missed by team). After 2 failed attempts, switch to SMS/WhatsApp and schedule a callback window.</li>
       <li><b>Strong connected-call depth</b> — 7.1 min average per answered call is excellent engagement. Keep it.</li>
     </ul>
@@ -79,8 +84,8 @@
   <div class="card">
     <div class="head"><span class="dot" style="background:var(--eli)"></span><h3 style="margin:0">Recommendations — Eliezer Lev</h3></div>
     <ul>
-      <li><b>Increase volume.</b> 14 dials vs Eden's 29, with the first call at 17:02 IL. Starting earlier in the day would roughly double capacity.</li>
-      <li><b>Close the mid-shift gap.</b> Nearly one full hour with no activity (18:08–19:01 IL). Protect that block for dialing.</li>
+      <li><b>Targets: 14/50 calls (28%) and 33.3/120 min (28%).</b> Far below both targets. Note: with a 4.5h shift vs Eden's 7h, hitting 50 calls means ~11 dials/hour — the pace he showed 19:00–19:30 (7 dials in 27 min) proves it's doable if sustained.</li>
+      <li><b>Reclaim dead time.</b> He started on time (17:02) but lost ~1h mid-shift (18:08–19:01) and made zero calls in the last 95 minutes (19:55–21:30) — together nearly 2.5h of his 4.5h shift went unused.</li>
       <li><b>Best connect rate on the team (64%)</b> — his time slots convert well. Worth scaling this window and testing whether evening hours are the driver.</li>
       <li><b>Shallow short calls.</b> Outside the one 17-min call, answered calls average ~1.7 min. If these are quick qualifications, fine; if they're pitches, work on holding the prospect longer (agenda-first opener, one discovery question before pitching).</li>
     </ul>
@@ -88,6 +93,7 @@
   <div class="card">
     <div class="head"><span class="dot" style="background:var(--amber)"></span><h3 style="margin:0">Team-Level Actions</h3></div>
     <ul>
+      <li><b>Team is at 43% of call target and 63% of minutes target</b> (43/100 calls, 152/240 min across both reps). The gap is volume, not talk quality — connected calls run long enough.</li>
       <li><b>Zero CRM hygiene:</b> none of the 43 calls has a contact or tag attached. Make tagging outcome (interested / callback / no-answer / not-relevant) mandatory — without it, pipeline reporting is impossible.</li>
       <li><b>Missed inbound callbacks:</b> at least 4 inbound calls to the DI Team line went unanswered by any user today (06:23, 12:59, 16:06, 18:00 IL). Set a ring-group fallback or voicemail-to-task flow.</li>
       <li><b>Enable Aircall AI (transcripts + summaries).</b> Currently blocked (403) — enabling it would allow real conversation coaching, objection tracking, and sentiment trends in this report.</li>
@@ -111,6 +117,12 @@ const calls=[
 ["19:27","L","out","+972 53-708-6710",187,1],["19:55","L","out","+972 52-960-7500",48,0]
 ];
 const fmt=s=>s>=60?`${Math.floor(s/60)}m ${s%60}s`:`${s}s`;
+const tgt=[["Eden — Calls",29,50,"calls"],["Eden — Minutes",118.7,120,"min"],["Eliezer — Calls",14,50,"calls"],["Eliezer — Minutes",33.3,120,"min"]];
+document.getElementById('targets').innerHTML=tgt.map(t=>{
+  const pct=Math.min(100,Math.round(t[1]/t[2]*100));
+  const col=pct>=90?'#34d399':pct>=60?'#fbbf24':'#f87171';
+  return `<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:4px;"><span>${t[0]}</span><span style="color:${col};font-weight:700;">${t[1]} / ${t[2]} ${t[3]} (${pct}%)</span></div><div style="background:#0f172a;border-radius:99px;height:10px;overflow:hidden;"><div style="width:${pct}%;height:100%;background:${col};border-radius:99px;"></div></div></div>`;
+}).join('');
 document.getElementById('log').innerHTML=calls.map(c=>`<tr><td>${c[0]}</td><td class="${c[1]=='E'?'rep-e':'rep-l'}">${c[1]=='E'?'Eden':'Eliezer'}</td><td>${c[2]}</td><td>${c[3]}</td><td>${fmt(c[4])}</td><td><span class="pill ${c[5]?'ans':'noans'}">${c[5]?'Answered':'No answer'}</span></td></tr>`).join('');
 Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='#334155';
 const EDEN='#38bdf8',ELI='#a78bfa';
