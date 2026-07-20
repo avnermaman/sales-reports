@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Call Report — July 20, 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--eden:#38bdf8;--eli:#a78bfa;--green:#34d399;--red:#f87171;--amber:#fbbf24;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
+  body{background:var(--bg);color:var(--text);padding:24px;}
+  h1{font-size:1.5rem;margin-bottom:4px;}
+  .sub{color:var(--muted);font-size:.85rem;margin-bottom:20px;}
+  .grid{display:grid;gap:16px;}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:20px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;}
+  .kpi .label{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;}
+  .kpi .value{font-size:1.7rem;font-weight:700;margin-top:4px;}
+  .kpi .split{font-size:.75rem;color:var(--muted);margin-top:4px;}
+  .kpi .split b.e{color:var(--eden);} .kpi .split b.l{color:var(--eli);}
+  .charts{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:20px;}
+  .card h3{font-size:.95rem;margin-bottom:12px;}
+  table{width:100%;border-collapse:collapse;font-size:.8rem;}
+  th{color:var(--muted);text-align:left;padding:8px;border-bottom:1px solid var(--border);text-transform:uppercase;font-size:.68rem;letter-spacing:.05em;}
+  td{padding:7px 8px;border-bottom:1px solid #26334a;}
+  .pill{padding:2px 8px;border-radius:99px;font-size:.7rem;font-weight:600;}
+  .ans{background:#064e3b;color:var(--green);} .noans{background:#450a0a;color:var(--red);}
+  .rep-e{color:var(--eden);font-weight:600;} .rep-l{color:var(--eli);font-weight:600;}
+  .recs{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+  .recs li{margin:0 0 10px 18px;font-size:.85rem;line-height:1.45;}
+  .recs .head{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+  .dot{width:10px;height:10px;border-radius:50%;}
+  .note{background:#1e293b;border-left:3px solid var(--amber);padding:10px 14px;border-radius:6px;font-size:.8rem;color:var(--muted);margin-bottom:20px;}
+  .scroll{max-height:420px;overflow-y:auto;}
+</style>
+</head>
+<body>
+<h1>📞 Sales Call Report — Monday, July 20, 2026</h1>
+<div class="sub">Eden Dadi &amp; Eliezer Lev · Aircall (DI Team line) · Times shown in Israel time (UTC+3)</div>
+
+<div class="note">⚠️ Call transcripts / AI summaries are not enabled on this Aircall account (Conversation Intelligence add-on), so insights below are based on call metadata: connect rates, durations, timing, and redial patterns.</div>
+
+<div class="grid kpis">
+  <div class="card kpi"><div class="label">Total Calls</div><div class="value">43</div><div class="split"><b class="e">Eden 29</b> · <b class="l">Eliezer 14</b></div></div>
+  <div class="card kpi"><div class="label">Answered</div><div class="value">25</div><div class="split"><b class="e">Eden 16 (55%)</b> · <b class="l">Eliezer 9 (64%)</b></div></div>
+  <div class="card kpi"><div class="label">Total Minutes</div><div class="value">152.1</div><div class="split"><b class="e">Eden 118.7</b> · <b class="l">Eliezer 33.3</b></div></div>
+  <div class="card kpi"><div class="label">Avg Min / Call</div><div class="value">3.5</div><div class="split"><b class="e">Eden 4.1</b> · <b class="l">Eliezer 2.4</b></div></div>
+  <div class="card kpi"><div class="label">Avg Min / Answered</div><div class="value">5.7</div><div class="split"><b class="e">Eden 7.1</b> · <b class="l">Eliezer 3.4</b></div></div>
+  <div class="card kpi"><div class="label">Longest Call</div><div class="value">46m</div><div class="split"><b class="e">Eden</b> outbound, 09:54 UTC</div></div>
+</div>
+
+<div class="grid charts">
+  <div class="card"><h3>Calls per Hour (Israel time)</h3><canvas id="hourly"></canvas></div>
+  <div class="card"><h3>Answered vs Unanswered</h3><canvas id="answered"></canvas></div>
+  <div class="card"><h3>Talk Time per Rep (minutes)</h3><canvas id="talk"></canvas></div>
+  <div class="card"><h3>Call Duration Distribution</h3><canvas id="dist"></canvas></div>
+</div>
+
+<div class="card" style="margin-bottom:20px;">
+  <h3>Call Log (43 calls)</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Time (IL)</th><th>Rep</th><th>Dir</th><th>Number</th><th>Duration</th><th>Status</th></tr></thead>
+    <tbody id="log"></tbody>
+  </table>
+  </div>
+</div>
+
+<div class="grid recs">
+  <div class="card">
+    <div class="head"><span class="dot" style="background:var(--eden)"></span><h3 style="margin:0">Recommendations — Eden Dadi</h3></div>
+    <ul>
+      <li><b>Manage the marathon calls.</b> Two calls (46 min and 17.7 min) consumed 53% of her total talk time. If these are qualified deals, great — but consider booking structured follow-ups instead of single mega-calls, freeing time for more prospects.</li>
+      <li><b>Fix the 16:00 burst pattern.</b> 14 of 29 dials were packed into 16:01–16:56 with a 43% connect rate and many short unanswered rings. Spreading these across the dead zone (14:00–16:00, where she made only 1 call) should lift connects.</li>
+      <li><b>Stop triple-dialing the same number back-to-back.</b> 054-301-7157 was dialed 3× unanswered within minutes; the prospect then called back and reached no one (57s + 4s inbound missed by team). After 2 failed attempts, switch to SMS/WhatsApp and schedule a callback window.</li>
+      <li><b>Strong connected-call depth</b> — 7.1 min average per answered call is excellent engagement. Keep it.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="head"><span class="dot" style="background:var(--eli)"></span><h3 style="margin:0">Recommendations — Eliezer Lev</h3></div>
+    <ul>
+      <li><b>Increase volume.</b> 14 dials vs Eden's 29, with the first call at 17:02 IL. Starting earlier in the day would roughly double capacity.</li>
+      <li><b>Close the mid-shift gap.</b> Nearly one full hour with no activity (18:08–19:01 IL). Protect that block for dialing.</li>
+      <li><b>Best connect rate on the team (64%)</b> — his time slots convert well. Worth scaling this window and testing whether evening hours are the driver.</li>
+      <li><b>Shallow short calls.</b> Outside the one 17-min call, answered calls average ~1.7 min. If these are quick qualifications, fine; if they're pitches, work on holding the prospect longer (agenda-first opener, one discovery question before pitching).</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="head"><span class="dot" style="background:var(--amber)"></span><h3 style="margin:0">Team-Level Actions</h3></div>
+    <ul>
+      <li><b>Zero CRM hygiene:</b> none of the 43 calls has a contact or tag attached. Make tagging outcome (interested / callback / no-answer / not-relevant) mandatory — without it, pipeline reporting is impossible.</li>
+      <li><b>Missed inbound callbacks:</b> at least 4 inbound calls to the DI Team line went unanswered by any user today (06:23, 12:59, 16:06, 18:00 IL). Set a ring-group fallback or voicemail-to-task flow.</li>
+      <li><b>Enable Aircall AI (transcripts + summaries).</b> Currently blocked (403) — enabling it would allow real conversation coaching, objection tracking, and sentiment trends in this report.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const calls=[
+["10:31","E","out","+972 54-540-8778",36,0],["10:34","E","out","+972 55-410-4739",26,1],["10:39","E","out","+972 54-236-6006",40,1],["10:46","E","in","+972 54-665-7129",383,1],
+["11:03","E","out","+972 52-877-4151",30,0],["11:08","E","out","+972 54-529-8710",347,1],["11:25","E","out","+972 54-648-6688",24,1],["11:32","E","out","+972 50-228-2121",1064,1],
+["12:22","E","out","+972 55-269-9292",25,0],["12:24","E","out","+972 52-660-2870",45,0],["12:39","E","out","+33 7 69 01 93 98",88,1],["12:48","E","out","+972 54-301-7157",22,0],
+["12:54","E","out","+972 58-762-8626",2759,1],["13:51","E","in","+972 52-877-4151",497,1],["14:00","E","out","+972 52-877-4151",689,1],
+["16:01","E","out","+972 54-236-6006",42,0],["16:05","E","out","+972 54-301-7157",34,0],["16:06","E","out","+972 54-301-7157",20,0],["16:08","E","out","+972 54-431-5732",36,0],
+["16:10","E","out","+972 54-668-5505",46,1],["16:12","E","out","+972 52-960-7500",10,0],["16:13","E","out","+972 58-488-3455",7,0],["16:15","E","out","+972 50-940-1011",119,1],
+["16:18","E","out","+972 52-311-1171",171,1],["16:25","E","out","+972 53-283-1388",37,1],["16:41","E","out","+972 54-444-6778",463,1],["16:52","E","out","+972 52-391-3688",5,0],
+["16:54","E","out","+33 6 35 46 78 72",29,1],["16:56","E","out","+972 53-286-0389",29,0],
+["17:02","L","out","+972 54-633-8574",1020,1],["17:23","L","out","+972 50-938-3638",82,1],["17:37","L","out","+972 55-911-8609",34,1],["17:39","L","out","+972 54-581-3971",9,0],
+["17:47","L","out","+972 54-867-6451",151,1],["18:03","L","out","+972 50-938-3638",233,1],["19:01","L","out","+972 50-391-4845",51,0],["19:07","L","out","+972 53-737-6639",47,0],
+["19:14","L","out","+33 6 95 26 79 97",61,1],["19:16","L","out","+972 54-702-0675",25,0],["19:21","L","out","+972 52-275-7873",26,1],["19:25","L","out","+33 7 81 99 49 02",26,1],
+["19:27","L","out","+972 53-708-6710",187,1],["19:55","L","out","+972 52-960-7500",48,0]
+];
+const fmt=s=>s>=60?`${Math.floor(s/60)}m ${s%60}s`:`${s}s`;
+document.getElementById('log').innerHTML=calls.map(c=>`<tr><td>${c[0]}</td><td class="${c[1]=='E'?'rep-e':'rep-l'}">${c[1]=='E'?'Eden':'Eliezer'}</td><td>${c[2]}</td><td>${c[3]}</td><td>${fmt(c[4])}</td><td><span class="pill ${c[5]?'ans':'noans'}">${c[5]?'Answered':'No answer'}</span></td></tr>`).join('');
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='#334155';
+const EDEN='#38bdf8',ELI='#a78bfa';
+new Chart(hourly,{type:'bar',data:{labels:['10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'],datasets:[
+{label:'Eden',data:[4,4,5,1,1,0,14,0,0,0],backgroundColor:EDEN,stack:'s'},
+{label:'Eliezer',data:[0,0,0,0,0,0,0,5,1,8],backgroundColor:ELI,stack:'s'}]},options:{scales:{x:{stacked:true},y:{stacked:true,ticks:{stepSize:2}}}}});
+new Chart(answered,{type:'bar',data:{labels:['Eden','Eliezer'],datasets:[
+{label:'Answered',data:[16,9],backgroundColor:'#34d399'},
+{label:'Unanswered',data:[13,5],backgroundColor:'#f87171'}]},options:{scales:{y:{ticks:{stepSize:4}}}}});
+new Chart(talk,{type:'bar',data:{labels:['Eden','Eliezer'],datasets:[
+{label:'Talk time (answered)',data:[113.0,30.3],backgroundColor:[EDEN,ELI]},
+{label:'Ring time (unanswered)',data:[5.7,3.0],backgroundColor:'#475569'}]},options:{indexAxis:'y',scales:{x:{stacked:true},y:{stacked:true}}}});
+new Chart(dist,{type:'bar',data:{labels:['<30s','30s–2m','2–5m','5–10m','10m+'],datasets:[
+{label:'Eden',data:[10,11,1,4,3],backgroundColor:EDEN},
+{label:'Eliezer',data:[4,6,3,0,1],backgroundColor:ELI}]},options:{scales:{y:{ticks:{stepSize:2}}}}});
+</script>
+</body>
+</html>
