@@ -1,224 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sales Call Report — July 23, 2026</title>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DI Daily Sales Call Report — 2026-07-23</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root{
-  --bg:#0d1117;--panel:#161b22;--panel2:#1c2230;--border:#2b3240;
-  --txt:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;
-  --red:#f85149;--amber:#d29922;--purple:#bc8cff;
-}
+:root{--bg:#0b0fratio;--bg:#0b0f19;--card:#151b28;--card2:#1b2333;--txt:#e6ebf5;--mut:#8b97ad;--line:#26304200;--line:#263042;--accE:#38bdf8;--accL:#a78bfa;--ok:#22c55e;--warn:#eab308;--bad:#ef4444}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.55;padding:32px 20px 60px}
-.wrap{max-width:1080px;margin:0 auto}
-h1{font-size:26px;margin:0 0 6px}
-.sub{color:var(--muted);font-size:14px;margin-bottom:14px}
-.sub b{color:var(--txt)}
-.warn{background:#20160a;border:1px solid #4d3a15;color:#e3b341;
-  padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:26px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:30px}
-.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px}
-.kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
-.kpi .big{font-size:30px;font-weight:700;margin:4px 0}
-.kpi .split{font-size:12px;color:var(--muted)}
-.kpi .split b{color:var(--txt)}
-section{margin-bottom:34px}
-h2{font-size:17px;margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px}
-.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:720px){.chart-grid{grid-template-columns:1fr}}
-.chart-box{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px}
-.chart-box h3{margin:0 0 12px;font-size:14px;font-weight:600;color:var(--txt)}
-.target{margin-bottom:18px}
-.target .row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
-.target .row .name{font-weight:600}
-.bar{height:14px;background:var(--panel2);border-radius:7px;overflow:hidden;margin-bottom:4px}
-.bar span{display:block;height:100%;border-radius:7px}
-.bar.calls span{background:linear-gradient(90deg,#1f6feb,#58a6ff)}
-.bar.mins span{background:linear-gradient(90deg,#238636,#3fb950)}
-.legend{font-size:11px;color:var(--muted)}
-table{width:100%;border-collapse:collapse;font-size:12.5px}
-th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--border)}
-th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.4px}
-tbody tr:hover{background:var(--panel2)}
-.ok{color:var(--green);font-weight:600}
-.no{color:var(--muted)}
-.miss{color:var(--red);font-weight:600}
-.tbl-scroll{max-height:520px;overflow-y:auto;border:1px solid var(--border);border-radius:10px}
-.recs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:720px){.recs{grid-template-columns:1fr}}
-.rec{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px}
-.rec h3{margin:0 0 12px;font-size:15px}
-.rec.eden{border-top:3px solid var(--accent)}
-.rec.eliezer{border-top:3px solid var(--purple)}
-.rec.team{border-top:3px solid var(--amber);grid-column:1/-1}
-.rec ul{margin:0;padding-left:18px}
-.rec li{margin-bottom:11px;font-size:13.5px}
-.rec li b{color:var(--txt)}
-.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;margin-left:6px;font-weight:600}
-.pill.good{background:#12261a;color:var(--green)}
-.pill.bad{background:#2a1315;color:var(--red)}
-footer{color:var(--muted);font-size:12px;text-align:center;margin-top:40px;border-top:1px solid var(--border);padding-top:18px}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <h1>📞 Sales Call Report — Thursday, July 23, 2026</h1>
-  <div class="sub">Eden Dadi (shift 10:00–17:00) &amp; Eliezer Lev (shift 17:00–21:30) · Aircall (DI Team line) · Times in Israel time (UTC+3) · Daily target per rep: <b>50 calls · 120 min</b></div>
-  <div class="warn">⚠️ Snapshot generated ~21:35 IL, at the tail end of Eliezer's shift (ends 21:30). Only 1 call from Eliezer appears in the feed, at 20:01 IL. Transcripts / AI summaries are not enabled on this Aircall account (API returns 404), so all insights below are based on call metadata only.</div>
+body{margin:0;background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header h1{margin:0 0 4px;font-size:26px}
+header .sub{color:var(--mut);font-size:14px}
+.tag{display:inline-block;background:var(--card2);color:var(--accE);padding:3px 10px;border-radius:20px;font-size:12px;margin-right:8px}
+h2{font-size:17px;margin:34px 0 14px;border-left:3px solid var(--accE);padding-left:10px}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .v{font-size:28px;font-weight:700;margin-top:2px}
+.kpi .l{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.kpi .d{font-size:12px;color:var(--mut);margin-top:4px}
+.two{grid-template-columns:1fr 1fr}
+.charts{grid-template-columns:1fr 1fr}
+.chartcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;min-height:300px}
+.chartcard h3{margin:0 0 10px;font-size:14px;color:var(--txt)}
+canvas{max-height:250px}
+.prog{margin:12px 0}
+.prog .top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}
+.track{background:#0e1421;border-radius:8px;height:14px;overflow:hidden}
+.fill{height:100%;border-radius:8px}
+.repname{font-weight:700;font-size:15px;margin-bottom:2px}
+.repname.E{color:var(--accE)} .repname.L{color:var(--accL)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:600;position:sticky;top:0;background:var(--card)}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+.ctr{text-align:center}
+.badge{padding:2px 8px;border-radius:20px;font-size:11.5px;font-weight:600}
+.badge.ok{background:rgba(34,197,94,.15);color:#4ade80}
+.badge.no{background:rgba(239,68,68,.15);color:#f87171}
+.rowL td{background:rgba(167,139,250,.06)}
+.tablewrap{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.rec{display:grid;gap:12px;grid-template-columns:1fr}
+.reccard{background:var(--card2);border:1px solid var(--line);border-left:3px solid var(--accE);border-radius:10px;padding:14px 16px}
+.reccard.L{border-left-color:var(--accL)}
+.reccard.team{border-left-color:var(--warn)}
+.reccard h4{margin:0 0 6px;font-size:14px}
+.reccard p{margin:6px 0;font-size:13.5px;color:#cdd5e4}
+.reccard .flag{font-weight:700}
+.flag.bad{color:#f87171} .flag.warn{color:#facc15} .flag.ok{color:#4ade80}
+.foot{color:var(--mut);font-size:12px;margin-top:34px;text-align:center}
+ul{margin:6px 0;padding-left:18px} li{margin:3px 0;font-size:13.5px;color:#cdd5e4}
+</style></head>
+<body><div class="wrap">
+<header>
+<h1>📞 Developers Institute — Daily Sales Call Report</h1>
+<div class="sub"><span class="tag">Thursday, 23 July 2026</span> DI Team line · times shown in Israel time (IDT, UTC+3) · generated 21:59 IDT</div>
+</header>
 
-  <div class="kpis">
-    <div class="kpi"><div class="label">Total Calls</div><div class="big">29</div><div class="split"><b>Eden 28</b> · <b>Eliezer 1</b></div></div>
-    <div class="kpi"><div class="label">Answered</div><div class="big">18</div><div class="split"><b>Eden 17 (61%)</b> · <b>Eliezer 1 (100%)</b></div></div>
-    <div class="kpi"><div class="label">Total Minutes</div><div class="big">113.8</div><div class="split"><b>Eden 112.9</b> · <b>Eliezer 0.9</b></div></div>
-    <div class="kpi"><div class="label">Avg Min / Call</div><div class="big">3.9</div><div class="split"><b>Eden 4.0</b> · <b>Eliezer 0.9</b></div></div>
-    <div class="kpi"><div class="label">Avg Min / Answered</div><div class="big">6.0</div><div class="split"><b>Eden 6.3</b> · <b>Eliezer 0.9</b></div></div>
-    <div class="kpi"><div class="label">Longest Call</div><div class="big">23m</div><div class="split"><b>Eden</b> 23.1m (+18.9m)</div></div>
-  </div>
+<h2>Team KPIs</h2>
+<div class="grid kpis">
+<div class="card kpi"><div class="l">Total Calls</div><div class="v">29</div><div class="d">Eden 28 · Eliezer 1</div></div>
+<div class="card kpi"><div class="l">Answered</div><div class="v">18</div><div class="d">62% connect rate</div></div>
+<div class="card kpi"><div class="l">Total Talk Time</div><div class="v">114<span style="font-size:15px;color:var(--mut)"> min</span></div><div class="d">Eden 113 · Eliezer 0.9</div></div>
+<div class="card kpi"><div class="l">Avg / Call</div><div class="v">3.9<span style="font-size:15px;color:var(--mut)"> min</span></div><div class="d">6.3 min / answered</div></div>
+<div class="card kpi"><div class="l">Longest Call</div><div class="v">23:04</div><div class="d">Eden · 12:48 IDT</div></div>
+</div>
 
-  <section>
-    <h2>🎯 Daily Targets — 50 calls &amp; 120 min per rep</h2>
-    <div class="card">
-      <div class="target">
-        <div class="row"><span class="name" style="color:var(--accent)">Eden Dadi</span><span>28 / 50 calls <span class="pill bad">56%</span> &nbsp; 112.9 / 120 min <span class="pill good">94%</span></span></div>
-        <div class="bar calls"><span style="width:56%"></span></div>
-        <div class="bar mins"><span style="width:94%"></span></div>
-        <div class="legend">Blue = calls vs 50 · Green = minutes vs 120</div>
-      </div>
-      <div class="target">
-        <div class="row"><span class="name" style="color:var(--purple)">Eliezer Lev</span><span>1 / 50 calls <span class="pill bad">2%</span> &nbsp; 0.9 / 120 min <span class="pill bad">1%</span></span></div>
-        <div class="bar calls"><span style="width:2%"></span></div>
-        <div class="bar mins"><span style="width:1%"></span></div>
-        <div class="legend">Blue = calls vs 50 · Green = minutes vs 120</div>
-      </div>
-      <div class="target" style="margin-bottom:0">
-        <div class="row"><span class="name" style="color:var(--amber)">Team combined</span><span>29 / 100 calls <span class="pill bad">29%</span> &nbsp; 113.8 / 240 min <span class="pill bad">47%</span></span></div>
-        <div class="bar calls"><span style="width:29%"></span></div>
-        <div class="bar mins"><span style="width:47%"></span></div>
-      </div>
-    </div>
-  </section>
+<h2>Daily Targets — 50 calls &amp; 120 talk-minutes per rep</h2>
+<div class="grid two">
+<div class="card">
+  <div class="repname E">Eden Dadi <span style="color:var(--mut);font-weight:400;font-size:12px">· shift 10:00–17:00</span></div>
+  <div class="prog"><div class="top"><span>Calls</span><span>28 / 50 (56%)</span></div><div class="track"><div class="fill" style="width:56%;background:#ef4444"></div></div></div>
+  <div class="prog"><div class="top"><span>Talk minutes</span><span>113 / 120 (94%)</span></div><div class="track"><div class="fill" style="width:94%;background:#eab308"></div></div></div>
+</div>
+<div class="card">
+  <div class="repname L">Eliezer Lev <span style="color:var(--mut);font-weight:400;font-size:12px">· shift 17:00–21:30</span></div>
+  <div class="prog"><div class="top"><span>Calls</span><span>1 / 50 (2%)</span></div><div class="track"><div class="fill" style="width:2%;background:#ef4444"></div></div></div>
+  <div class="prog"><div class="top"><span>Talk minutes</span><span>0.9 / 120 (1%)</span></div><div class="track"><div class="fill" style="width:1.5%;background:#ef4444"></div></div></div>
+</div>
+</div>
 
-  <section>
-    <h2>Charts</h2>
-    <div class="chart-grid">
-      <div class="chart-box"><h3>Calls per Hour (Israel time)</h3><canvas id="hourChart" height="220"></canvas></div>
-      <div class="chart-box"><h3>Answered vs Unanswered</h3><canvas id="ansChart" height="220"></canvas></div>
-      <div class="chart-box"><h3>Talk Time per Rep (minutes)</h3><canvas id="talkChart" height="220"></canvas></div>
-      <div class="chart-box"><h3>Call Duration Distribution</h3><canvas id="durChart" height="220"></canvas></div>
-    </div>
-  </section>
+<h2>Charts</h2>
+<div class="grid charts">
+<div class="chartcard"><h3>Calls per hour (Israel time)</h3><canvas id="cHour"></canvas></div>
+<div class="chartcard"><h3>Answered vs unanswered</h3><canvas id="cAns"></canvas></div>
+<div class="chartcard"><h3>Talk time per rep (minutes)</h3><canvas id="cTalk"></canvas></div>
+<div class="chartcard"><h3>Call duration distribution</h3><canvas id="cDur"></canvas></div>
+</div>
 
-  <section>
-    <h2>Call Log (29 rep calls + 4 missed inbound)</h2>
-    <div class="tbl-scroll">
-      <table>
-        <thead><tr><th>Time (IL)</th><th>Rep</th><th>Dir</th><th>Number</th><th>Duration</th><th>Status</th></tr></thead>
-        <tbody>
-<tr><td>10:00</td><td>Eden Dadi</td><td>out</td><td>+972 50-907-5055</td><td>20m 11s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>10:23</td><td>Eden Dadi</td><td>out</td><td>+972 50-755-5580</td><td>47s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>10:45</td><td>Eden Dadi</td><td>out</td><td>+972 54-701-4232</td><td>39s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>11:32</td><td>Eden Dadi</td><td>out</td><td>+972 50-532-5518</td><td>22s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>11:33</td><td>Eden Dadi</td><td>out</td><td>+972 58-366-9925</td><td>40s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>11:42</td><td>Eden Dadi</td><td>out</td><td>+972 53-923-7796</td><td>12m 35s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>12:02</td><td>Eden Dadi</td><td>out</td><td>+972 53-923-7796</td><td>1m 06s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>12:09</td><td>Eden Dadi</td><td>out</td><td>+972 52-618-8857</td><td>3m 13s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>12:41</td><td>Eden Dadi</td><td>out</td><td>+972 55-771-5600</td><td>17s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>12:46</td><td>Eden Dadi</td><td>out</td><td>+972 55-771-5600</td><td>18s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>12:48</td><td>Eden Dadi</td><td>out</td><td>+972 55-771-5600</td><td>23m 04s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>13:17</td><td>Eden Dadi</td><td>out</td><td>+972 50-907-5055</td><td>5m 22s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>13:27</td><td>—</td><td>in</td><td>+972 50-907-5055</td><td>36s</td><td><span class="miss">Missed inbound</span></td></tr>
-<tr><td>13:28</td><td>Eden Dadi</td><td>out</td><td>+972 50-907-5055</td><td>2m 36s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>13:38</td><td>—</td><td>in</td><td>+972 53-340-6768</td><td>36s</td><td><span class="miss">Missed inbound</span></td></tr>
-<tr><td>15:54</td><td>—</td><td>in</td><td>+972 53-923-7796</td><td>1m 37s</td><td><span class="miss">Missed inbound</span></td></tr>
-<tr><td>15:55</td><td>Eden Dadi</td><td>out</td><td>+972 53-923-7796</td><td>7m 10s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>15:55</td><td>—</td><td>in</td><td>+972 53-923-7796</td><td>1m 51s</td><td><span class="miss">Missed inbound</span></td></tr>
-<tr><td>16:03</td><td>Eden Dadi</td><td>out</td><td>+972 52-615-4849</td><td>18m 54s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>16:22</td><td>Eden Dadi</td><td>out</td><td>+972 50-395-5419</td><td>4m 02s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:17</td><td>Eden Dadi</td><td>out</td><td>+972 58-442-1047</td><td>1m 29s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:20</td><td>Eden Dadi</td><td>out</td><td>+972 50-755-5580</td><td>50s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>17:24</td><td>Eden Dadi</td><td>out</td><td>+972 50-228-2121</td><td>15s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>17:26</td><td>Eden Dadi</td><td>out</td><td>+972 50-228-7872</td><td>1m 48s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:30</td><td>Eden Dadi</td><td>out</td><td>+33 7 69 01 93 98</td><td>22s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:33</td><td>Eden Dadi</td><td>out</td><td>+972 55-770-2694</td><td>1m 18s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:35</td><td>Eden Dadi</td><td>out</td><td>+972 52-846-0444</td><td>14s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:42</td><td>Eden Dadi</td><td>out</td><td>+972 52-758-0988</td><td>41s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:43</td><td>Eden Dadi</td><td>out</td><td>+972 53-640-5750</td><td>2m 34s</td><td><span class="ok">Answered</span></td></tr>
-<tr><td>17:49</td><td>Eden Dadi</td><td>out</td><td>+972 54-635-2454</td><td>51s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>17:52</td><td>Eden Dadi</td><td>out</td><td>+972 50-327-1177</td><td>42s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>17:54</td><td>Eden Dadi</td><td>out</td><td>+972 53-718-1848</td><td>36s</td><td><span class="no">No answer</span></td></tr>
-<tr><td>20:01</td><td>Eliezer Lev</td><td>out</td><td>+972 52-292-0835</td><td>52s</td><td><span class="ok">Answered</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+<h2>Recommendations</h2>
+<div class="rec">
+<div class="reccard">
+<h4 style="color:var(--accE)">Eden Dadi — solid talk time, volume &amp; pacing gaps</h4>
+<p><span class="flag warn">Volume:</span> 28 calls vs the 50 target (56%). Talk time landed at 113 min — 94% of the 120-min goal, carried by a few long conversations (three calls over 12 min). She is closing time on target but not <em>reaching</em> enough prospects.</p>
+<p><span class="flag bad">Dead time inside shift:</span> a 148-minute stretch with no calls (13:28–15:55 IDT), plus several 20–48 min gaps in the late morning. Recovering even half of that idle window at her ~4-min average pace adds 15–20 dials.</p>
+<p><span class="flag warn">Shift drift:</span> 12 of her 28 calls were placed after 17:00 — her shift end. Work is backloaded into the evening rather than filling the 10:00–17:00 window.</p>
+<p><span class="flag ok">Redials / connect:</span> 60% connect rate is healthy. Numbers 55-771-5600 and 53-923-7796 show sensible redial patterns (retried after no-answer, later connected). Keep that discipline; focus the freed time on new dials.</p>
+</div>
+<div class="reccard L">
+<h4 style="color:var(--accL)">Eliezer Lev — effectively no activity today</h4>
+<p><span class="flag bad">Critical:</span> only <strong>1 call</strong> logged for the entire 17:00–21:30 shift (0.9 min of talk), placed at 20:01 IDT. That is 2% of the call target and &lt;1% of the talk-time target.</p>
+<p><span class="flag bad">Action:</span> confirm first whether this is a data/login issue (wrong Aircall device, not clocked in) or a genuine no-show. If he was working, the dialer setup needs checking; if not, this is a same-day management conversation.</p>
+<p><span class="flag warn">Connect:</span> his single call did connect, so the line itself is functional.</p>
+</div>
+<div class="reccard team">
+<h4 style="color:var(--warn)">Team-level actions</h4>
+<p><span class="flag bad">Missed inbound with no owner:</span> 4 inbound calls hit the DI Team line with no user attached (e.g. 13:27, 13:38, 15:54, 15:55 IDT). Two were the same prospect (53-923-7796) who Eden then called back — the others were not returned. Set up an inbound routing/ring group so evening and gap-time inbounds don't drop.</p>
+<p><span class="flag warn">CRM tagging:</span> every one of the 29 rep calls has zero tags and no linked contact. Enforce call tagging (outcome / disposition) and contact matching in Aircall so this report can show conversion, not just activity.</p>
+<p><span class="flag warn">Coverage:</span> from 15:55 to 17:00 IDT the DI line had almost no outbound activity from either rep — the handoff between Eden's and Eliezer's shifts is a coverage hole.</p>
+</div>
+</div>
 
-  <section>
-    <h2>Recommendations</h2>
-    <div class="recs">
-      <div class="rec eden">
-        <h3 style="color:var(--accent)">Eden Dadi</h3>
-        <ul>
-          <li><b>28/50 calls (56%), 112.9/120 min (94%).</b> Talk-time nearly on target again, but volume slipped further — down from 40 calls yesterday. Depth stayed strong: 17 connects at 6.3 min average, anchored by a 23-minute and an 18.9-minute conversation.</li>
-          <li><b>A 2.5-hour dead gap, 13:30–15:55 IL.</b> After the 2m36s call ending 13:30 she made no outbound dials until 15:55 — and only restarted because a warm inbound (53-923-7796) came in. That single gap is the whole volume shortfall; at even 6 dials/hr it's ~15 lost calls.</li>
-          <li><b>The day was two bursts, not a steady shift.</b> 13 calls before 13:30, then nothing until a 12-call sprint packed into 17:17–17:54 (past shift end). Spreading that end-of-day energy across the empty 14:00–15:00 and 15:00 hours would clear the target.</li>
-          <li><b>Persistence is paying off — keep it.</b> 55-771-5600 went 17s → 18s → then a 23-minute connect on the third try; 50-907-5055 got three touches (20m + 5m + 3m); 53-923-7796 four touches incl. two inbound callbacks. This multi-touch discipline is her edge.</li>
-        </ul>
-      </div>
-      <div class="rec eliezer">
-        <h3 style="color:var(--purple)">Eliezer Lev</h3>
-        <ul>
-          <li><b>1/50 calls (2%), 0.9/120 min (1%) — the critical issue, worse than yesterday.</b> A single dial at 20:01 IL, answered and 52 seconds long, is the only activity in the feed for his entire 17:00–21:30 shift.</li>
-          <li><b>Effectively a no-show shift.</b> Two straight days of near-zero volume (5 calls yesterday, 1 today) point to an availability, dialer-setup, or logging problem that needs an urgent direct conversation — this is no longer a coaching issue, it's an "is he able to work the line" issue.</li>
-          <li><b>Nothing to judge on craft.</b> His one call connected, so there's no pitch problem to diagnose; the entire gap is presence and activity.</li>
-          <li><b>Immediate step:</b> confirm his Aircall app/line is working and set a live-tracked floor of ~10 dials/hour from 17:00. If the tooling checks out, escalate on accountability.</li>
-        </ul>
-      </div>
-      <div class="rec team">
-        <h3 style="color:var(--amber)">Team-Level Actions</h3>
-        <ul>
-          <li><b>Team at 29% of the call target, 47% of minutes</b> (29/100 calls, 113.8/240 min). Eden supplied 99% of the talk time; the shortfall is almost entirely Eliezer's missing shift plus Eden's midday gap.</li>
-          <li><b>Warm inbound is leaking — one went unanswered today.</b> Three inbound calls hit the DI Team line with no assigned user: 50-907-5055 (13:27) and 53-923-7796 (15:54 &amp; 15:55) were both recovered by Eden calling straight back, but <b>53-340-6768 at 13:38 IL got no callback at all</b> — a warm hand-raiser lost during the dead gap. A ring-group fallback would have caught it.</li>
-          <li><b>Zero tags and zero linked contacts on all 29 calls, third day running.</b> Outcome tagging is still not in use, so nothing beyond duration is measurable. Ship a mandatory tag set (Interested / Callback / Not-fit / No-answer) before hang-up.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<h2>Full call log (29 rep calls)</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Time (IDT)</th><th>Rep</th><th>Dir.</th><th>Number</th><th>Duration</th><th>Result</th><th class="ctr">Rec</th></tr></thead>
+<tbody>
+<tr class="rowE"><td>10:00</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-907-5055</td><td class="mono">20:11</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>10:23</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-755-5580</td><td class="mono">0:47</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>10:45</td><td>Eden</td><td>Outbound</td><td class="mono">+972 54-701-4232</td><td class="mono">0:39</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>11:32</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-532-5518</td><td class="mono">0:22</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>11:33</td><td>Eden</td><td>Outbound</td><td class="mono">+972 58-366-9925</td><td class="mono">0:40</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>11:42</td><td>Eden</td><td>Outbound</td><td class="mono">+972 53-923-7796</td><td class="mono">12:35</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>12:02</td><td>Eden</td><td>Outbound</td><td class="mono">+972 53-923-7796</td><td class="mono">1:06</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>12:09</td><td>Eden</td><td>Outbound</td><td class="mono">+972 52-618-8857</td><td class="mono">3:13</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>12:41</td><td>Eden</td><td>Outbound</td><td class="mono">+972 55-771-5600</td><td class="mono">0:17</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>12:46</td><td>Eden</td><td>Outbound</td><td class="mono">+972 55-771-5600</td><td class="mono">0:18</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>12:48</td><td>Eden</td><td>Outbound</td><td class="mono">+972 55-771-5600</td><td class="mono">23:04</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>13:17</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-907-5055</td><td class="mono">5:22</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>13:28</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-907-5055</td><td class="mono">2:36</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>15:55</td><td>Eden</td><td>Outbound</td><td class="mono">+972 53-923-7796</td><td class="mono">7:10</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>16:03</td><td>Eden</td><td>Outbound</td><td class="mono">+972 52-615-4849</td><td class="mono">18:54</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>16:22</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-395-5419</td><td class="mono">4:02</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:17</td><td>Eden</td><td>Outbound</td><td class="mono">+972 58-442-1047</td><td class="mono">1:29</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:20</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-755-5580</td><td class="mono">0:50</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>17:24</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-228-2121</td><td class="mono">0:15</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>17:26</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-228-7872</td><td class="mono">1:48</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:30</td><td>Eden</td><td>Outbound</td><td class="mono">+33 7 69 01 93 98</td><td class="mono">0:22</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:33</td><td>Eden</td><td>Outbound</td><td class="mono">+972 55-770-2694</td><td class="mono">1:18</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:35</td><td>Eden</td><td>Outbound</td><td class="mono">+972 52-846-0444</td><td class="mono">0:14</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:42</td><td>Eden</td><td>Outbound</td><td class="mono">+972 52-758-0988</td><td class="mono">0:41</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:43</td><td>Eden</td><td>Outbound</td><td class="mono">+972 53-640-5750</td><td class="mono">2:34</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+<tr class="rowE"><td>17:49</td><td>Eden</td><td>Outbound</td><td class="mono">+972 54-635-2454</td><td class="mono">0:51</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>17:52</td><td>Eden</td><td>Outbound</td><td class="mono">+972 50-327-1177</td><td class="mono">0:42</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowE"><td>17:54</td><td>Eden</td><td>Outbound</td><td class="mono">+972 53-718-1848</td><td class="mono">0:36</td><td><span class="badge no">No answer</span></td><td class="ctr">—</td></tr>
+<tr class="rowL"><td>20:01</td><td>Eliezer</td><td>Outbound</td><td class="mono">+972 52-292-0835</td><td class="mono">0:52</td><td><span class="badge ok">Answered</span></td><td class="ctr">🎧</td></tr>
+</tbody></table></div>
 
-  <footer>Generated automatically from Aircall data · Developers Institute · report date 2026-07-23 · times in Israel time (UTC+3)</footer>
+<h2>Missed inbound — DI Team line, no user (4)</h2>
+<div class="tablewrap" style="max-height:none"><table>
+<thead><tr><th>Time (IDT)</th><th>From</th><th>Ring/Duration</th></tr></thead>
+<tbody>
+<tr><td>13:27</td><td class="mono">+972 50-907-5055</td><td class="mono">0:36</td></tr>
+<tr><td>13:38</td><td class="mono">+972 53-340-6768</td><td class="mono">0:36</td></tr>
+<tr><td>15:54</td><td class="mono">+972 53-923-7796</td><td class="mono">1:37</td></tr>
+<tr><td>15:55</td><td class="mono">+972 53-923-7796</td><td class="mono">1:51</td></tr>
+</tbody></table></div>
+
+<p class="foot">Data source: Aircall API (DI Team line, id 999525). Transcript &amp; AI-summary add-on not enabled (endpoints returned 404), so no call-content analysis is included. All timestamps converted from UTC to Israel Daylight Time (UTC+3). Targets: 50 calls / 120 talk-minutes per rep per day.</p>
 </div>
 
 <script>
-Chart.defaults.color='#8b949e';
-Chart.defaults.borderColor='#2b3240';
-Chart.defaults.font.family='-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif';
-const hours=['10','11','12','13','14','15','16','17','18','19','20','21'];
-new Chart(document.getElementById('hourChart'),{type:'bar',
- data:{labels:hours,datasets:[
-  {label:'Eden',data:[3,3,5,2,0,1,2,12,0,0,0,0],backgroundColor:'#58a6ff'},
-  {label:'Eliezer',data:[0,0,0,0,0,0,0,0,0,0,1,0],backgroundColor:'#bc8cff'}]},
- options:{responsive:true,scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true,ticks:{stepSize:2}}},plugins:{legend:{position:'bottom'}}}});
-
-new Chart(document.getElementById('ansChart'),{type:'doughnut',
- data:{labels:['Answered','No answer'],datasets:[{data:[18,11],backgroundColor:['#3fb950','#30363d'],borderColor:'#161b22',borderWidth:2}]},
- options:{responsive:true,plugins:{legend:{position:'bottom'}}}});
-
-new Chart(document.getElementById('talkChart'),{type:'bar',
- data:{labels:['Eden Dadi','Eliezer Lev'],datasets:[
-  {label:'Minutes',data:[112.9,0.9],backgroundColor:['#58a6ff','#bc8cff']},
-  {label:'Target (120)',data:[120,120],type:'line',borderColor:'#d29922',borderDash:[6,4],pointRadius:0,fill:false}]},
- options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true}}}});
-
-new Chart(document.getElementById('durChart'),{type:'bar',
- data:{labels:['0–30s','30–60s','1–3m','3–5m','5m+'],datasets:[
-  {label:'Eden',data:[6,8,6,2,6],backgroundColor:'#58a6ff'},
-  {label:'Eliezer',data:[0,1,0,0,0],backgroundColor:'#bc8cff'}]},
- options:{responsive:true,scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,beginAtZero:true}},plugins:{legend:{position:'bottom'}}}});
+const D={"hours": ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"], "E_hd": [3, 3, 5, 2, 0, 1, 2, 12, 0, 0, 0, 0], "L_hd": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0], "ansE": [17, 11], "ansL": [1, 0], "talk": [112.9, 0.9], "buckets": [6, 9, 6, 4, 4]};
+const gridc="#26304288", txtc="#8b97ad";
+Chart.defaults.color=txtc; Chart.defaults.font.family="Segoe UI,system-ui,sans-serif";
+new Chart(document.getElementById('cHour'),{type:'bar',data:{labels:D.hours,datasets:[
+ {label:'Eden',data:D.E_hd,backgroundColor:'#38bdf8'},
+ {label:'Eliezer',data:D.L_hd,backgroundColor:'#a78bfa'}]},
+ options:{responsive:true,scales:{x:{stacked:true,grid:{color:gridc}},y:{stacked:true,beginAtZero:true,grid:{color:gridc},ticks:{precision:0}}},plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('cAns'),{type:'bar',data:{labels:['Eden','Eliezer'],datasets:[
+ {label:'Answered',data:[D.ansE[0],D.ansL[0]],backgroundColor:'#22c55e'},
+ {label:'No answer',data:[D.ansE[1],D.ansL[1]],backgroundColor:'#ef4444'}]},
+ options:{responsive:true,scales:{x:{stacked:true,grid:{color:gridc}},y:{stacked:true,beginAtZero:true,grid:{color:gridc},ticks:{precision:0}}},plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('cTalk'),{type:'bar',data:{labels:['Eden','Eliezer'],datasets:[
+ {label:'Talk minutes',data:D.talk,backgroundColor:['#38bdf8','#a78bfa']}]},
+ options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gridc}},y:{beginAtZero:true,grid:{color:gridc}}}}});
+new Chart(document.getElementById('cDur'),{type:'bar',data:{labels:['0-30s','30-60s','1-3m','3-10m','10m+'],datasets:[
+ {label:'Calls',data:D.buckets,backgroundColor:'#38bdf8'}]},
+ options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gridc}},y:{beginAtZero:true,grid:{color:gridc},ticks:{precision:0}}}}});
 </script>
-</body>
-</html>
+</body></html>
