@@ -1,7 +1,18 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DI Weekly Sales Call Report — 18–23 Jul 2026</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js">
+new Chart(cHour,{data:{labels:D.hrLabels,datasets:[
+ {type:'bar',label:'Eden calls',data:D.edenHrCalls,backgroundColor:'#38bdf833',yAxisID:'y',order:3},
+ {type:'bar',label:'Eliezer calls',data:D.elieHrCalls,backgroundColor:'#a78bfa33',yAxisID:'y',order:3},
+ {type:'line',label:'Eden answer %',data:D.edenHrRate,borderColor:'#38bdf8',backgroundColor:'#38bdf8',yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:2.5,pointRadius:3},
+ {type:'line',label:'Eliezer answer %',data:D.elieHrRate,borderColor:'#a78bfa',backgroundColor:'#a78bfa',yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:2.5,pointRadius:3},
+ {type:'line',label:'Team answer %',data:D.allRate,borderColor:'#6b7688',borderDash:[4,4],yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:1.5,pointRadius:0}
+]},options:{plugins:{legend:{position:'bottom'}},scales:{
+ x:{grid:{color:grid},title:{display:true,text:'Hour of day (IDT)'}},
+ y:{position:'left',beginAtZero:true,grid:{color:grid},title:{display:true,text:'Calls'}},
+ y1:{position:'right',beginAtZero:true,max:100,grid:{drawOnChartArea:false},title:{display:true,text:'Answer rate %'}}}}});
+</script>
 <style>
 :root{--bg:#0b0f19;--card:#151b28;--card2:#1b2333;--txt:#e6ebf5;--mut:#8b97ad;--line:#263042;--accE:#38bdf8;--accL:#a78bfa;--ok:#22c55e;--warn:#eab308;--bad:#ef4444}
 *{box-sizing:border-box}
@@ -79,6 +90,10 @@ em{color:#cdd5e4}
 <div class="chartcard"><h3>Weekly calls: actual vs target</h3><canvas id="cAtt"></canvas></div>
 </div>
 
+<h2>Answer rate by hour of day</h2>
+<p class="muted" style="margin:-6px 0 10px">Outbound calls aggregated across the 5 working days, by Israel-time hour. Bars = calls placed in that hour (context); lines = % of those calls that connected. Eden dials mornings (10:00–17:00), Eliezer evenings (16:00–21:00); they overlap 16:00–17:00.</p>
+<div class="chartcard" style="min-height:340px"><canvas id="cHour" style="max-height:300px"></canvas></div>
+
 <h2>Eden Dadi — daily breakdown</h2>
 <div class="card" style="padding:0"><table>
 <thead><tr><th>Day</th><th class="ctr">Calls /target</th><th class="ctr">Connected</th><th class="ctr">Talk min /target</th><th class="ctr">Longest</th></tr></thead>
@@ -114,7 +129,7 @@ em{color:#cdd5e4}
 <p class="foot">Source: Aircall API (DI Team line, id 999525). Sat 18 Jul had no calls (weekend). "Connected" uses call-recording presence as the answered signal (validated against answered timestamps). Talk minutes include inbound calls handled by the rep. Transcript/AI-summary add-on not enabled. Eliezer's targets pro-rated by shift length (4.5h vs 7h).</p>
 </div>
 <script>
-const D={"labels": ["Sat 18", "Sun 19", "Mon 20", "Tue 21", "Wed 22", "Thu 23"], "edenCalls": [0, 33, 27, 14, 40, 28], "elieCalls": [0, 6, 14, 21, 5, 1], "edenMins": [0.0, 80.2, 118.7, 95.5, 151.0, 112.9], "elieMins": [0.0, 9.2, 33.3, 41.7, 7.4, 0.9], "edenRate": [0, 54.5, 51.9, 50.0, 65.0, 60.7], "elieRate": [0, 100.0, 64.3, 61.9, 40.0, 100.0], "edenCT": 50, "elieCT": 32, "edenMT": 120, "elieMT": 77};
+const D={"labels": ["Sat 18", "Sun 19", "Mon 20", "Tue 21", "Wed 22", "Thu 23"], "edenCalls": [0, 33, 27, 14, 40, 28], "elieCalls": [0, 6, 14, 21, 5, 1], "edenMins": [0.0, 80.2, 118.7, 95.5, 151.0, 112.9], "elieMins": [0.0, 9.2, 33.3, 41.7, 7.4, 0.9], "edenRate": [0, 54.5, 51.9, 50.0, 65.0, 60.7], "elieRate": [0, 100.0, 64.3, 61.9, 40.0, 100.0], "edenCT": 50, "elieCT": 32, "edenMT": 120, "elieMT": 77, "hrLabels": ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"], "edenHrRate": [50.0, 50.0, 54.5, 57.1, 100.0, 62.1, 52.2, 68.4, null, null, null, null], "elieHrRate": [null, null, null, null, null, null, 0.0, 66.7, 72.7, 66.7, 100.0, 50.0], "allRate": [50.0, 50.0, 54.5, 57.1, 100.0, 62.1, 50.0, 67.7, 72.7, 66.7, 100.0, 50.0], "edenHrCalls": [18, 14, 22, 14, 3, 29, 23, 19, 0, 0, 0, 0], "elieHrCalls": [0, 0, 0, 0, 0, 0, 1, 12, 11, 15, 2, 6]};
 const grid="#26304288";Chart.defaults.color="#8b97ad";Chart.defaults.font.family="Segoe UI,system-ui,sans-serif";
 function tline(val,color){return {type:'line',label:'target',data:D.labels.map(_=>val),borderColor:color,borderDash:[5,4],borderWidth:1.5,pointRadius:0,fill:false};}
 new Chart(cCalls,{data:{labels:D.labels,datasets:[
