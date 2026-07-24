@@ -1,18 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DI Weekly Sales Call Report — 18–23 Jul 2026</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js">
-new Chart(cHour,{data:{labels:D.hrLabels,datasets:[
- {type:'bar',label:'Eden calls',data:D.edenHrCalls,backgroundColor:'#38bdf833',yAxisID:'y',order:3},
- {type:'bar',label:'Eliezer calls',data:D.elieHrCalls,backgroundColor:'#a78bfa33',yAxisID:'y',order:3},
- {type:'line',label:'Eden answer %',data:D.edenHrRate,borderColor:'#38bdf8',backgroundColor:'#38bdf8',yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:2.5,pointRadius:3},
- {type:'line',label:'Eliezer answer %',data:D.elieHrRate,borderColor:'#a78bfa',backgroundColor:'#a78bfa',yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:2.5,pointRadius:3},
- {type:'line',label:'Team answer %',data:D.allRate,borderColor:'#6b7688',borderDash:[4,4],yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:1.5,pointRadius:0}
-]},options:{plugins:{legend:{position:'bottom'}},scales:{
- x:{grid:{color:grid},title:{display:true,text:'Hour of day (IDT)'}},
- y:{position:'left',beginAtZero:true,grid:{color:grid},title:{display:true,text:'Calls'}},
- y1:{position:'right',beginAtZero:true,max:100,grid:{drawOnChartArea:false},title:{display:true,text:'Answer rate %'}}}}});
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root{--bg:#0b0f19;--card:#151b28;--card2:#1b2333;--txt:#e6ebf5;--mut:#8b97ad;--line:#263042;--accE:#38bdf8;--accL:#a78bfa;--ok:#22c55e;--warn:#eab308;--bad:#ef4444}
 *{box-sizing:border-box}
@@ -150,4 +139,15 @@ new Chart(cAtt,{type:'bar',data:{labels:['Eden','Eliezer'],datasets:[
  {label:'Actual',data:[142,47],backgroundColor:['#38bdf8','#a78bfa']},
  {label:'Target',data:[250,160],backgroundColor:'#37415188'}]},
  options:{plugins:{legend:{position:'bottom'}},scales:{x:{grid:{color:grid}},y:{beginAtZero:true,grid:{color:grid}}}}});
+
+new Chart(cHour,{data:{labels:D.hrLabels,datasets:[
+ {type:'bar',label:'Eden calls',data:D.edenHrCalls,backgroundColor:'#38bdf833',yAxisID:'y',order:3},
+ {type:'bar',label:'Eliezer calls',data:D.elieHrCalls,backgroundColor:'#a78bfa33',yAxisID:'y',order:3},
+ {type:'line',label:'Eden answer %',data:D.edenHrRate,borderColor:'#38bdf8',backgroundColor:'#38bdf8',yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:2.5,pointRadius:3},
+ {type:'line',label:'Eliezer answer %',data:D.elieHrRate,borderColor:'#a78bfa',backgroundColor:'#a78bfa',yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:2.5,pointRadius:3},
+ {type:'line',label:'Team answer %',data:D.allRate,borderColor:'#6b7688',borderDash:[4,4],yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:1.5,pointRadius:0}
+]},options:{plugins:{legend:{position:'bottom'}},scales:{
+ x:{grid:{color:grid},title:{display:true,text:'Hour of day (IDT)'}},
+ y:{position:'left',beginAtZero:true,grid:{color:grid},title:{display:true,text:'Calls'}},
+ y1:{position:'right',beginAtZero:true,max:100,grid:{drawOnChartArea:false},title:{display:true,text:'Answer rate %'}}}}});
 </script></body></html>
