@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eden Dadi — Monthly Sales Call Estimate (May–Jul 2026)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0b0f19;--card:#151b28;--card2:#1b2333;--txt:#e6ebf5;--mut:#8b97ad;--line:#263042;--acc:#38bdf8;--ok:#22c55e;--warn:#eab308;--bad:#ef4444}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
+h1{margin:0 0 4px;font-size:25px} .sub{color:var(--mut);font-size:14px}
+.tag{display:inline-block;background:var(--card2);color:var(--acc);padding:3px 10px;border-radius:20px;font-size:12px;margin-right:8px}
+.warn-banner{background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.35);border-radius:10px;padding:12px 16px;margin:18px 0;font-size:13px;color:#e9d8a6}
+h2{font-size:17px;margin:32px 0 14px;border-left:3px solid var(--acc);padding-left:10px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.mhead{font-weight:700;font-size:15px;margin-bottom:8px;color:var(--acc)}
+.big{font-size:30px;font-weight:700} .unit{font-size:15px;color:var(--mut)}
+.rangeline{color:var(--mut);font-size:12.5px;margin:2px 0 12px}
+.prog{margin:10px 0} .prog .top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px}
+.track{background:#0e1421;border-radius:8px;height:12px;overflow:hidden} .fill{height:100%;border-radius:8px}
+.sub2{font-size:12.5px;color:var(--mut);margin-top:8px}
+.muted{color:var(--mut)} .ctr{text-align:center}
+.chartcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.two{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)} th{color:var(--mut);font-weight:600}
+.mcell{font-weight:700;color:var(--acc);vertical-align:top}
+canvas{max-height:260px}
+.foot{color:var(--mut);font-size:12px;margin-top:30px}
+.rec{background:var(--card2);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:14px 16px;font-size:13.5px;color:#cdd5e4}
+.rec b{color:#e6ebf5}
+</style></head><body><div class="wrap">
+<h1>📈 Eden Dadi — Monthly Call Volume (Estimate)</h1>
+<div class="sub"><span class="tag">May · June · July 2026</span> DI Team line · Israel time · targets 50 calls / 120 talk-min per working day</div>
+
+<div class="warn-banner">⚠️ <b>Estimate, not exact.</b> Aircall's API has no per-rep monthly total and the line carries ~12,400 calls across these months from several reps, so full extraction isn't possible here. These figures are extrapolated from sampled working days (May: 2 days, June: 1 day, July: 5 exact days) × each month's working days. Treat them as directional; the likely-range bars show the uncertainty. For exact numbers, an Aircall Analytics export (filter = Eden Dadi, group by month) is the reliable source.</div>
+
+<h2>Monthly estimate</h2>
+<div class="grid">
+<div class="card">
+      <div class="mhead">May 2026 <span class="muted">· 21 working days · 2 sampled days (6th, 20th)</span></div>
+      <div class="big">~724 <span class="unit">calls</span></div>
+      <div class="rangeline">likely range 504–945 · ~34.5/day</div>
+      <div class="prog"><div class="top"><span>Calls vs target (1,050)</span><span>69%</span></div><div class="track"><div class="fill" style="width:69%;background:#ef4444"></div></div></div>
+      <div class="prog"><div class="top"><span>Talk time 46.6h vs 42h</span><span>111%</span></div><div class="track"><div class="fill" style="width:100%;background:#22c55e"></div></div></div>
+      <div class="sub2">Est. connect rate ~50.7%</div>
+    </div><div class="card">
+      <div class="mhead">June 2026 <span class="muted">· 22 working days · 1 sampled day (4th)</span></div>
+      <div class="big">~924 <span class="unit">calls</span></div>
+      <div class="rangeline">likely range 924–924 · ~42.0/day</div>
+      <div class="prog"><div class="top"><span>Calls vs target (1,100)</span><span>84%</span></div><div class="track"><div class="fill" style="width:84%;background:#eab308"></div></div></div>
+      <div class="prog"><div class="top"><span>Talk time 36.9h vs 44h</span><span>84%</span></div><div class="track"><div class="fill" style="width:84%;background:#eab308"></div></div></div>
+      <div class="sub2">Est. connect rate ~54.8%</div>
+    </div><div class="card">
+      <div class="mhead">July 2026 <span class="muted">· 22 working days · 5 exact weekdays (19-23)</span></div>
+      <div class="big">~625 <span class="unit">calls</span></div>
+      <div class="rangeline">likely range 308–880 · ~28.4/day</div>
+      <div class="prog"><div class="top"><span>Calls vs target (1,100)</span><span>57%</span></div><div class="track"><div class="fill" style="width:57%;background:#ef4444"></div></div></div>
+      <div class="prog"><div class="top"><span>Talk time 40.9h vs 44h</span><span>93%</span></div><div class="track"><div class="fill" style="width:93%;background:#eab308"></div></div></div>
+      <div class="sub2">Est. connect rate ~57.7%</div>
+    </div>
+</div>
+
+<h2>Trend</h2>
+<div class="two">
+<div class="chartcard"><h3 style="margin:0 0 10px;font-size:14px">Estimated calls / month vs target</h3><canvas id="cCalls"></canvas></div>
+<div class="chartcard"><h3 style="margin:0 0 10px;font-size:14px">Estimated talk hours &amp; connect rate</h3><canvas id="cMix"></canvas></div>
+</div>
+
+<h2>What the numbers say</h2>
+<div class="rec">
+<p><b>Consistent shape:</b> in every sampled month Eden lands well under the 50-call/day dialing bar but at or above the 120-min talk-time bar — she reaches fewer prospects but stays on each call a long time (a 20-min+ call appears in every sample). Coaching lever remains dial volume, not connection quality (connect rate is steady ~51–58%).</p>
+<p><b>Her working hours moved:</b> in May she dialed <b>evenings</b> (≈15:00–22:00 IL); by June–July she was on a <b>morning</b> block (≈10:00–17:00 IL). Worth confirming this shift was intentional.</p>
+<p><b>Volume read (directional):</b> June's sampled day was her strongest (42 calls), May mid (24–45 swing), July softest on dials (14–40 swing, avg 28). But June rests on a single day, so its month figure is the least reliable — don't over-read the June bar.</p>
+</div>
+
+<h2>Sample days used (actual, exact)</h2>
+<div class="card" style="padding:0">
+<table><thead><tr><th>Month</th><th>Day</th><th class="ctr">Calls</th><th class="ctr">Talk min</th><th class="ctr">Connect</th><th>Pattern</th></tr></thead>
+<tbody><tr><td rowspan="2" class="mcell">May</td><td>May 6</td><td class="ctr">45</td><td class="ctr">160</td><td class="ctr">47%</td><td class="muted">evening 15:00-22:00</td></tr><tr><td>May 20</td><td class="ctr">24</td><td class="ctr">106</td><td class="ctr">58%</td><td class="muted">evening 15:00-21:00</td></tr><tr><td rowspan="1" class="mcell">June</td><td>Jun 4</td><td class="ctr">42</td><td class="ctr">101</td><td class="ctr">55%</td><td class="muted">morning 10:00-17:00</td></tr><tr><td rowspan="5" class="mcell">July</td><td>Jul 19</td><td class="ctr">33</td><td class="ctr">80</td><td class="ctr">55%</td><td class="muted">morning</td></tr><tr><td>Jul 20</td><td class="ctr">27</td><td class="ctr">119</td><td class="ctr">52%</td><td class="muted">morning</td></tr><tr><td>Jul 21</td><td class="ctr">14</td><td class="ctr">96</td><td class="ctr">50%</td><td class="muted">morning</td></tr><tr><td>Jul 22</td><td class="ctr">40</td><td class="ctr">151</td><td class="ctr">65%</td><td class="muted">morning</td></tr><tr><td>Jul 23</td><td class="ctr">28</td><td class="ctr">113</td><td class="ctr">61%</td><td class="muted">morning</td></tr></tbody></table></div>
+
+<p class="foot">Source: Aircall API (DI Team line). Sampled days pulled in full and counted exactly; monthly totals are those daily figures averaged and multiplied by working days (Sun–Thu). "Calls" = outbound dials; talk time includes inbound handled by Eden. Connect rate uses call-recording presence as the answered signal. Generated for Avner, Jul 2026.</p>
+</div>
+<script>
+const D={"months": ["May", "June", "July"], "estCalls": [724, 924, 625], "estLo": [504, 924, 308], "estHi": [945, 924, 880], "callTarget": [1050, 1100, 1100], "estHours": [46.6, 36.9, 40.9], "minTargetH": [42.0, 44.0, 44.0], "rate": [50.7, 54.8, 57.7], "avgCalls": [34.5, 42.0, 28.4]};const grid="#26304288";Chart.defaults.color="#8b97ad";Chart.defaults.font.family="Segoe UI,system-ui,sans-serif";
+new Chart(cCalls,{data:{labels:D.months,datasets:[
+ {type:'bar',label:'Estimated calls',data:D.estCalls,backgroundColor:'#38bdf8',order:2},
+ {type:'line',label:'Target',data:D.callTarget,borderColor:'#ef4444',borderDash:[5,4],borderWidth:1.5,pointRadius:0,order:1},
+ {type:'line',label:'Low estimate',data:D.estLo,borderColor:'#8b97ad',borderDash:[2,3],borderWidth:1,pointRadius:2,order:0},
+ {type:'line',label:'High estimate',data:D.estHi,borderColor:'#8b97ad',borderDash:[2,3],borderWidth:1,pointRadius:2,order:0}
+]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{grid:{color:grid}},y:{beginAtZero:true,grid:{color:grid}}}}});
+new Chart(cMix,{data:{labels:D.months,datasets:[
+ {type:'bar',label:'Talk hours (est)',data:D.estHours,backgroundColor:'#a78bfa',yAxisID:'y'},
+ {type:'line',label:'Connect rate %',data:D.rate,borderColor:'#22c55e',yAxisID:'y1',tension:.3,borderWidth:2.5,pointRadius:3}
+]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{grid:{color:grid}},
+ y:{position:'left',beginAtZero:true,grid:{color:grid},title:{display:true,text:'Talk hours'}},
+ y1:{position:'right',beginAtZero:true,max:100,grid:{drawOnChartArea:false},title:{display:true,text:'Connect %'}}}}});
+</script></body></html>
