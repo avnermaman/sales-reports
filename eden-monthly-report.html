@@ -66,6 +66,10 @@ canvas{max-height:260px}
 <div class="chartcard"><h3 style="margin:0 0 10px;font-size:14px">Estimated talk hours &amp; connect rate</h3><canvas id="cMix"></canvas></div>
 </div>
 
+<h2>Answer rate by hour of day (Eden)</h2>
+<p class="muted" style="margin:-6px 0 10px;font-size:13px">Eden's outbound calls from all sampled days pooled (253 calls), by Israel-time hour. Bars = calls in that hour; line = % that connected. NOTE: because Eden dialed <b>evenings</b> in May but <b>mornings</b> in June-July, this pools two different shift patterns, so the 10:00-14:00 points are mostly June/July and the 18:00-22:00 points are mostly May.</p>
+<div class="chartcard" style="min-height:330px"><canvas id="cHour" style="max-height:300px"></canvas></div>
+
 <h2>What the numbers say</h2>
 <div class="rec">
 <p><b>Consistent shape:</b> in every sampled month Eden lands well under the 50-call/day dialing bar but at or above the 120-min talk-time bar — she reaches fewer prospects but stays on each call a long time (a 20-min+ call appears in every sample). Coaching lever remains dial volume, not connection quality (connect rate is steady ~51–58%).</p>
@@ -81,7 +85,7 @@ canvas{max-height:260px}
 <p class="foot">Source: Aircall API (DI Team line). Sampled days pulled in full and counted exactly; monthly totals are those daily figures averaged and multiplied by working days (Sun–Thu). "Calls" = outbound dials; talk time includes inbound handled by Eden. Connect rate uses call-recording presence as the answered signal. Generated for Avner, Jul 2026.</p>
 </div>
 <script>
-const D={"months": ["May", "June", "July"], "estCalls": [724, 924, 625], "estLo": [504, 924, 308], "estHi": [945, 924, 880], "callTarget": [1050, 1100, 1100], "estHours": [46.6, 36.9, 40.9], "minTargetH": [42.0, 44.0, 44.0], "rate": [50.7, 54.8, 57.7], "avgCalls": [34.5, 42.0, 28.4]};const grid="#26304288";Chart.defaults.color="#8b97ad";Chart.defaults.font.family="Segoe UI,system-ui,sans-serif";
+const D={"months": ["May", "June", "July"], "estCalls": [724, 924, 625], "estLo": [504, 924, 308], "estHi": [945, 924, 880], "callTarget": [1050, 1100, 1100], "estHours": [46.6, 36.9, 40.9], "minTargetH": [42.0, 44.0, 44.0], "rate": [50.7, 54.8, 57.7], "avgCalls": [34.5, 42.0, 28.4], "hrLabels": ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"], "hrCalls": [22, 25, 25, 14, 3, 42, 33, 34, 21, 16, 13, 4, 1], "hrRate": [50.0, 40.0, 56.0, 57.1, 100.0, 64.3, 57.6, 67.6, 42.9, 62.5, 23.1, 50.0, 100.0]};const grid="#26304288";Chart.defaults.color="#8b97ad";Chart.defaults.font.family="Segoe UI,system-ui,sans-serif";
 new Chart(cCalls,{data:{labels:D.months,datasets:[
  {type:'bar',label:'Estimated calls',data:D.estCalls,backgroundColor:'#38bdf8',order:2},
  {type:'line',label:'Target',data:D.callTarget,borderColor:'#ef4444',borderDash:[5,4],borderWidth:1.5,pointRadius:0,order:1},
@@ -94,4 +98,11 @@ new Chart(cMix,{data:{labels:D.months,datasets:[
 ]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{grid:{color:grid}},
  y:{position:'left',beginAtZero:true,grid:{color:grid},title:{display:true,text:'Talk hours'}},
  y1:{position:'right',beginAtZero:true,max:100,grid:{drawOnChartArea:false},title:{display:true,text:'Connect %'}}}}});
+new Chart(cHour,{data:{labels:D.hrLabels,datasets:[
+ {type:'bar',label:'Calls (sampled)',data:D.hrCalls,backgroundColor:'#38bdf833',yAxisID:'y',order:2},
+ {type:'line',label:'Answer rate %',data:D.hrRate,borderColor:'#22c55e',backgroundColor:'#22c55e',yAxisID:'y1',tension:.3,spanGaps:false,borderWidth:2.5,pointRadius:3,order:1}
+]},options:{plugins:{legend:{position:'bottom'}},scales:{
+ x:{grid:{color:grid},title:{display:true,text:'Hour of day (IDT)'}},
+ y:{position:'left',beginAtZero:true,grid:{color:grid},title:{display:true,text:'Calls'}},
+ y1:{position:'right',beginAtZero:true,max:100,grid:{drawOnChartArea:false},title:{display:true,text:'Answer rate %'}}}}});
 </script></body></html>
