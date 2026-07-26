@@ -4,7 +4,7 @@
 <title>DI Daily Sales Call Report — 2026-07-26</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root{--bg:#0d1117;--card:#161b22;--card2:#1c2230;--border:#2a3140;--txt:#e6edf3;--mut:#8b949e;--acc:#58a6ff;--grn:#3fb950;--red:#f85149;--yel:#d29922;--eden:#58a6ff;--eli:#bc8cff;}
+:root{--bg:#0d1117;--card:#161b22;--card2:#1c2230;--border:#2a3140;--txt:#e6edf3;--mut:#8b949e;--grn:#3fb950;--red:#f85149;--yel:#d29922;}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
 .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
@@ -16,7 +16,7 @@ h2{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)
 .kpi .lbl{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
 .kpi .val{font-size:28px;font-weight:700;margin:6px 0 4px}
 .kpi .note{color:var(--mut);font-size:12px}
-.targets{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.targets{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .tcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
 .tcard h3{margin:0 0 4px;font-size:15px}
 .tcard .shift{color:var(--mut);font-size:12px;margin-bottom:12px}
@@ -29,8 +29,8 @@ h2{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)
 .chart{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
 .chart h4{margin:0 0 12px;font-size:13px;color:var(--mut);font-weight:600}
 .recs{display:grid;gap:14px}
-.rec{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:10px;padding:16px 18px}
-.rec.eden{border-left-color:var(--eden)}.rec.eli{border-left-color:var(--eli)}.rec.team{border-left-color:var(--yel)}
+.rec{background:var(--card);border:1px solid var(--border);border-left:3px solid #58a6ff;border-radius:10px;padding:16px 18px}
+.rec.eden{border-left-color:#58a6ff}.rec.nat{border-left-color:#f0883e}.rec.eli{border-left-color:#bc8cff}.rec.team{border-left-color:var(--yel)}
 .rec h4{margin:0 0 10px;font-size:15px}
 .rec p{margin:8px 0;font-size:14px;color:#c9d1d9}
 .rec strong{color:var(--txt)}
@@ -47,84 +47,130 @@ tr.na td{color:var(--mut)}
 <body><div class="wrap">
 <header>
 <h1>📞 Developers Institute — Daily Sales Call Report</h1>
-<div class="sub">Sunday, 26 July 2026 · DI Team line · times shown in Israel time (IDT, UTC+3) · generated 21:59 IDT</div>
+<div class="sub">Sunday, 26 July 2026 · DI Team line · times shown in Israel time (IDT, UTC+3) · generated 22:20 IDT</div>
 </header>
 
 <h2>Team KPIs</h2>
 <div class="kpis">
-<div class="kpi"><div class="lbl">Total Calls</div><div class="val">32</div><div class="note">Eden 12 · Eliezer 20</div></div>
-<div class="kpi"><div class="lbl">Answered</div><div class="val">21</div><div class="note">66% connect rate</div></div>
-<div class="kpi"><div class="lbl">Total Talk Time</div><div class="val">71 min</div><div class="note">Eden 54 · Eliezer 17</div></div>
-<div class="kpi"><div class="lbl">Avg / Call</div><div class="val">2.2 min</div><div class="note">3.2 min / answered</div></div>
+<div class="kpi"><div class="lbl">Total Calls</div><div class="val">90</div><div class="note">Eden 12 · Natalia 58 · Eliezer 20</div></div>
+<div class="kpi"><div class="lbl">Answered</div><div class="val">41</div><div class="note">46% connect rate</div></div>
+<div class="kpi"><div class="lbl">Total Talk Time</div><div class="val">133 min</div><div class="note">Eden 54 · Natalia 62 · Eliezer 17</div></div>
+<div class="kpi"><div class="lbl">Avg / Call</div><div class="val">1.5 min</div><div class="note">2.5 min / answered</div></div>
 <div class="kpi"><div class="lbl">Longest Call</div><div class="val">22:43</div><div class="note">Eden · 12:17 IDT</div></div>
 </div>
 
 <h2>Daily Targets — 50 calls &amp; 120 talk-minutes per rep</h2>
 <div class="targets">
-<div class="tcard"><h3>Eden Dadi</h3><div class="shift">shift 10:00–17:00</div>
-<div class="tgt">
-      <div class="tgt-row"><span>Calls</span><span>12 / 50 (24%)</span></div>
-      <div class="track"><div class="fill low" style="width:24%"></div></div>
-    </div>
-<div class="tgt">
-      <div class="tgt-row"><span>Talk minutes</span><span>54 / 120 (45%)</span></div>
-      <div class="track"><div class="fill low" style="width:45%"></div></div>
-    </div></div>
-<div class="tcard"><h3>Eliezer Lev</h3><div class="shift">shift 17:00–21:30</div>
-<div class="tgt">
-      <div class="tgt-row"><span>Calls</span><span>20 / 50 (40%)</span></div>
-      <div class="track"><div class="fill low" style="width:40%"></div></div>
-    </div>
-<div class="tgt">
-      <div class="tgt-row"><span>Talk minutes</span><span>17 / 120 (14%)</span></div>
-      <div class="track"><div class="fill low" style="width:14%"></div></div>
-    </div></div>
+<div class="tcard"><h3>Eden Dadi</h3><div class="shift">shift 10:00–17:00</div><div class="tgt"><div class="tgt-row"><span>Calls</span><span>12 / 50 (24%)</span></div><div class="track"><div class="fill low" style="width:24%"></div></div></div><div class="tgt"><div class="tgt-row"><span>Talk minutes</span><span>54 / 120 (45%)</span></div><div class="track"><div class="fill low" style="width:45%"></div></div></div></div>
+<div class="tcard"><h3>Natalia Abolmazova</h3><div class="shift">shift 10:00–18:00</div><div class="tgt"><div class="tgt-row"><span>Calls</span><span>58 / 50 (100%)</span></div><div class="track"><div class="fill ok" style="width:100%"></div></div></div><div class="tgt"><div class="tgt-row"><span>Talk minutes</span><span>62 / 120 (52%)</span></div><div class="track"><div class="fill mid" style="width:52%"></div></div></div></div>
+<div class="tcard"><h3>Eliezer Lev</h3><div class="shift">shift 17:00–21:30</div><div class="tgt"><div class="tgt-row"><span>Calls</span><span>20 / 50 (40%)</span></div><div class="track"><div class="fill low" style="width:40%"></div></div></div><div class="tgt"><div class="tgt-row"><span>Talk minutes</span><span>17 / 120 (14%)</span></div><div class="track"><div class="fill low" style="width:14%"></div></div></div></div>
 </div>
 
 <h2>Charts</h2>
 <div class="charts">
 <div class="chart"><h4>Calls per hour (Israel time)</h4><canvas id="c1"></canvas></div>
-<div class="chart"><h4>Answered vs unanswered</h4><canvas id="c2"></canvas></div>
+<div class="chart"><h4>Answered vs unanswered (team)</h4><canvas id="c2"></canvas></div>
 <div class="chart"><h4>Talk time per rep (minutes)</h4><canvas id="c3"></canvas></div>
 <div class="chart"><h4>Call duration distribution</h4><canvas id="c4"></canvas></div>
 </div>
 
 <h2>Recommendations</h2>
 <div class="recs">
-<div class="rec eden"><h4>Eden Dadi — strong connect rate, big volume &amp; idle-time gaps</h4>
-<p><strong>Volume:</strong> 12 calls vs the 50 target (24%) — the lowest dial count of the day. Talk time reached 54 min (45% of the 120-min goal), carried almost entirely by three long calls (22:43, 12:25, 10:52). Connect rate is excellent at 75%, so the issue is quantity of dials, not quality of conversations.</p>
-<p><strong>Dead time inside shift:</strong> two large idle stretches — roughly 10:38→12:16 (~98 min) and 15:17→17:00 (~1h40m with no dials at the end of shift), plus a ~65-min gap 14:07→15:12. Recovering even half of that idle window at her pace would roughly double her dial count.</p>
-<p><strong>Redials:</strong> sensible retry discipline (53-335-9091, 52-786-3602 and 58-668-3727 each redialed then connected or abandoned). Keep it — the priority is filling the empty afternoon with fresh dials.</p></div>
+<div class="rec eden"><h4>Eden Dadi — strong connect rate, low volume &amp; idle afternoon</h4>
+<p><strong>Volume:</strong> 12 calls vs 50 (24%) — the lowest dial count. Talk time 54 min (45% of 120), carried almost entirely by three long calls (22:43, 12:25, 10:52). Connect rate is excellent at 75%; the gap is quantity of dials.</p>
+<p><strong>Dead time:</strong> active 10:10–15:17 IDT with a large idle stretch (~98 min, 10:38→12:16) and no dials from ~15:17 to her 17:00 shift end. Filling that empty afternoon is the single biggest lever for her.</p></div>
+
+<div class="rec nat"><h4>Natalia Abolmazova — top volume, low connect rate</h4>
+<p><strong>Volume:</strong> 58 calls — by far the most of any rep, clearing the 50-call target. Talk time 62 min (52% of 120), lifted by three inbound call-backs she fielded (15:31, 16:38, 17:01 IDT) running 12:25, 3:43 and 5:32.</p>
+<p><strong>Connect rate:</strong> 34% (20/58) — the lowest of the three. She is dialing hard but a lot of numbers ring out; average just 1.1 min/call. Worth auditing her call-list quality and openers — the volume is there, the conversion isn't.</p>
+<p><strong>Pacing:</strong> active 11:47–17:47 IDT, but her first dial wasn't until 11:47 — roughly 1h45m into her 10:00 shift, the day's slowest start. Cadence is tight through the late morning; largest idle gap ~49 min (15:49→16:38). Pulling that start time earlier is the easiest volume win.</p></div>
 
 <div class="rec eli"><h4>Eliezer Lev — decent dial count, critically low talk time</h4>
-<p><strong>Talk time:</strong> just 17 min of talk (14% of the 120-min target) across 20 calls. He dialed more than Eden but his conversations are very short — average 0.9 min/call — so almost no real selling time is being logged.</p>
-<p><strong>Connect rate:</strong> 60% (12/20). Many answered calls end in well under 30 seconds, which points to weak openers or wrong-number lists rather than a dialer problem.</p>
-<p><strong>Dead time inside shift:</strong> started ~20 min late (first dial 17:20) and had two long silent gaps — 18:36→19:30 (~54 min) and 19:35→20:45 (~70 min). More than two hours of his 4.5-hour shift had no activity. Tightening pacing and coaching on holding the prospect past the first 30 seconds is the single biggest lever for him.</p></div>
+<p><strong>Talk time:</strong> just 17 min (14% of 120) across 20 calls. He out-dials Eden but conversations are very short — avg 0.9 min/call — so little real selling time is logged.</p>
+<p><strong>Connect &amp; pacing:</strong> 60% connect (12/20); many answered calls end under 30s, pointing to weak openers or list quality. Active 17:20–20:45 IDT with a ~70-min silent gap (19:35→20:45). Coaching on holding prospects past the first 30 seconds is his top priority.</p></div>
 
 <div class="rec team"><h4>Team-level actions</h4>
-<p><strong>Missed inbound with no owner:</strong> 11 inbound calls hit the DI Team line with no user attached. Several are prospects the reps had just dialed (53-335-9091, 52-786-3602, 52-275-7873, 52-673-4343) calling back and getting no one — warm leads dropping. Set up an inbound ring-group so call-backs are answered.</p>
-<p><strong>CRM tagging:</strong> all 32 rep calls carry zero tags and no linked contact. Enforce disposition tagging and contact matching in Aircall so this report can show conversion, not just activity.</p>
-<p><strong>Biggest single fix:</strong> both reps are far under the 120-min talk target (Eden 45%, Eliezer 14%) and under the 50-call target. Eden needs to fill her empty afternoon with dials; Eliezer needs to convert his dials into real conversations. Talk-minutes, not dial-count, is where the team is losing the day.</p></div>
+<p><strong>Missed inbound with no owner:</strong> 11 inbound calls hit the DI Team line with no user attached. Several are prospects a rep had just dialed (53-335-9091, 52-786-3602, 52-275-7873, 52-673-4343) calling back to no one. Note Natalia did field three inbound call-backs from 52-621-1520 — set up an inbound ring-group so the rest aren't dropped.</p>
+<p><strong>CRM tagging:</strong> all 90 rep calls carry zero tags and no linked contact. Enforce disposition tagging and contact matching so this report can show conversion, not just activity.</p>
+<p><strong>Biggest single fix:</strong> connect rate and talk-minutes, not raw dials, are where the team is losing the day. Natalia has the volume (58 calls) but only 34% connect; Eliezer converts dials into ultra-short calls (17 talk-min); Eden connects well (75%) but under-dials and goes quiet mid-afternoon. All three sit under the 120-min talk target — focus coaching on list quality and openers.</p></div>
 </div>
 
-<h2>Full call log (32 rep calls)</h2>
+<h2>Full call log (90 rep calls)</h2>
 <table><thead><tr><th>Time (IDT)</th><th>Rep</th><th>Dir.</th><th>Number</th><th>Duration</th><th>Result</th><th>Rec</th></tr></thead>
 <tbody>
 <tr class="ans"><td>10:10</td><td>Eden</td><td>Outbound</td><td>+972 54-395-6844</td><td>0:33</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>10:36</td><td>Eden</td><td>Outbound</td><td>+972 53-335-9091</td><td>0:37</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>10:38</td><td>Eden</td><td>Outbound</td><td>+972 53-335-9091</td><td>12:25</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>11:47</td><td>Natalia</td><td>Outbound</td><td>+972 52-621-1520</td><td>1:07</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
 <tr class="ans"><td>12:16</td><td>Eden</td><td>Outbound</td><td>+972 52-786-3602</td><td>0:33</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>12:17</td><td>Eden</td><td>Outbound</td><td>+972 52-786-3602</td><td>22:43</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>12:22</td><td>Natalia</td><td>Outbound</td><td>+972 53-729-3536</td><td>0:13</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>12:25</td><td>Natalia</td><td>Outbound</td><td>+972 58-423-6760</td><td>0:58</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>12:27</td><td>Natalia</td><td>Outbound</td><td>+972 54-954-0354</td><td>0:36</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>13:01</td><td>Natalia</td><td>Outbound</td><td>+972 55-269-1864</td><td>0:53</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>13:19</td><td>Natalia</td><td>Outbound</td><td>+972 58-403-1989</td><td>0:39</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>13:24</td><td>Natalia</td><td>Outbound</td><td>+972 50-387-7526</td><td>0:15</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>13:30</td><td>Eden</td><td>Outbound</td><td>+972 54-689-6565</td><td>0:56</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>13:30</td><td>Natalia</td><td>Outbound</td><td>+972 58-584-4522</td><td>0:24</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
 <tr class="ans"><td>13:33</td><td>Eden</td><td>Outbound</td><td>+972 55-972-2186</td><td>3:45</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>13:34</td><td>Natalia</td><td>Outbound</td><td>+972 52-747-4942</td><td>0:19</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>13:38</td><td>Natalia</td><td>Outbound</td><td>+972 53-301-0473</td><td>0:27</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>13:40</td><td>Natalia</td><td>Outbound</td><td>+972 55-269-1864</td><td>0:24</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>13:41</td><td>Natalia</td><td>Outbound</td><td>+972 53-426-0632</td><td>0:40</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>13:50</td><td>Natalia</td><td>Outbound</td><td>+972 58-584-4522</td><td>0:33</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>13:51</td><td>Natalia</td><td>Outbound</td><td>+995 557 34 04 09</td><td>0:45</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="ans"><td>13:53</td><td>Natalia</td><td>Outbound</td><td>+972 55-771-0616</td><td>1:46</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="na"><td>14:00</td><td>Eden</td><td>Outbound</td><td>+972 58-442-1047</td><td>0:30</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>14:04</td><td>Natalia</td><td>Outbound</td><td>+972 52-314-3049</td><td>1:25</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>14:07</td><td>Eden</td><td>Outbound</td><td>+1 917-617-4047</td><td>0:37</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>14:21</td><td>Natalia</td><td>Outbound</td><td>+972 54-559-5042</td><td>0:49</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>14:23</td><td>Natalia</td><td>Outbound</td><td>+972 50-692-5979</td><td>0:07</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>14:24</td><td>Natalia</td><td>Outbound</td><td>+972 54-676-2299</td><td>0:17</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>14:27</td><td>Natalia</td><td>Outbound</td><td>+972 52-344-1415</td><td>1:02</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>14:31</td><td>Natalia</td><td>Outbound</td><td>+972 53-398-6071</td><td>0:46</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>14:35</td><td>Natalia</td><td>Outbound</td><td>+972 54-973-2475</td><td>0:51</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>14:38</td><td>Natalia</td><td>Outbound</td><td>+972 54-741-7029</td><td>1:05</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>14:40</td><td>Natalia</td><td>Outbound</td><td>+972 54-741-7029</td><td>0:40</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>14:41</td><td>Natalia</td><td>Outbound</td><td>+972 53-304-7438</td><td>0:56</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="ans"><td>14:45</td><td>Natalia</td><td>Outbound</td><td>+33 6 95 26 79 97</td><td>0:11</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>14:47</td><td>Natalia</td><td>Outbound</td><td>+972 54-441-9488</td><td>0:09</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>14:49</td><td>Natalia</td><td>Outbound</td><td>+972 52-621-1520</td><td>1:06</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>14:50</td><td>Natalia</td><td>Outbound</td><td>+972 52-937-3243</td><td>0:24</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>14:51</td><td>Natalia</td><td>Outbound</td><td>+972 52-747-4942</td><td>0:39</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>14:52</td><td>Natalia</td><td>Outbound</td><td>+972 58-584-4522</td><td>0:39</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>14:53</td><td>Natalia</td><td>Outbound</td><td>+972 58-403-1989</td><td>0:38</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>14:54</td><td>Natalia</td><td>Outbound</td><td>+972 53-301-0473</td><td>0:55</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>14:55</td><td>Natalia</td><td>Outbound</td><td>+972 53-572-7099</td><td>0:22</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>15:06</td><td>Natalia</td><td>Outbound</td><td>+972 54-954-0354</td><td>1:06</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>15:10</td><td>Natalia</td><td>Outbound</td><td>+972 53-572-7099</td><td>0:47</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
 <tr class="na"><td>15:12</td><td>Eden</td><td>Outbound</td><td>+972 58-668-3727</td><td>0:09</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
 <tr class="na"><td>15:16</td><td>Eden</td><td>Outbound</td><td>+972 58-668-3727</td><td>0:08</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
 <tr class="ans"><td>15:17</td><td>Eden</td><td>Outbound</td><td>+972 53-923-7796</td><td>10:52</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>15:18</td><td>Natalia</td><td>Outbound</td><td>+972 54-589-9373</td><td>0:14</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>15:20</td><td>Natalia</td><td>Outbound</td><td>+972 50-299-6653</td><td>0:25</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>15:22</td><td>Natalia</td><td>Outbound</td><td>+972 52-526-6277</td><td>0:50</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>15:23</td><td>Natalia</td><td>Outbound</td><td>+972 52-526-6277</td><td>0:16</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>15:24</td><td>Natalia</td><td>Outbound</td><td>+972 52-380-1510</td><td>0:50</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="ans"><td>15:27</td><td>Natalia</td><td>Outbound</td><td>+972 55-291-1770</td><td>2:32</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>15:31</td><td>Natalia</td><td>Outbound</td><td>+972 52-489-2867</td><td>0:21</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>15:31</td><td>Natalia</td><td>Inbound</td><td>+972 52-621-1520</td><td>12:25</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>15:46</td><td>Natalia</td><td>Outbound</td><td>+995 557 34 04 09</td><td>1:06</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>15:49</td><td>Natalia</td><td>Outbound</td><td>+972 54-294-7029</td><td>0:54</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>16:38</td><td>Natalia</td><td>Inbound</td><td>+972 52-621-1520</td><td>3:43</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="ans"><td>17:01</td><td>Natalia</td><td>Inbound</td><td>+972 52-621-1520</td><td>5:32</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>17:20</td><td>Eliezer</td><td>Outbound</td><td>+972 54-633-8574</td><td>0:17</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="ans"><td>17:27</td><td>Natalia</td><td>Outbound</td><td>+972 52-380-1510</td><td>1:33</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="na"><td>17:31</td><td>Eliezer</td><td>Outbound</td><td>+972 54-633-8574</td><td>0:25</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>17:34</td><td>Natalia</td><td>Outbound</td><td>+972 54-973-2475</td><td>1:06</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>17:35</td><td>Natalia</td><td>Outbound</td><td>+972 58-793-9737</td><td>0:41</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="ans"><td>17:36</td><td>Natalia</td><td>Outbound</td><td>+972 53-572-7099</td><td>0:22</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>17:38</td><td>Natalia</td><td>Outbound</td><td>+972 55-302-6945</td><td>0:07</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>17:40</td><td>Natalia</td><td>Outbound</td><td>+972 50-599-1527</td><td>0:38</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>17:42</td><td>Natalia</td><td>Outbound</td><td>+972 54-973-2475</td><td>1:05</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
 <tr class="ans"><td>17:44</td><td>Eliezer</td><td>Outbound</td><td>+972 52-275-7873</td><td>0:25</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
+<tr class="na"><td>17:45</td><td>Natalia</td><td>Outbound</td><td>+972 52-747-4942</td><td>0:47</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>17:46</td><td>Natalia</td><td>Outbound</td><td>+972 58-584-4522</td><td>0:38</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
+<tr class="na"><td>17:47</td><td>Natalia</td><td>Outbound</td><td>+972 53-301-0473</td><td>0:46</td><td><span class="pill pn">No answer</span></td><td>—</td></tr>
 <tr class="ans"><td>17:47</td><td>Eliezer</td><td>Outbound</td><td>+972 55-911-8609</td><td>2:58</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>17:53</td><td>Eliezer</td><td>Outbound</td><td>+972 50-391-4845</td><td>2:31</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
 <tr class="ans"><td>18:02</td><td>Eliezer</td><td>Outbound</td><td>+972 52-275-7873</td><td>0:27</td><td><span class="pill pa">Answered</span></td><td>🎧</td></tr>
@@ -160,16 +206,21 @@ tr.na td{color:var(--mut)}
 <tr><td>21:23</td><td>+972 52-673-4343</td><td>0:07</td></tr>
 </tbody></table>
 
-<div class="foot">Data source: Aircall API (DI Team line, id 999525). Transcript &amp; AI-summary add-on not enabled (get_transcript returned 404, get_summary returned no content), so no call-content analysis is included. All timestamps converted from UTC to Israel Daylight Time (UTC+3). Targets: 50 calls / 120 talk-minutes per rep per day. Note: a third user (Natalia Abolmazova) also used the DI Team line today but is outside the two tracked reps and is excluded from this report.</div>
+<div class="foot">Data source: Aircall API (DI Team line, id 999525). Reps: Eden Dadi (10:00–17:00), Natalia Abolmazova (10:00–18:00), Eliezer Lev (17:00–21:30). Transcript &amp; AI-summary add-on not enabled (get_transcript returned 404, get_summary returned no content), so no call-content analysis is included. All timestamps converted from UTC to Israel Daylight Time (UTC+3). Targets: 50 calls / 120 talk-minutes per rep per day.</div>
 </div>
 
 <script>
-const D={"hours": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], "eden_h": [0, 0, 0, 3, 0, 2, 2, 2, 3, 0, 0, 0, 0, 0, 0], "el_h": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 12, 2, 1, 0], "dist": [13, 9, 4, 3, 3], "buckets": ["0-30s", "30-60s", "1-2m", "2-5m", "5m+"], "e_ans": 9, "e_na": 3, "l_ans": 12, "l_na": 8, "e_min": 53.8, "l_min": 17.4};
+const H=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+const DS=[
+ {label:'Eden',data:[0, 0, 0, 3, 0, 2, 2, 2, 3, 0, 0, 0, 0, 0, 0],backgroundColor:'#58a6ff'},
+ {label:'Natalia',data:[0, 0, 0, 0, 1, 3, 11, 19, 12, 1, 11, 0, 0, 0, 0],backgroundColor:'#f0883e'},
+ {label:'Eliezer',data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 12, 2, 1, 0],backgroundColor:'#bc8cff'}
+];
 const gx={grid:{color:'#2a3140'},ticks:{color:'#8b949e'}};
 const gO={plugins:{legend:{labels:{color:'#e6edf3'}}},scales:{x:gx,y:{...gx,beginAtZero:true}}};
-new Chart(c1,{type:'bar',data:{labels:D.hours.map(h=>h+':00'),datasets:[{label:'Eden',data:D.eden_h,backgroundColor:'#58a6ff'},{label:'Eliezer',data:D.el_h,backgroundColor:'#bc8cff'}]},options:{...gO,scales:{x:{...gx,stacked:true},y:{...gx,stacked:true,beginAtZero:true}}}});
-new Chart(c2,{type:'doughnut',data:{labels:['Answered','No answer'],datasets:[{data:[21,11],backgroundColor:['#3fb950','#f85149']}]},options:{plugins:{legend:{labels:{color:'#e6edf3'}}}}});
-new Chart(c3,{type:'bar',data:{labels:['Eden','Eliezer'],datasets:[{label:'Talk minutes',data:[D.e_min,D.l_min],backgroundColor:['#58a6ff','#bc8cff']},{label:'Target',data:[120,120],backgroundColor:'#30363d'}]},options:gO});
-new Chart(c4,{type:'bar',data:{labels:D.buckets,datasets:[{label:'Calls',data:D.dist,backgroundColor:'#d29922'}]},options:{...gO,plugins:{legend:{display:false}}}});
+new Chart(c1,{type:'bar',data:{labels:H.map(h=>h+':00'),datasets:DS},options:{...gO,scales:{x:{...gx,stacked:true},y:{...gx,stacked:true,beginAtZero:true}}}});
+new Chart(c2,{type:'doughnut',data:{labels:['Answered','No answer'],datasets:[{data:[41,49],backgroundColor:['#3fb950','#f85149']}]},options:{plugins:{legend:{labels:{color:'#e6edf3'}}}}});
+new Chart(c3,{type:'bar',data:{labels:['Eden','Natalia','Eliezer'],datasets:[{label:'Talk minutes',data:[53.8,61.7,17.4],backgroundColor:['#58a6ff','#f0883e','#bc8cff']},{label:'Target',data:[120,120,120],backgroundColor:'#30363d'}]},options:gO});
+new Chart(c4,{type:'bar',data:{labels:["0-30s", "30-60s", "1-2m", "2-5m", "5m+"],datasets:[{label:'Calls',data:[31, 34, 15, 5, 5],backgroundColor:'#d29922'}]},options:{...gO,plugins:{legend:{display:false}}}});
 </script>
 </body></html>
