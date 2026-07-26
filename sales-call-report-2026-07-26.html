@@ -41,13 +41,19 @@ tr.na td{color:var(--mut)}
 .pill{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
 .pill.pa{background:rgba(63,185,80,.15);color:var(--grn)}
 .pill.pn{background:rgba(248,81,73,.12);color:var(--red)}
+.pill.pi{background:rgba(88,166,255,.12);color:#58a6ff}
+.meetgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.mcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.mcard .mname{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.mcard .mbig{font-size:30px;font-weight:700;margin:6px 0 2px}
+.mcard .mnote{color:var(--mut);font-size:12px}
 .foot{color:var(--mut);font-size:12px;margin-top:24px;border-top:1px solid var(--border);padding-top:14px}
 @media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}.targets,.charts{grid-template-columns:1fr}}
 </style></head>
 <body><div class="wrap">
 <header>
 <h1>📞 Developers Institute — Daily Sales Call Report</h1>
-<div class="sub">Sunday, 26 July 2026 · DI Team line · times shown in Israel time (IDT, UTC+3) · generated 22:20 IDT</div>
+<div class="sub">Sunday, 26 July 2026 · DI Team line · times shown in Israel time (IDT, UTC+3) · generated 22:31 IDT</div>
 </header>
 
 <h2>Team KPIs</h2>
@@ -65,6 +71,29 @@ tr.na td{color:var(--mut)}
 <div class="tcard"><h3>Natalia Abolmazova</h3><div class="shift">shift 10:00–18:00</div><div class="tgt"><div class="tgt-row"><span>Calls</span><span>58 / 50 (100%)</span></div><div class="track"><div class="fill ok" style="width:100%"></div></div></div><div class="tgt"><div class="tgt-row"><span>Talk minutes</span><span>62 / 120 (52%)</span></div><div class="track"><div class="fill mid" style="width:52%"></div></div></div></div>
 <div class="tcard"><h3>Eliezer Lev</h3><div class="shift">shift 17:00–21:30</div><div class="tgt"><div class="tgt-row"><span>Calls</span><span>20 / 50 (40%)</span></div><div class="track"><div class="fill low" style="width:40%"></div></div></div><div class="tgt"><div class="tgt-row"><span>Talk minutes</span><span>17 / 120 (14%)</span></div><div class="track"><div class="fill low" style="width:14%"></div></div></div></div>
 </div>
+
+<h2>Google Meet — scheduled video calls (12)</h2>
+<div class="meetgrid">
+<div class="mcard"><div class="mname">Eden</div><div class="mbig">4</div><div class="mnote">60 scheduled min</div></div>
+<div class="mcard"><div class="mname">Natalia</div><div class="mbig">1</div><div class="mnote">15 scheduled min</div></div>
+<div class="mcard"><div class="mname">Eliezer</div><div class="mbig">7</div><div class="mnote">105 scheduled min</div></div>
+</div>
+<table><thead><tr><th>Time (IDT)</th><th>Rep</th><th>Meeting</th><th>Scheduled</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>11:30</td><td>Eden</td><td>Pius — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>12:00</td><td>Eden</td><td>אימאן — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>13:00</td><td>Eden</td><td>Saidi — admission call</td><td>15 min</td><td><span class="pill pn">Declined</span></td></tr>
+<tr><td>15:15</td><td>Eden</td><td>Natalie — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>17:15</td><td>Natalia</td><td>Klim — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>17:30</td><td>Eliezer</td><td>Geryis — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>18:00</td><td>Eliezer</td><td>Dovie — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>18:45</td><td>Eliezer</td><td>Isaak — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>19:15</td><td>Eliezer</td><td>Saleem — admission call</td><td>15 min</td><td><span class="pill pa">Recorded</span></td></tr>
+<tr><td>19:30</td><td>Eliezer</td><td>Denis — admission call (w/ Eden)</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>19:45</td><td>Eliezer</td><td>Dickson — admission call</td><td>15 min</td><td><span class="pill pi">Scheduled</span></td></tr>
+<tr><td>21:15</td><td>Eliezer</td><td>Mohanad — admission call</td><td>15 min</td><td><span class="pill pa">Recorded</span></td></tr>
+</tbody></table>
+<p style="color:var(--mut);font-size:12px;margin-top:10px">12 prospect video calls booked (180 scheduled min). Durations are the <em>scheduled</em> calendar slots — Google Meet actual attend-time isn't exposed by this connector — so treat these as booked, not confirmed talk-time. Only calls marked <span class="pill pa">Recorded</span> have a confirmed Gemini recording (i.e. definitely took place). Excludes 2 internal team meetings (90 min: Weekly Sales meeting + a 1:1).</p>
 
 <h2>Charts</h2>
 <div class="charts">
@@ -206,7 +235,7 @@ tr.na td{color:var(--mut)}
 <tr><td>21:23</td><td>+972 52-673-4343</td><td>0:07</td></tr>
 </tbody></table>
 
-<div class="foot">Data source: Aircall API (DI Team line, id 999525). Reps: Eden Dadi (10:00–17:00), Natalia Abolmazova (10:00–18:00), Eliezer Lev (17:00–21:30). Transcript &amp; AI-summary add-on not enabled (get_transcript returned 404, get_summary returned no content), so no call-content analysis is included. All timestamps converted from UTC to Israel Daylight Time (UTC+3). Targets: 50 calls / 120 talk-minutes per rep per day.</div>
+<div class="foot">Data sources: Aircall API (DI Team line, id 999525) for phone calls; Google Calendar (per-rep calendars, events with a Google Meet link) for scheduled video calls. Reps: Eden Dadi (10:00–17:00), Natalia Abolmazova (10:00–18:00), Eliezer Lev (17:00–21:30). Transcript &amp; AI-summary add-on not enabled (get_transcript returned 404, get_summary returned no content), so no call-content analysis is included. All timestamps converted from UTC to Israel Daylight Time (UTC+3). Targets: 50 calls / 120 talk-minutes per rep per day.</div>
 </div>
 
 <script>
