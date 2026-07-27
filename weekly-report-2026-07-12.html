@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Sales Report — July 12–18, 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--eden:#38bdf8;--eli:#a78bfa;--green:#34d399;--red:#f87171;--amber:#fbbf24;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
+  body{background:var(--bg);color:var(--text);padding:24px;}
+  h1{font-size:1.5rem;margin-bottom:4px;}
+  .sub{color:var(--muted);font-size:.85rem;margin-bottom:20px;}
+  .grid{display:grid;gap:16px;}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:20px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;}
+  .kpi .label{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;}
+  .kpi .value{font-size:1.7rem;font-weight:700;margin-top:4px;}
+  .kpi .split{font-size:.75rem;color:var(--muted);margin-top:4px;}
+  .kpi .split b.e{color:var(--eden);} .kpi .split b.l{color:var(--eli);}
+  .charts{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:20px;}
+  .card h3{font-size:.95rem;margin-bottom:12px;}
+  table{width:100%;border-collapse:collapse;font-size:.82rem;}
+  th{color:var(--muted);text-align:left;padding:8px;border-bottom:1px solid var(--border);text-transform:uppercase;font-size:.68rem;letter-spacing:.05em;}
+  td{padding:8px;border-bottom:1px solid #26334a;}
+  .rep-e{color:var(--eden);font-weight:600;} .rep-l{color:var(--eli);font-weight:600;}
+  .recs{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+  .recs li{margin:0 0 10px 18px;font-size:.85rem;line-height:1.45;}
+  .recs .head{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+  .dot{width:10px;height:10px;border-radius:50%;}
+  .note{background:#1e293b;border-left:3px solid var(--amber);padding:10px 14px;border-radius:6px;font-size:.8rem;color:var(--muted);margin-bottom:20px;}
+  a{color:var(--eden);}
+  .good{color:var(--green);font-weight:600;} .bad{color:var(--red);font-weight:600;} .mid{color:var(--amber);font-weight:600;}
+</style>
+</head>
+<body>
+<h1>📊 Weekly Sales Report — Sun July 12 → Sat July 18, 2026</h1>
+<div class="sub">Eden Dadi (shift 10:00–17:00) &amp; Eliezer Lev (shift 17:00–21:30) · Aircall (DI Team line) · Israel time · Weekly target per rep: <b style="color:var(--amber)">250 calls · 600 min</b> (5 × 50 calls / 120 min) · <a href="weekly-report.html">→ This week's report (Jul 19–23)</a></div>
+
+<div class="note">⚠️ Answered status inferred from recording presence (this proxy matched 100% of ~30 calls verified individually via answered_at in later weeks). Transcripts unavailable (Aircall AI add-on not enabled). No calls occurred Sat Jul 18.</div>
+
+<div class="grid kpis">
+  <div class="card kpi"><div class="label">Total Calls</div><div class="value">150</div><div class="split"><b class="e">Eden 145</b> · <b class="l">Eliezer 5</b></div></div>
+  <div class="card kpi"><div class="label">Answered</div><div class="value">69 (46%)</div><div class="split"><b class="e">Eden 66 (46%)</b> · <b class="l">Eliezer 3 (60%)</b></div></div>
+  <div class="card kpi"><div class="label">Total Minutes</div><div class="value">499</div><div class="split"><b class="e">Eden 482</b> · <b class="l">Eliezer 17</b></div></div>
+  <div class="card kpi"><div class="label">Avg Min / Call</div><div class="value">3.3</div><div class="split"><b class="e">Eden 3.3</b> · <b class="l">Eliezer 3.3</b></div></div>
+  <div class="card kpi"><div class="label">Avg Min / Answered</div><div class="value">6.7</div><div class="split"><b class="e">Eden 6.8</b> · <b class="l">Eliezer 5.4</b></div></div>
+  <div class="card kpi"><div class="label">Longest Call</div><div class="value">34m</div><div class="split"><b class="e">Eden</b>, Thu · plus 30m ×2, 26m, 25m…</div></div>
+</div>
+
+<div class="card" style="margin-bottom:20px;">
+  <h3>🎯 Weekly Targets — 250 calls &amp; 600 min per rep</h3>
+  <div id="targets"></div>
+</div>
+
+<div class="grid charts">
+  <div class="card"><h3>Calls per Day</h3><canvas id="callsday"></canvas></div>
+  <div class="card"><h3>Minutes per Day</h3><canvas id="minday"></canvas></div>
+  <div class="card"><h3>Answer Rate per Day (%)</h3><canvas id="ansday"></canvas></div>
+  <div class="card"><h3>Talk Time Split (minutes)</h3><canvas id="talk"></canvas></div>
+</div>
+
+<div class="card" style="margin-bottom:20px;">
+  <h3>Daily Breakdown</h3>
+  <table>
+    <thead><tr><th>Day</th><th>Rep</th><th>Calls</th><th>Answered</th><th>Rate</th><th>Minutes</th><th>vs 50 calls</th><th>vs 120 min</th></tr></thead>
+    <tbody>
+      <tr><td>Sun Jul 12</td><td class="rep-e">Eden</td><td>31</td><td>12</td><td>39%</td><td>126.8</td><td class="mid">62%</td><td class="good">106%</td></tr>
+      <tr><td>Sun Jul 12</td><td class="rep-l">Eliezer</td><td class="bad">0</td><td>—</td><td>—</td><td>0</td><td class="bad">0%</td><td class="bad">0%</td></tr>
+      <tr><td>Mon Jul 13</td><td class="rep-e">Eden</td><td>44</td><td>19</td><td>43%</td><td>135.0</td><td class="mid">88%</td><td class="good">113%</td></tr>
+      <tr><td>Mon Jul 13</td><td class="rep-l">Eliezer</td><td class="bad">0</td><td>—</td><td>—</td><td>0</td><td class="bad">0%</td><td class="bad">0%</td></tr>
+      <tr><td>Tue Jul 14</td><td class="rep-e">Eden</td><td class="bad">0</td><td>—</td><td>—</td><td>0</td><td class="bad">0%</td><td class="bad">0%</td></tr>
+      <tr><td>Tue Jul 14</td><td class="rep-l">Eliezer</td><td class="bad">0</td><td>—</td><td>—</td><td>0</td><td class="bad">0%</td><td class="bad">0%</td></tr>
+      <tr><td>Wed Jul 15</td><td class="rep-e">Eden</td><td>39</td><td>19</td><td>49%</td><td>88.8</td><td class="mid">78%</td><td class="mid">74%</td></tr>
+      <tr><td>Wed Jul 15</td><td class="rep-l">Eliezer</td><td>1</td><td>1</td><td>100%</td><td>14.1</td><td class="bad">2%</td><td class="bad">12%</td></tr>
+      <tr><td>Thu Jul 16</td><td class="rep-e">Eden</td><td>31</td><td>16</td><td>52%</td><td>131.8</td><td class="mid">62%</td><td class="good">110%</td></tr>
+      <tr><td>Thu Jul 16</td><td class="rep-l">Eliezer</td><td>4</td><td>2</td><td>50%</td><td>2.5</td><td class="bad">8%</td><td class="bad">2%</td></tr>
+      <tr><td>Fri Jul 17</td><td colspan="7" style="color:var(--muted)">No calls by either rep</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="grid recs">
+  <div class="card">
+    <div class="head"><span class="dot" style="background:var(--eden)"></span><h3 style="margin:0">Weekly Review — Eden Dadi</h3></div>
+    <ul>
+      <li><b>145/250 calls (58%) and 482/600 min (80%).</b> On working days she beat the 120-min target three times out of four — but Tuesday Jul 14 had zero calls, which alone cost 50 calls / 120 min of target.</li>
+      <li><b>Monday Jul 13 was her best volume day of the two weeks tracked (44 calls)</b> — proof the 50/day target is within reach when the day is protected.</li>
+      <li><b>Connect rate was low (46%, vs 59% the following week).</b> Combined with heavy repeat-dialing of the same numbers, this suggests list fatigue — worth refreshing lead sources or reviewing dial timing.</li>
+      <li><b>Same marathon-call pattern:</b> six calls over 23 minutes (34m, 30m, 30m, 26m, 25m, 24m) consumed ~29% of total talk time.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="head"><span class="dot" style="background:var(--eli)"></span><h3 style="margin:0">Weekly Review — Eliezer Lev</h3></div>
+    <ul>
+      <li><b>5 calls in the entire week (2% of target), 16.6 minutes (3%).</b> He made zero calls on Sunday, Monday, Tuesday and Friday; his week consisted of one 14-min call Wednesday and 4 short dials Thursday.</li>
+      <li><b>If he was on shift those days, this is effectively a non-working week</b> on the phone; if he was off or onboarding, the target should be adjusted. Either way this needs a management conversation, not coaching — the data can't distinguish absence from inactivity.</li>
+      <li><b>What little he did convert did well</b> (3 of 5 answered, incl. a 14-min conversation) — consistent with his strong connect rates the following week.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="head"><span class="dot" style="background:var(--amber)"></span><h3 style="margin:0">Team-Level — Week</h3></div>
+    <ul>
+      <li><b>Team at 30% of the weekly call target (150/500) and 42% of minutes (499/1200)</b> — worse than the following week (38% / 53%). The evening shift produced essentially nothing.</li>
+      <li><b>The week has three dead days</b> across the team (Eden Tue, Eliezer Sun–Tue + Fri). Filling rep coverage gaps is worth more than any per-call improvement.</li>
+      <li><b>Recurring issues already flagged this week were present here too:</b> zero contact/tag hygiene on all 150 calls, and multiple inbound callbacks reaching no one (e.g., prospects calling back within a minute of a missed dial on Sun and Mon).</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const tgt=[["Eden — Calls",145,250,"calls"],["Eden — Minutes",482.4,600,"min"],["Eliezer — Calls",5,250,"calls"],["Eliezer — Minutes",16.6,600,"min"]];
+document.getElementById('targets').innerHTML=tgt.map(t=>{
+  const pct=Math.min(100,Math.round(t[1]/t[2]*100));
+  const col=pct>=90?'#34d399':pct>=60?'#fbbf24':'#f87171';
+  return `<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:4px;"><span>${t[0]}</span><span style="color:${col};font-weight:700;">${t[1]} / ${t[2]} ${t[3]} (${pct}%)</span></div><div style="background:#0f172a;border-radius:99px;height:10px;overflow:hidden;"><div style="width:${pct}%;height:100%;background:${col};border-radius:99px;"></div></div></div>`;
+}).join('');
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='#334155';
+const EDEN='#38bdf8',ELI='#a78bfa',DAYS=['Sun 12','Mon 13','Tue 14','Wed 15','Thu 16','Fri 17'];
+new Chart(callsday,{type:'bar',data:{labels:DAYS,datasets:[
+{label:'Eden',data:[31,44,0,39,31,0],backgroundColor:EDEN},
+{label:'Eliezer',data:[0,0,0,1,4,0],backgroundColor:ELI},
+{label:'Daily target',data:[50,50,50,50,50,null],type:'line',borderColor:'#fbbf24',borderDash:[6,4],pointRadius:0,fill:false}]},options:{scales:{y:{ticks:{stepSize:10}}}}});
+new Chart(minday,{type:'bar',data:{labels:DAYS,datasets:[
+{label:'Eden',data:[126.8,135.0,0,88.8,131.8,0],backgroundColor:EDEN},
+{label:'Eliezer',data:[0,0,0,14.1,2.5,0],backgroundColor:ELI},
+{label:'Daily target',data:[120,120,120,120,120,null],type:'line',borderColor:'#fbbf24',borderDash:[6,4],pointRadius:0,fill:false}]},options:{scales:{y:{ticks:{stepSize:30}}}}});
+new Chart(ansday,{type:'line',data:{labels:DAYS,datasets:[
+{label:'Eden',data:[39,43,null,49,52,null],borderColor:EDEN,backgroundColor:EDEN,tension:.3},
+{label:'Eliezer',data:[null,null,null,100,50,null],borderColor:ELI,backgroundColor:ELI,tension:.3}]},options:{scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'}}}}});
+new Chart(talk,{type:'bar',data:{labels:['Eden','Eliezer'],datasets:[
+{label:'Talk time (answered)',data:[445.7,16.2],backgroundColor:[EDEN,ELI]},
+{label:'Ring time (unanswered)',data:[36.7,0.4],backgroundColor:'#475569'}]},options:{indexAxis:'y',scales:{x:{stacked:true},y:{stacked:true}}}});
+</script>
+</body>
+</html>
