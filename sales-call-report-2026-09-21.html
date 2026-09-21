@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DI Sales Call Report &mdash; 2026-09-21</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --border:#2a3140;
+    --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; --green:#3fb950;
+    --amber:#d29922; --red:#f85149; --purple:#bc8cff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;padding:0 0 60px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  header{padding:34px 0 10px}
+  h1{font-size:26px;margin:0 0 6px;font-weight:700}
+  .sub{color:var(--muted);font-size:14px}
+  h2{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+    margin:38px 0 14px;font-weight:600}
+  h3{font-size:16px;margin:0 0 12px}
+  .banner{background:linear-gradient(90deg,#3a2410,#2a1c0c);border:1px solid #6b4a17;
+    border-radius:12px;padding:18px 20px;margin-top:22px;display:flex;gap:14px;align-items:flex-start}
+  .banner .ico{font-size:22px;line-height:1}
+  .banner b{color:#f0c674}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px}
+  .card .big{font-size:30px;font-weight:700;letter-spacing:-.5px}
+  .card .lbl{color:var(--muted);font-size:13px;margin-top:2px}
+  .card .note{color:var(--muted);font-size:12px;margin-top:8px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .prog{margin:14px 0}
+  .prog .row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+  .bar{height:10px;background:var(--panel2);border-radius:6px;overflow:hidden}
+  .bar > span{display:block;height:100%;border-radius:6px}
+  .g{background:var(--green)}.a{background:var(--amber)}.r{background:var(--red)}
+  .pct{color:var(--muted);font-size:12px;margin-top:5px}
+  .chartbox{position:relative;height:260px}
+  .chart-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:14px;text-align:center;padding:20px}
+  .rec{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:8px;padding:14px 16px;margin-bottom:12px}
+  .rec.warn{border-left-color:var(--amber)}
+  .rec.bad{border-left-color:var(--red)}
+  .rec.good{border-left-color:var(--green)}
+  .rec b{display:block;margin-bottom:5px}
+  .rec p{margin:0;color:#c9d1d9;font-size:14px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .muted{color:var(--muted)}
+  footer{color:var(--muted);font-size:12px;margin-top:40px;text-align:center}
+  @media(max-width:820px){.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>📞 Developers Institute — Daily Sales Call Report</h1>
+  <div class="sub">Monday, September 21, 2026 · Line: DI Team · All times Israel (IDT, UTC+3) · Generated automatically</div>
+  <div class="banner">
+    <div class="ico">🕍</div>
+    <div>
+      <b>No calls today — Yom Kippur.</b> Monday, Sept 21, 2026 is Yom Kippur, Israel's national day of rest
+      when the entire country shuts down (no work, phones, or business). The Aircall API correctly returned
+      <b>0 calls</b> for both reps, and the newest activity on the line is <b>Sept 19, 07:46 IL</b> — the last
+      working day before the holiday (Sept 20 was Erev Yom Kippur, also zero). Both reps sit at <b>0 of 50
+      calls</b> and <b>0 of 120 talk-minutes</b>, which is fully expected. <b>No action required</b>; normal
+      dialing should resume on the next working day.
+    </div>
+  </div>
+</header>
+
+<h2>Team Overview</h2>
+<div class="cards">
+  <div class="card"><div class="big">0</div><div class="lbl">Total Calls</div><div class="note">Eden 0 · Eliezer 0</div></div>
+  <div class="card"><div class="big">0</div><div class="lbl">Answered</div><div class="note">— connect rate (no calls)</div></div>
+  <div class="card"><div class="big">0.0m</div><div class="lbl">Total Talk Time</div><div class="note">0.0 hours</div></div>
+  <div class="card"><div class="big">—</div><div class="lbl">Avg / Answered Call</div><div class="note">Longest — </div></div>
+</div>
+
+<h2>Daily Targets · 50 calls &amp; 120 min per rep</h2>
+<div class="grid2">
+  <div class="panel">
+    <h3>Eden Dadi <span class="muted" style="font-size:13px;font-weight:400">10:00–17:00</span></h3>
+    <div class="prog">
+      <div class="row"><span>Calls</span><b>0 / 50</b></div>
+      <div class="bar"><span class="r" style="width:0%"></span></div>
+      <div class="pct">0% of target</div>
+    </div>
+    <div class="prog">
+      <div class="row"><span>Talk minutes</span><b>0.0m / 120m</b></div>
+      <div class="bar"><span class="r" style="width:0%"></span></div>
+      <div class="pct">0% of target</div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Eliezer Lev <span class="muted" style="font-size:13px;font-weight:400">17:00–21:30</span></h3>
+    <div class="prog">
+      <div class="row"><span>Calls</span><b>0 / 50</b></div>
+      <div class="bar"><span class="r" style="width:0%"></span></div>
+      <div class="pct">0% of target</div>
+    </div>
+    <div class="prog">
+      <div class="row"><span>Talk minutes</span><b>0.0m / 120m</b></div>
+      <div class="bar"><span class="r" style="width:0%"></span></div>
+      <div class="pct">0% of target</div>
+    </div>
+  </div>
+</div>
+
+<h2>Per-Rep Metrics</h2>
+<div class="grid2">
+  <div class="panel">
+    <h3>Eden Dadi <span class="muted" style="font-size:13px;font-weight:400">Rep</span></h3>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card"><div class="big">0</div><div class="lbl">Calls</div></div>
+      <div class="card"><div class="big">0</div><div class="lbl">Answered</div></div>
+      <div class="card"><div class="big">0.0</div><div class="lbl">Talk min</div></div>
+    </div>
+    <div class="note muted" style="margin-top:10px;font-size:13px">No active window · Longest call —</div>
+  </div>
+  <div class="panel">
+    <h3>Eliezer Lev <span class="muted" style="font-size:13px;font-weight:400">Rep</span></h3>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card"><div class="big">0</div><div class="lbl">Calls</div></div>
+      <div class="card"><div class="big">0</div><div class="lbl">Answered</div></div>
+      <div class="card"><div class="big">0.0</div><div class="lbl">Talk min</div></div>
+    </div>
+    <div class="note muted" style="margin-top:10px;font-size:13px">No active window · Longest call —</div>
+  </div>
+</div>
+
+<h2>Charts</h2>
+<div class="grid2">
+  <div class="panel"><h3>Calls per Hour (IL time)</h3>
+    <div class="chartbox"><canvas id="c1"></canvas><div class="chart-empty" id="e1">No calls today</div></div></div>
+  <div class="panel"><h3>Answered vs Unanswered</h3>
+    <div class="chartbox"><canvas id="c2"></canvas><div class="chart-empty" id="e2">No calls today</div></div></div>
+  <div class="panel"><h3>Talk Time per Rep (minutes)</h3>
+    <div class="chartbox"><canvas id="c3"></canvas></div></div>
+  <div class="panel"><h3>Call Duration Distribution</h3>
+    <div class="chartbox"><canvas id="c4"></canvas><div class="chart-empty" id="e4">No calls today</div></div></div>
+</div>
+
+<h2>Recommendations — Eden Dadi</h2>
+<div class="rec good">
+  <b>Holiday — no dials expected (0 / 50 calls)</b>
+  <p>Eden's 10:00–17:00 shift falls on Yom Kippur, so zero activity is correct and requires no follow-up. No
+  reconciliation needed against her calendar.</p>
+</div>
+<div class="rec warn">
+  <b>Baseline to return to on the next working day</b>
+  <p>Her last full working day (Sept 17) hit 128% of the talk-minute target on 24 calls but only 48% of the dial
+  goal. When dialing resumes, the standing coaching point holds: protect the strong connect rate while lifting
+  raw dial count toward 50.</p>
+</div>
+
+<h2>Recommendations — Eliezer Lev</h2>
+<div class="rec good">
+  <b>Holiday — no dials expected (0 / 50 calls)</b>
+  <p>Eliezer's 17:00–21:30 shift also falls on Yom Kippur; zero activity is expected. On his last working day he
+  used only a 31-minute slice of a 4.5-hour shift, so the priority once activity resumes is a structured call
+  block from shift start.</p>
+</div>
+
+<h2>Team Actions</h2>
+<div class="rec good">
+  <b>No action required today</b>
+  <p>Sept 20–21 are Erev Yom Kippur and Yom Kippur; both correctly show zero activity with the last live record
+  at Sept 19 07:46. The Aircall line (id 999525) and reporting pipeline are functioning — this run confirms the
+  pipeline handles zero-data holidays cleanly. Normal reporting resumes on the next working day.</p>
+</div>
+<div class="rec warn">
+  <b>Standing item — missed inbound coverage</b>
+  <p>Prior working-day reports showed inbound calls hitting the DI Team line with no rep assigned. Not relevant
+  today (holiday), but overflow routing remains worth setting up for regular shifts.</p>
+</div>
+<div class="rec">
+  <b>CRM tagging</b>
+  <p>No call tags to review today. When dialing resumes, enforcing outcome tags (connected / voicemail /
+  callback / not-interested) would make these reports far more actionable.</p>
+</div>
+<div class="rec">
+  <b>Transcripts unavailable</b>
+  <p>The Aircall AI summary/transcript endpoints were not exercised today (no answered calls to analyze). On
+  active days these have returned 403/404 (add-on not enabled); enabling the AI add-on would unlock
+  talk-ratio and objection insights.</p>
+</div>
+
+<h2>Full Call Log</h2>
+<div class="panel">
+  <p class="muted" style="margin:0">No calls were recorded for Eden Dadi or Eliezer Lev on September 21, 2026
+  (Yom Kippur). The most recent calls on the account were logged on September 19, 2026 (07:46 IL, an unassigned
+  inbound to the DI Team line) — the last working day before the holiday.</p>
+</div>
+
+<footer>Data source: Aircall · Report generated 2026-09-21 22:07 IL · Developers Institute automated sales reporting</footer>
+</div>
+
+<script>
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#2a3140';
+Chart.defaults.font.family = '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif';
+
+// Chart 3: Talk time per rep — real (zero) data, shown so the axis/structure renders
+new Chart(document.getElementById('c3'), {
+  type:'bar',
+  data:{labels:['Eden Dadi','Eliezer Lev'],
+    datasets:[{label:'Talk minutes',data:[0,0],backgroundColor:['#58a6ff','#bc8cff'],borderRadius:6}]},
+  options:{plugins:{legend:{display:false}},
+    scales:{y:{beginAtZero:true,suggestedMax:120,grid:{color:'#222833'},
+      title:{display:true,text:'minutes (target 120)'}},x:{grid:{display:false}}}}
+});
+
+// Empty placeholders: leave canvases blank, overlay message already in DOM.
+// c1 (per hour), c2 (answered vs unanswered), c4 (duration dist) intentionally show "No calls today".
+</script>
+</body>
+</html>
