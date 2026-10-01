@@ -1,5 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DI Sales Call Report</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DI Sales Call Report</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root{--bg:#0b0f17;--card:#131a26;--card2:#18202e;--line:#222c3d;--tx:#e6ebf3;--mu:#8391a7;--blue:#3b82f6;--purple:#8b5cf6;--teal:#14b8a6;--green:#22c55e;--red:#ef4444;--amber:#f59e0b}
@@ -8,60 +7,179 @@
 .eyebrow{color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 h1{margin:6px 0 4px;font-size:26px}.sub{color:var(--mu);font-size:13px;padding-bottom:18px;border-bottom:1px solid var(--line)}
 h2{font-size:16px;margin:30px 0 12px;padding-left:10px;border-left:3px solid var(--blue)}h2 small{color:var(--mu);font-weight:400;font-size:11px;margin-left:10px}
-.banner{margin-top:16px;padding:10px 14px;border:1px solid #5b4a1a;background:#2a2210;color:#f5d58a;border-radius:10px;font-size:13px}
+.banner{margin-top:16px;padding:10px 14px;border:1px solid #1e3a5f;background:#0f1d33;color:#a9c7f5;border-radius:10px;font-size:13px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-.k .v{font-size:24px;font-weight:700}.k .l{font-size:12px;margin-top:4px}.k .s,.m .s{color:var(--mu);font-size:11px}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-.rep-h{font-weight:700;margin-bottom:12px}.chip{font-size:10px;padding:2px 8px;border-radius:99px;margin-left:6px;font-weight:600}
-.chip.blue{background:#1e3a8a55;color:#93c5fd}.chip.purple{background:#4c1d9555;color:#c4b5fd}.chip.teal{background:#134e4a88;color:#5eead4}
-.bluet{color:#60a5fa}.purplet{color:#a78bfa}.tealt{color:#2dd4bf}
-.bar-l{display:flex;justify-content:space-between;font-size:13px;margin-top:12px}.bar-l span{color:var(--mu);font-size:12px}
-.bar{height:7px;background:#222c3d;border-radius:9px;margin-top:6px;overflow:hidden}.bar i{display:block;height:100%;border-radius:9px}
-.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.m{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px}.m .v{font-size:20px;font-weight:700}.m .l{font-size:12px}
-canvas{max-height:260px}.ct{font-size:13px;font-weight:600;margin-bottom:10px}
-.rec{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px}.rec p{margin:6px 0 0;color:#c3ccda;font-size:13px}
-.rec-h{display:flex;justify-content:space-between;gap:8px;font-weight:600}
-.badge{font-size:10px;padding:2px 8px;border-radius:99px;font-weight:700;letter-spacing:.05em;align-self:flex-start}
-.priority{background:#7f1d1d88;color:#fca5a5}.watch{background:#78350f88;color:#fcd34d}.good{background:#14532d88;color:#86efac}.info{background:#1e3a8a66;color:#93c5fd}
-.tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--mu);font-weight:500;font-size:12px}
-.pill{font-size:11px;padding:2px 8px;border-radius:99px}.pill.ok{background:#14532d88;color:#86efac}.pill.no{background:#7f1d1d66;color:#fca5a5}.muted{color:var(--mu)}
-footer{color:var(--mu);font-size:11px;margin-top:30px}
-@media(max-width:560px){.mini{grid-template-columns:repeat(2,1fr)}}
+.kpi,.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi .v{font-size:26px;font-weight:700}.kpi .l{color:var(--mu);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.kpi .s{color:var(--mu);font-size:12px;margin-top:4px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:12px}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.rn{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}.rn b{font-size:15px}.rn span{color:var(--mu);font-size:12px}
+.pb{margin:10px 0}.pbh{display:flex;justify-content:space-between;font-size:12px;color:var(--mu)}.pbh b{color:var(--tx);font-weight:600}
+.pbh em{font-style:normal;margin-left:6px}.g{color:var(--green)}.a{color:var(--amber)}.r{color:var(--red)}
+.track{height:8px;background:var(--card2);border-radius:6px;overflow:hidden;margin-top:4px}.fill{height:100%;border-radius:6px}.fill.g{background:var(--green)}.fill.a{background:var(--amber)}.fill.r{background:var(--red)}
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.mini div{background:var(--card2);border-radius:8px;padding:8px}.mini b{display:block;font-size:17px}.mini span{color:var(--mu);font-size:11px}
+.chart{position:relative;height:260px}.card h3{margin:0 0 10px;font-size:13px;color:var(--mu);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:var(--mu);font-weight:600;position:sticky;top:0;background:var(--card)}
+.tbl{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;font-weight:600}.pill.y{background:#123824;color:#4ade80}.pill.n{background:#3a1616;color:#f87171}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.rec{border-left:3px solid var(--blue)}.rec h4{margin:0 0 8px;font-size:14px}.rec ul{margin:0;padding-left:18px}.rec li{margin:6px 0;color:#cdd6e4}.rec li b{color:var(--tx)}
+.note{color:var(--mu);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
 </style></head><body><div class="wrap">
 <div class="eyebrow">Developers Institute · Sales Call Report</div>
 <h1>Daily Sales Dashboard</h1>
-<div class="sub">Wednesday, 30 September 2026 · all times Israel time (IDT, UTC+3) · DI Team line · snapshot 10:50</div>
-<div class="banner">Partial-day snapshot taken at 10:50 Israel time — Eden's shift is under way; Chaim (14:00) and Eliezer (17:00) have not started. Numbers will be much lower than a full day.</div>
+<div class="sub">Wednesday, 30 September 2026 · all times Israel time (IDT, UTC+3) · DI Team line · full day (generated 1 Oct 2026, 10:05)</div>
+<div class="banner">Full-day report for Wednesday 30 Sep. This report runs at 10:00 Israel time, before the day's calling starts, so it covers the previous complete working day (1 Oct had 0 calls at run time). Chaim Sand is included as the third rep on the DI Team line.</div>
 <h2>Team KPIs</h2><div class="kpis">
-<div class="card k"><div class="v">1</div><div class="l">Total calls</div><div class="s">Eden 1 · Eliezer 0 · Chaim 0</div></div>
-<div class="card k"><div class="v">1</div><div class="l">Answered</div><div class="s">100% connect rate</div></div>
-<div class="card k"><div class="v">1 min</div><div class="l">Talk time</div><div class="s">1 min on answered</div></div>
-<div class="card k"><div class="v">1.1 min</div><div class="l">Avg / call</div><div class="s">1.1 min per answered</div></div>
-<div class="card k"><div class="v">1:06</div><div class="l">Longest call</div><div class="s">Eden · +972 55-264-9168</div></div>
-<div class="card k"><div class="v">0</div><div class="l">Missed inbound</div><div class="s">no rep assigned</div></div></div>
-<h2>Daily Targets <small>50 calls · 120 talk minutes per rep</small></h2><div class="grid2"><div class="card"><div class="rep-h">Eden Dadi <span class="chip blue">10:00–17:00</span></div>
-<div class="bar-l"><b>Calls</b><span>1 / 50 <b class="bluet">2%</b></span></div><div class="bar"><i style="width:2%;background:#3b82f6"></i></div>
-<div class="bar-l"><b>Talk minutes</b><span>1 / 120 <b class="bluet">1%</b></span></div><div class="bar"><i style="width:1%;background:#3b82f6"></i></div></div><div class="card"><div class="rep-h">Eliezer Lev <span class="chip purple">17:00–21:30</span></div>
-<div class="bar-l"><b>Calls</b><span>0 / 50 <b class="purplet">0%</b></span></div><div class="bar"><i style="width:0%;background:#8b5cf6"></i></div>
-<div class="bar-l"><b>Talk minutes</b><span>0 / 120 <b class="purplet">0%</b></span></div><div class="bar"><i style="width:0%;background:#8b5cf6"></i></div></div><div class="card"><div class="rep-h">Chaim <span class="chip teal">14:00–18:00</span></div>
-<div class="bar-l"><b>Calls</b><span>0 / 50 <b class="tealt">0%</b></span></div><div class="bar"><i style="width:0%;background:#14b8a6"></i></div>
-<div class="bar-l"><b>Talk minutes</b><span>0 / 120 <b class="tealt">0%</b></span></div><div class="bar"><i style="width:0%;background:#14b8a6"></i></div></div></div>
-<h2>Per-rep breakdown</h2><div class="grid2"><div class="card"><div class="rep-h">Eden Dadi</div><div class="mini"><div class="m"><div class="v">1</div><div class="l">Calls</div><div class="s"></div></div><div class="m"><div class="v">1</div><div class="l">Answered</div><div class="s">100%</div></div><div class="m"><div class="v">1</div><div class="l">Talk min</div><div class="s">1 on answered</div></div><div class="m"><div class="v">1.2</div><div class="l">Calls / hr</div><div class="s">0.8 h of shift elapsed</div></div><div class="m"><div class="v">1.1m</div><div class="l">Avg answered</div><div class="s">1.1m per call</div></div><div class="m"><div class="v">1:06</div><div class="l">Longest</div><div class="s">+972 55-264-9168</div></div></div></div><div class="card"><div class="rep-h">Eliezer Lev</div><div class="mini"><div class="m"><div class="v">0</div><div class="l">Calls</div><div class="s"></div></div><div class="m"><div class="v">0</div><div class="l">Answered</div><div class="s">—</div></div><div class="m"><div class="v">0</div><div class="l">Talk min</div><div class="s">0 on answered</div></div><div class="m"><div class="v">—</div><div class="l">Calls / hr</div><div class="s">shift not started</div></div><div class="m"><div class="v">0.0m</div><div class="l">Avg answered</div><div class="s">0.0m per call</div></div><div class="m"><div class="v">—</div><div class="l">Longest</div><div class="s"></div></div></div></div><div class="card"><div class="rep-h">Chaim</div><div class="mini"><div class="m"><div class="v">0</div><div class="l">Calls</div><div class="s"></div></div><div class="m"><div class="v">0</div><div class="l">Answered</div><div class="s">—</div></div><div class="m"><div class="v">0</div><div class="l">Talk min</div><div class="s">0 on answered</div></div><div class="m"><div class="v">—</div><div class="l">Calls / hr</div><div class="s">shift not started</div></div><div class="m"><div class="v">0.0m</div><div class="l">Avg answered</div><div class="s">0.0m per call</div></div><div class="m"><div class="v">—</div><div class="l">Longest</div><div class="s"></div></div></div></div></div>
-<h2>Charts</h2><div class="grid2">
-<div class="card"><div class="ct">Calls per hour (Israel time)</div><canvas id="c1"></canvas></div>
-<div class="card"><div class="ct">Answered vs unanswered</div><canvas id="c2"></canvas></div>
-<div class="card"><div class="ct">Talk time per rep (minutes)</div><canvas id="c3"></canvas></div>
-<div class="card"><div class="ct">Call duration distribution</div><canvas id="c4"></canvas></div></div>
-<h2>Recommendations</h2><div class="grid2"><div class="card"><div class="rep-h">Eden Dadi</div><div class="rec"><div class="rec-h"><span>Dial volume behind pace</span><span class="badge priority">PRIORITY</span></div><p>1 call(s) in the first 50 min of shift vs ~6 expected at the 7.1/hr pace needed for 50. Remaining: 49 calls in 6.2 h → 8.0 calls/hr.</p></div><div class="rec"><div class="rec-h"><span>Dead time inside shift</span><span class="badge watch">WATCH</span></div><p>Gaps of 20+ min with no dials: 10:16–10:50 (34 min). Block these with a pre-loaded call list (power-dial the previous day's unanswered leads first).</p></div><div class="rec"><div class="rec-h"><span>Talk time below pace</span><span class="badge watch">WATCH</span></div><p>1 of 120 talk minutes (1%). Talk time follows dial volume — raising dials is the main lever; on connected calls, aim to book a next step before ending.</p></div></div><div class="card"><div class="rep-h">Eliezer Lev</div><div class="rec"><div class="rec-h"><span>Shift not started yet</span><span class="badge info">INFO</span></div><p>Eliezer's shift (17:00–21:30) had not begun when this snapshot was taken at 10:50. No activity expected yet — to reach target Eliezer needs about 11 dials per hour across the shift.</p></div></div><div class="card"><div class="rep-h">Chaim</div><div class="rec"><div class="rec-h"><span>Shift not started yet</span><span class="badge info">INFO</span></div><p>Chaim's shift (14:00–18:00) had not begun when this snapshot was taken at 10:50. No activity expected yet — to reach target Chaim needs about 12 dials per hour across the shift.</p></div></div>
-<div class="card"><div class="rep-h">Team-level actions</div><div class="rec"><div class="rec-h"><span>CRM tagging</span><span class="badge priority">PRIORITY</span></div><p>1 of 1 rep calls have no Aircall tag and none are linked to a contact. Tag outcomes (Interested / Not now / Wrong number / Enrolled) so tomorrow's list can be prioritized.</p></div><div class="rec"><div class="rec-h"><span>Missed inbound calls</span><span class="badge good">GOOD</span></div><p>0 inbound call(s) on the DI Team line with no rep assigned so far today. Keep the line covered during 10:00–21:30.</p></div><div class="rec"><div class="rec-h"><span>Transcripts / AI summaries unavailable</span><span class="badge info">INFO</span></div><p>Aircall returned 403 (summary) / 404 (transcript) for answered calls — the Conversation Intelligence add-on isn't enabled, so call-content analysis was skipped.</p></div></div></div>
-<h2>Call log <small>1 rep calls</small></h2><div class="card tbl"><table><thead><tr><th>Time</th><th>Rep</th><th>Direction</th><th>Number</th><th>Duration</th><th>Status</th><th>Tags</th></tr></thead><tbody><tr><td>10:16:17</td><td>Eden</td><td>outbound</td><td>+972 55-264-9168</td><td>1:06</td><td><span class="pill ok">Answered</span></td><td>—</td></tr></tbody></table></div>
-<footer>Source: Aircall API · generated 2026-09-30 10:50 Israel time · call transcripts/summaries unavailable (add-on not enabled)</footer>
+<div class="kpi"><div class="v">102</div><div class="l">Total calls</div><div class="s">Eden 28 · Eliezer 23 · Chaim 51</div></div>
+<div class="kpi"><div class="v">51</div><div class="l">Answered</div><div class="s">50% connect rate</div></div>
+<div class="kpi"><div class="v">185 min</div><div class="l">Talk time</div><div class="s">160 min on answered</div></div>
+<div class="kpi"><div class="v">1.8 min</div><div class="l">Avg / call</div><div class="s">3.1 min per answered</div></div>
+<div class="kpi"><div class="v">36:22</div><div class="l">Longest call</div><div class="s">Eliezer · +972 58-671-2948</div></div>
+<div class="kpi"><div class="v">2</div><div class="l">Inbound, no user</div><div class="s">1 prospect callback + 1 internal test</div></div>
+</div>
+<h2>Daily Targets <small>50 calls · 120 talk minutes per rep</small></h2><div class="grid3">
+<div class="card"><div class="rn"><b><span class="dot" style="background:#3b82f6"></span>Eden Dadi</b><span>10:00–17:00</span></div><div class="pb"><div class="pbh"><span>Calls</span><b>28 / 50 <em class="r">56%</em></b></div><div class="track"><div class="fill r" style="width:56%"></div></div></div><div class="pb"><div class="pbh"><span>Talk minutes</span><b>77 / 120 <em class="a">64%</em></b></div><div class="track"><div class="fill a" style="width:64%"></div></div></div></div>
+<div class="card"><div class="rn"><b><span class="dot" style="background:#8b5cf6"></span>Eliezer Lev</b><span>17:00–21:30</span></div><div class="pb"><div class="pbh"><span>Calls</span><b>23 / 50 <em class="r">46%</em></b></div><div class="track"><div class="fill r" style="width:46%"></div></div></div><div class="pb"><div class="pbh"><span>Talk minutes</span><b>61 / 120 <em class="r">51%</em></b></div><div class="track"><div class="fill r" style="width:51%"></div></div></div></div>
+<div class="card"><div class="rn"><b><span class="dot" style="background:#14b8a6"></span>Chaim Sand</b><span>14:00–18:00</span></div><div class="pb"><div class="pbh"><span>Calls</span><b>51 / 50 <em class="g">102%</em></b></div><div class="track"><div class="fill g" style="width:100%"></div></div></div><div class="pb"><div class="pbh"><span>Talk minutes</span><b>46 / 120 <em class="r">38%</em></b></div><div class="track"><div class="fill r" style="width:38%"></div></div></div></div>
+</div><h2>Per-rep breakdown</h2><div class="grid3">
+<div class="card"><div class="rn"><b><span class="dot" style="background:#3b82f6"></span>Eden Dadi</b><span>active 10:16–20:08</span></div>
+<div class="mini"><div><b>28</b><span>Calls</span></div><div><b>13</b><span>Answered</span></div><div><b>46%</b><span>Connect</span></div><div><b>77</b><span>Talk min</span></div>
+<div><b>2.8</b><span>Calls / hr</span></div><div><b>2.8m</b><span>Avg / call</span></div><div><b>5.5m</b><span>Avg answered</span></div><div><b>24:31</b><span>Longest</span></div></div></div>
+<div class="card"><div class="rn"><b><span class="dot" style="background:#8b5cf6"></span>Eliezer Lev</b><span>active 17:04–19:57</span></div>
+<div class="mini"><div><b>23</b><span>Calls</span></div><div><b>11</b><span>Answered</span></div><div><b>48%</b><span>Connect</span></div><div><b>61</b><span>Talk min</span></div>
+<div><b>8.0</b><span>Calls / hr</span></div><div><b>2.6m</b><span>Avg / call</span></div><div><b>4.6m</b><span>Avg answered</span></div><div><b>36:22</b><span>Longest</span></div></div></div>
+<div class="card"><div class="rn"><b><span class="dot" style="background:#14b8a6"></span>Chaim Sand</b><span>active 11:50–17:43</span></div>
+<div class="mini"><div><b>51</b><span>Calls</span></div><div><b>27</b><span>Answered</span></div><div><b>53%</b><span>Connect</span></div><div><b>46</b><span>Talk min</span></div>
+<div><b>8.7</b><span>Calls / hr</span></div><div><b>0.9m</b><span>Avg / call</span></div><div><b>1.4m</b><span>Avg answered</span></div><div><b>10:00</b><span>Longest</span></div></div></div>
+</div><h2>Charts</h2><div class="grid2">
+<div class="card"><h3>Calls per hour (Israel time)</h3><div class="chart"><canvas id="c1"></canvas></div></div>
+<div class="card"><h3>Answered vs unanswered</h3><div class="chart"><canvas id="c2"></canvas></div></div>
+<div class="card"><h3>Talk time per rep (minutes)</h3><div class="chart"><canvas id="c3"></canvas></div></div>
+<div class="card"><h3>Call duration distribution</h3><div class="chart"><canvas id="c4"></canvas></div></div></div>
+<h2>Recommendations</h2><div class="grid3">
+<div class="card rec" style="border-left-color:#3b82f6"><h4>Eden Dadi</h4><ul><li><b>Volume: 28/50 calls (56%).</b> Only 25 calls fell inside her 10:00–17:00 shift — about 3.6/hr. Talk time is her strength (77 min, 64% of target), so the gap is dials, not conversations.</li><li><b>Dead time:</b> one call between 10:16 and 12:30 (≈2h13m idle at the start of shift), then 56 min idle 12:31–13:27 and two ~35 min gaps 14:00–15:08. Calling only really began at 15:00 (19 of 28 calls between 15:00 and 17:00). Block 10:00–12:00 as a protected power-hour.</li><li><b>Conversion depth:</b> 4 answered calls ran 9+ minutes (best: 24:31 at 20:08 and 20:07 with +972 55-299-6277 after a 2-min first touch). That's a strong second-touch pattern — log these as hot leads in the CRM with next steps.</li><li><b>Connect rate 46%:</b> 6 calls under 15s. Try a second attempt on no-answers later in the day rather than moving straight on.</li></ul></div>
+<div class="card rec" style="border-left-color:#8b5cf6"><h4>Eliezer Lev</h4><ul><li><b>Volume: 23/50 calls (46%), 61/120 min (51%).</b> Dial pace while active was good (8.0/hr), but the last call was at 19:57 — the final ~1.5h of the 17:00–21:30 shift had no calls. At the same pace that hour and a half is ~12 more dials.</li><li><b>Dead time:</b> 27 min idle 18:49–19:16 and nothing after 19:58. 36 min of his 61 talk-minutes came from a single 36:22 call at 17:04 — strong conversation, but it shouldn't replace volume.</li><li><b>Ring-out pattern:</b> 6 unanswered calls lasted exactly 1:11 — they rang to timeout. Hang up at ~25–30s (or drop a voicemail) to save ~4 min of dead air and make room for more dials.</li><li><b>Redial:</b> +972 54-996-3860 dialed 3× in 4 minutes after a 3:43 conversation — likely a dropped call; note the reason in the CRM so the follow-up owner has context.</li></ul></div>
+<div class="card rec" style="border-left-color:#14b8a6"><h4>Chaim Sand</h4><ul><li><b>Volume: 51/50 calls (100%) — target met.</b> Talk time is the gap: 46/120 min (38%), average answered call just 1.4 min (median 51s).</li><li><b>Short connects:</b> 27 answered calls but only one passed 5 minutes (10:00 with +972 53-307-8515). Many answered calls end in under 30s — work on the opener and a qualifying question to extend conversations before booking the next step.</li><li><b>Dead time:</b> started early (11:50) but then 1h43m idle 12:25–14:08; once his 14:00 shift began, pace was strong (8–15 calls/hr) with one 23-min gap at 15:35.</li><li><b>Redials:</b> +972 52-934-7260 dialed 3× (connects of 3–7s each — likely hang-ups), +972 50-587-6065 and two others 2×. If a lead hangs up twice, switch to WhatsApp/SMS rather than a third call. One call at 14:11 was to the DI Team line itself — avoid test calls inflating counts.</li></ul></div>
+</div><div class="card rec" style="margin-top:12px;border-left-color:var(--amber)"><h4>Team-level actions</h4><ul>
+<li><b>Missed prospect callback:</b> +972 53-534-8293 called the DI Team line back at 14:48, one minute after Chaim's unanswered attempt — the inbound had no user and nobody picked up. Route DI Team inbound to the on-shift rep (ring group) and call this lead back today.</li>
+<li><b>CRM tagging:</b> 0 of 102 calls carry an Aircall tag or comment and none are linked to a contact. Require an outcome tag (Connected / No answer / Callback / Not interested / Enrolled) on every call so connect-to-meeting can be measured.</li>
+<li><b>Shift coverage:</b> 59 of 102 calls happened 14:00–17:00 (Eden + Chaim overlap), while 10:00–14:00 had only 11 calls and 20:00–21:30 just 1. Rebalance so mornings aren't idle.</li>
+<li><b>Transcripts unavailable:</b> Aircall AI summary returned 403 and transcript 404 — the Conversation Intelligence add-on isn't enabled, so this report has no call-content analysis.</li>
+</ul></div>
+<h2>Full call log <small>DI Team line · reps + unassigned inbound</small></h2><div class="tbl"><table><thead><tr><th>Time</th><th>Rep</th><th>Dir</th><th>Number</th><th>Duration</th><th>Answered</th></tr></thead><tbody>
+<tr><td>10:16:17</td><td>Eden Dadi</td><td>Out</td><td>+972 55-264-9168</td><td>1:06</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>11:50:45</td><td>Chaim Sand</td><td>Out</td><td>+972 55-285-2637</td><td>0:28</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>11:52:05</td><td>Chaim Sand</td><td>Out</td><td>+972 55-286-6848</td><td>0:16</td><td><span class="pill n">No</span></td></tr>
+<tr><td>11:53:14</td><td>Chaim Sand</td><td>Out</td><td>+972 52-934-7260</td><td>0:08</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>11:53:26</td><td>Chaim Sand</td><td>Out</td><td>+972 52-934-7260</td><td>0:15</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>12:14:31</td><td>Chaim Sand</td><td>Out</td><td>+972 50-587-6065</td><td>0:18</td><td><span class="pill n">No</span></td></tr>
+<tr><td>12:22:14</td><td>Chaim Sand</td><td>Out</td><td>+972 50-497-9511</td><td>3:28</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>12:30:21</td><td>Eden Dadi</td><td>Out</td><td>+972 52-864-7636</td><td>0:42</td><td><span class="pill n">No</span></td></tr>
+<tr><td>13:27:08</td><td>Eden Dadi</td><td>Out</td><td>+972 52-733-5416</td><td>0:09</td><td><span class="pill n">No</span></td></tr>
+<tr><td>13:29:29</td><td>Eden Dadi</td><td>Out</td><td>+972 52-550-9485</td><td>10:49</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>13:59:15</td><td>Eden Dadi</td><td>Out</td><td>+972 54-457-8175</td><td>0:08</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:08:11</td><td>Chaim Sand</td><td>Out</td><td>+972 55-285-2637</td><td>0:24</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>14:09:31</td><td>Chaim Sand</td><td>Out</td><td>+972 50-299-6653</td><td>0:30</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:10:27</td><td>Chaim Sand</td><td>Out</td><td>+972 55-999-3507</td><td>0:43</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:11:42</td><td>Chaim Sand</td><td>Out</td><td>+972 53-566-7716</td><td>0:09</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>14:11:44</td><td>— (no user)</td><td>In</td><td>+972 53-566-7716</td><td>0:07</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:11:57</td><td>Chaim Sand</td><td>Out</td><td>+972 50-587-6065</td><td>2:03</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>14:19:01</td><td>Chaim Sand</td><td>Out</td><td>+972 54-318-3002</td><td>0:15</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:20:37</td><td>Chaim Sand</td><td>Out</td><td>+972 55-772-5215</td><td>0:29</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>14:21:55</td><td>Chaim Sand</td><td>Out</td><td>+972 53-480-7431</td><td>1:15</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>14:25:59</td><td>Chaim Sand</td><td>Out</td><td>+972 52-441-5574</td><td>0:12</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:32:31</td><td>Eden Dadi</td><td>Out</td><td>+972 58-722-0688</td><td>0:25</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:34:17</td><td>Chaim Sand</td><td>Out</td><td>+972 50-556-4965</td><td>0:37</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:44:40</td><td>Chaim Sand</td><td>Out</td><td>+972 50-680-2858</td><td>0:32</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:47:05</td><td>Chaim Sand</td><td>Out</td><td>+972 53-534-8293</td><td>0:47</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:48:14</td><td>— (no user)</td><td>In</td><td>+972 53-534-8293</td><td>0:08</td><td><span class="pill n">No</span></td></tr>
+<tr><td>14:51:03</td><td>Chaim Sand</td><td>Out</td><td>+972 50-464-6441</td><td>0:51</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>14:55:50</td><td>Chaim Sand</td><td>Out</td><td>+33 7 83 35 43 05</td><td>1:55</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:08:15</td><td>Eden Dadi</td><td>Out</td><td>+972 54-782-2296</td><td>0:40</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:11:28</td><td>Eden Dadi</td><td>Out</td><td>+972 55-255-9891</td><td>0:26</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:11:51</td><td>Chaim Sand</td><td>Out</td><td>+972 52-367-2376</td><td>0:10</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:14:33</td><td>Chaim Sand</td><td>Out</td><td>+972 52-479-1980</td><td>0:31</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:18:38</td><td>Eden Dadi</td><td>Out</td><td>+55 11 99955-2686</td><td>0:05</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:18:48</td><td>Chaim Sand</td><td>Out</td><td>+972 50-730-5989</td><td>0:47</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:20:06</td><td>Chaim Sand</td><td>Out</td><td>+972 52-911-9630</td><td>0:10</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:21:12</td><td>Chaim Sand</td><td>Out</td><td>+972 52-471-2737</td><td>0:40</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:22:30</td><td>Chaim Sand</td><td>Out</td><td>+972 50-437-0698</td><td>0:08</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:25:04</td><td>Chaim Sand</td><td>Out</td><td>+972 53-880-4707</td><td>0:09</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:27:54</td><td>Chaim Sand</td><td>Out</td><td>+972 50-234-5329</td><td>2:49</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:28:08</td><td>Eden Dadi</td><td>Out</td><td>+972 58-766-9227</td><td>0:20</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:29:12</td><td>Eden Dadi</td><td>Out</td><td>+1 845-269-8304</td><td>0:51</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:32:29</td><td>Eden Dadi</td><td>Out</td><td>+972 55-299-6277</td><td>1:58</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:34:06</td><td>Chaim Sand</td><td>Out</td><td>+972 54-351-1318</td><td>1:15</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:36:41</td><td>Eden Dadi</td><td>Out</td><td>+972 50-786-5253</td><td>0:31</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:45:08</td><td>Eden Dadi</td><td>Out</td><td>+972 50-381-6322</td><td>0:35</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:57:54</td><td>Eden Dadi</td><td>Out</td><td>+972 54-733-9114</td><td>0:33</td><td><span class="pill n">No</span></td></tr>
+<tr><td>15:58:14</td><td>Chaim Sand</td><td>Out</td><td>+972 53-409-7426</td><td>1:20</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>15:58:47</td><td>Eden Dadi</td><td>Out</td><td>+972 55-664-3737</td><td>0:06</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:00:01</td><td>Eden Dadi</td><td>Out</td><td>+972 58-779-4920</td><td>0:37</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:01:16</td><td>Eden Dadi</td><td>Out</td><td>+972 54-981-3295</td><td>0:14</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:02:05</td><td>Eden Dadi</td><td>Out</td><td>+972 53-933-1575</td><td>0:29</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:03:18</td><td>Eden Dadi</td><td>Out</td><td>+972 50-982-2199</td><td>0:28</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:05:53</td><td>Eden Dadi</td><td>Out</td><td>+33 6 26 11 21 67</td><td>0:25</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:07:09</td><td>Eden Dadi</td><td>Out</td><td>+33 7 82 69 43 44</td><td>0:20</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:09:39</td><td>Eden Dadi</td><td>Out</td><td>+972 52-048-6852</td><td>0:03</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:12:42</td><td>Eden Dadi</td><td>Out</td><td>+972 52-733-5416</td><td>9:25</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:17:32</td><td>Chaim Sand</td><td>Out</td><td>+995 591 14 39 91</td><td>0:08</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:18:36</td><td>Chaim Sand</td><td>Out</td><td>+972 50-792-0644</td><td>0:57</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:20:46</td><td>Chaim Sand</td><td>Out</td><td>+972 52-934-7260</td><td>0:07</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:21:17</td><td>Chaim Sand</td><td>Out</td><td>+972 55-286-6848</td><td>1:13</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:24:05</td><td>Chaim Sand</td><td>Out</td><td>+972 52-457-4421</td><td>0:47</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:25:45</td><td>Chaim Sand</td><td>Out</td><td>+972 50-682-8850</td><td>0:12</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:28:20</td><td>Chaim Sand</td><td>Out</td><td>+972 54-223-4418</td><td>0:26</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:29:31</td><td>Chaim Sand</td><td>Out</td><td>+386 31 366 244</td><td>0:26</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:31:06</td><td>Chaim Sand</td><td>Out</td><td>+254 759 335816</td><td>1:12</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:37:21</td><td>Eden Dadi</td><td>Out</td><td>+972 55-299-6277</td><td>20:07</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:38:22</td><td>Chaim Sand</td><td>Out</td><td>+972 58-724-3369</td><td>0:51</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:41:36</td><td>Chaim Sand</td><td>Out</td><td>+33 6 21 68 68 62</td><td>0:27</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:50:40</td><td>Chaim Sand</td><td>Out</td><td>+972 50-837-8128</td><td>0:07</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:53:01</td><td>Chaim Sand</td><td>Out</td><td>+972 54-343-1092</td><td>0:29</td><td><span class="pill n">No</span></td></tr>
+<tr><td>16:54:24</td><td>Chaim Sand</td><td>Out</td><td>+972 53-308-8167</td><td>0:10</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>16:55:56</td><td>Chaim Sand</td><td>Out</td><td>+972 55-989-0048</td><td>0:11</td><td><span class="pill n">No</span></td></tr>
+<tr><td>17:04:24</td><td>Eliezer Lev</td><td>Out</td><td>+972 58-671-2948</td><td>36:22</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>17:08:52</td><td>Chaim Sand</td><td>Out</td><td>+972 53-592-1489</td><td>0:47</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>17:11:00</td><td>Chaim Sand</td><td>Out</td><td>+972 53-307-8515</td><td>10:00</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>17:12:51</td><td>Eden Dadi</td><td>Out</td><td>+972 50-278-1660</td><td>0:55</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>17:25:25</td><td>Eden Dadi</td><td>Out</td><td>+972 58-599-0593</td><td>0:22</td><td><span class="pill n">No</span></td></tr>
+<tr><td>17:26:14</td><td>Chaim Sand</td><td>Out</td><td>+33 6 60 98 35 57</td><td>0:50</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>17:27:34</td><td>Chaim Sand</td><td>Out</td><td>+972 55-257-6898</td><td>1:01</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>17:39:41</td><td>Chaim Sand</td><td>Out</td><td>+972 53-398-7233</td><td>0:12</td><td><span class="pill n">No</span></td></tr>
+<tr><td>17:43:37</td><td>Chaim Sand</td><td>Out</td><td>+972 50-457-7663</td><td>2:26</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>17:47:15</td><td>Eliezer Lev</td><td>Out</td><td>+1 410-240-0933</td><td>0:07</td><td><span class="pill n">No</span></td></tr>
+<tr><td>17:50:01</td><td>Eliezer Lev</td><td>Out</td><td>+972 58-448-9152</td><td>1:11</td><td><span class="pill n">No</span></td></tr>
+<tr><td>18:07:26</td><td>Eliezer Lev</td><td>Out</td><td>+972 50-648-7794</td><td>1:11</td><td><span class="pill n">No</span></td></tr>
+<tr><td>18:17:58</td><td>Eliezer Lev</td><td>Out</td><td>+254 740 705447</td><td>1:11</td><td><span class="pill n">No</span></td></tr>
+<tr><td>18:24:26</td><td>Eliezer Lev</td><td>Out</td><td>+972 55-300-3072</td><td>1:11</td><td><span class="pill n">No</span></td></tr>
+<tr><td>18:27:10</td><td>Eliezer Lev</td><td>Out</td><td>+972 52-790-9805</td><td>4:43</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>18:34:24</td><td>Eliezer Lev</td><td>Out</td><td>+1 512-992-3681</td><td>0:25</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>18:43:37</td><td>Eliezer Lev</td><td>Out</td><td>+33 6 22 42 03 28</td><td>1:07</td><td><span class="pill n">No</span></td></tr>
+<tr><td>18:46:17</td><td>Eliezer Lev</td><td>Out</td><td>+972 53-866-7107</td><td>0:43</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>18:47:47</td><td>Eliezer Lev</td><td>Out</td><td>+972 53-961-7676</td><td>1:16</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>19:16:30</td><td>Eliezer Lev</td><td>Out</td><td>+972 54-973-2475</td><td>1:11</td><td><span class="pill n">No</span></td></tr>
+<tr><td>19:19:32</td><td>Eliezer Lev</td><td>Out</td><td>+972 50-427-0107</td><td>1:11</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>19:21:51</td><td>Eliezer Lev</td><td>Out</td><td>+972 55-771-6389</td><td>0:35</td><td><span class="pill n">No</span></td></tr>
+<tr><td>19:23:10</td><td>Eliezer Lev</td><td>Out</td><td>+972 55-293-6978</td><td>0:11</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>19:37:36</td><td>Eliezer Lev</td><td>Out</td><td>+972 54-595-8836</td><td>0:23</td><td><span class="pill n">No</span></td></tr>
+<tr><td>19:39:00</td><td>Eliezer Lev</td><td>Out</td><td>+972 52-568-4044</td><td>0:37</td><td><span class="pill n">No</span></td></tr>
+<tr><td>19:40:49</td><td>Eliezer Lev</td><td>Out</td><td>+353 83 466 7989</td><td>0:25</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>19:43:16</td><td>Eliezer Lev</td><td>Out</td><td>+972 52-407-1585</td><td>0:36</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>19:47:29</td><td>Eliezer Lev</td><td>Out</td><td>+972 54-996-3860</td><td>3:43</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>19:51:32</td><td>Eliezer Lev</td><td>Out</td><td>+972 54-996-3860</td><td>0:14</td><td><span class="pill n">No</span></td></tr>
+<tr><td>19:51:48</td><td>Eliezer Lev</td><td>Out</td><td>+972 54-996-3860</td><td>1:11</td><td><span class="pill n">No</span></td></tr>
+<tr><td>19:57:53</td><td>Eliezer Lev</td><td>Out</td><td>+972 50-279-8168</td><td>1:12</td><td><span class="pill y">Yes</span></td></tr>
+<tr><td>20:08:54</td><td>Eden Dadi</td><td>Out</td><td>+972 54-513-5329</td><td>24:31</td><td><span class="pill y">Yes</span></td></tr>
+</tbody></table></div>
+<div class="note">Source: Aircall API (DI Team line, number id 999525), 30 Sep 2026 00:00–23:59 IDT. “Answered” = answered_at is set on the call record. Talk minutes = sum of call duration (includes ring time). Julia Elbaz / PSTB line excluded.</div>
 </div><script>
-Chart.defaults.color='#8391a7';Chart.defaults.borderColor='#222c3d';Chart.defaults.font.family='Inter,system-ui,sans-serif';
-const reps=["Eden", "Eliezer", "Chaim"],cols=["#3b82f6", "#8b5cf6", "#14b8a6"];
-new Chart(c1,{type:'bar',data:{labels:["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],datasets:reps.map((n,i)=>({label:n,data:[[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]][i],backgroundColor:cols[i],borderRadius:4}))},options:{scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{precision:0}}}}});
-new Chart(c2,{type:'bar',data:{labels:reps,datasets:[{label:'Answered',data:[1, 0, 0],backgroundColor:'#22c55e',borderRadius:4},{label:'Unanswered',data:[0, 0, 0],backgroundColor:'#ef4444',borderRadius:4}]},options:{scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{precision:0}}}}});
-new Chart(c3,{type:'bar',data:{labels:reps,datasets:[{label:'Talk min',data:[1.1, 0.0, 0.0],backgroundColor:cols,borderRadius:4},{label:'Target',data:reps.map(()=>120),type:'line',borderColor:'#f59e0b',borderDash:[5,4],pointRadius:0}]},options:{scales:{y:{beginAtZero:true}}}});
-new Chart(c4,{type:'bar',data:{labels:["<30s", "30s\u20131m", "1\u20132m", "2\u20135m", "5\u201310m", "10m+"],datasets:[{label:'Calls',data:[0, 0, 1, 0, 0, 0],backgroundColor:'#3b82f6',borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}}});
+Chart.defaults.color='#8391a7';Chart.defaults.borderColor='#222c3d';
+const reps=["Eden Dadi", "Eliezer Lev", "Chaim Sand"],cols=["#3b82f6", "#8b5cf6", "#14b8a6"];
+new Chart(c1,{type:'bar',data:{labels:["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"],datasets:[[1, 0, 1, 3, 1, 10, 9, 2, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 3, 8, 12, 0, 0], [0, 4, 2, 0, 14, 10, 15, 6, 0, 0, 0, 0]].map((d,i)=>({label:reps[i],data:d,backgroundColor:cols[i],borderRadius:3}))},options:{maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true}}}});
+new Chart(c2,{type:'bar',data:{labels:reps,datasets:[{label:'Answered',data:[13, 11, 27],backgroundColor:'#22c55e',borderRadius:3},{label:'Unanswered',data:[15, 12, 24],backgroundColor:'#ef4444',borderRadius:3}]},options:{maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true}}}});
+new Chart(c3,{type:'bar',data:{labels:reps,datasets:[{label:'Talk minutes',data:[77.3, 60.9, 46.5],backgroundColor:cols,borderRadius:3},{label:'Target',type:'line',data:[120,120,120],borderColor:'#f59e0b',borderDash:[5,4],pointRadius:0}]},options:{maintainAspectRatio:false,scales:{y:{beginAtZero:true,max:130}}}});
+new Chart(c4,{type:'bar',data:{labels:["<15s", "15\u201330s", "30\u201360s", "1\u20132m", "2\u20135m", "5\u201310m", "10m+"],datasets:[[6, 8, 8, 2, 0, 1, 3], [3, 3, 4, 10, 2, 0, 1], [14, 11, 14, 7, 4, 0, 1]].map((d,i)=>({label:reps[i],data:d,backgroundColor:cols[i],borderRadius:3}))},options:{maintainAspectRatio:false,scales:{y:{beginAtZero:true}}}});
 </script></body></html>
