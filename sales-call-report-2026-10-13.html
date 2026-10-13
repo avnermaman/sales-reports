@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DI Sales Call Report — 2026-10-13</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0b1020;--card:#141a2e;--line:#242c48;--txt:#e6e9f2;--mut:#8b93ad;--ok:#34d399;--bad:#f87171;--warn:#fbbf24;--info:#60a5fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:24px 16px 60px}h1{margin:0 0 4px;font-size:26px}h2{margin:32px 0 12px;font-size:18px}h3{margin:20px 0 8px;font-size:15px}
+.muted{color:var(--mut)}.small{font-size:12px}.note{background:#1c2340;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:12px;color:var(--mut)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi .v{font-size:26px;font-weight:700}.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.tcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.tname{font-weight:700;margin-bottom:8px}.tlabel{font-size:13px;margin-top:6px}.bar{height:10px;background:#0f1428;border-radius:6px;overflow:hidden;margin:4px 0}.bar i{display:block;height:100%}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:640px}th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase}
+tr.tot td{font-weight:700}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}.ok{color:var(--ok)}.bad{color:var(--bad)}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}.ch{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;height:300px;position:relative}.ch h4{margin:0 0 6px;font-size:13px;color:var(--mut)}.ch canvas{max-height:250px}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--info);border-radius:10px;padding:12px 14px}
+.rec.warn{border-left-color:var(--warn)}.rec.good{border-left-color:var(--ok)}.rec.bad{border-left-color:var(--bad)}.rh{font-weight:700;margin-bottom:4px}.rb{color:#c7cce0;font-size:13px}
+@media(max-width:600px){.charts{grid-template-columns:1fr}.ch{height:280px}}
+</style></head><body><div class="wrap">
+<h1>Daily Sales Call Report</h1>
+<div class="muted">Developers Institute · DI Team line · <b>2026-10-13</b> · generated 10:17 Israel time (IDT, UTC+3)</div>
+<div class="note">⚠ Early-day snapshot: this report was generated at 10:17, 17 minutes into Eden's shift. Chaim (14:00) and Eliezer (17:00) haven't started yet, so target progress reflects the morning only. Aircall AI summaries/transcripts are not enabled on this account (403/404), so call content was not analysed.</div>
+<h2>Key metrics (team)</h2><div class="kpis">
+<div class="kpi"><div class="l">Rep calls</div><div class="v">1</div></div>
+<div class="kpi"><div class="l">Answered</div><div class="v">1 <span class="small muted">(100%)</span></div></div>
+<div class="kpi"><div class="l">Talk minutes</div><div class="v">1.4</div></div>
+<div class="kpi"><div class="l">Avg min / call</div><div class="v">1.42</div></div>
+<div class="kpi"><div class="l">Longest call</div><div class="v">1:25</div></div>
+<div class="kpi"><div class="l">Inbound, no user</div><div class="v">2</div></div>
+</div>
+<h2>Daily targets (50 calls · 120 min per rep)</h2><div class="tgrid"><div class="tcard"><div class="tname"><span class="dot" style="background:#60a5fa"></span>Eden Dadi <span class="small muted">· 10:00–17:00 · Shift in progress</span></div>
+<div class="tlabel">Calls: <b>1</b> / 50 (2%)</div><div class="bar"><i style="width:2.0%;background:var(--warn)"></i></div>
+<div class="tlabel">Minutes: <b>1.4</b> / 120 (1%)</div><div class="bar"><i style="width:1.1805555555555558%;background:var(--warn)"></i></div></div><div class="tcard"><div class="tname"><span class="dot" style="background:#a78bfa"></span>Chaim <span class="small muted">· 14:00–18:00 · Shift not started yet</span></div>
+<div class="tlabel">Calls: <b>0</b> / 50 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div>
+<div class="tlabel">Minutes: <b>0.0</b> / 120 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div></div><div class="tcard"><div class="tname"><span class="dot" style="background:#f472b6"></span>Eliezer Lev <span class="small muted">· 17:00–21:30 · Shift not started yet</span></div>
+<div class="tlabel">Calls: <b>0</b> / 50 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div>
+<div class="tlabel">Minutes: <b>0.0</b> / 120 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div></div></div>
+<h2>Per-rep breakdown</h2><div class="tbl"><table><thead><tr><th>Rep</th><th>Calls</th><th>Answered</th><th>Rate</th><th>Minutes</th><th>Avg min/call</th><th>Avg min/answered</th><th>Longest</th></tr></thead><tbody><tr><td>Eden Dadi</td><td>1</td><td>1</td><td>100%</td><td>1.4</td><td>1.42</td><td>1.42</td><td>1:25</td></tr><tr><td>Chaim</td><td>0</td><td>0</td><td>0%</td><td>0.0</td><td>0.00</td><td>0.00</td><td>0:00</td></tr><tr><td>Eliezer Lev</td><td>0</td><td>0</td><td>0%</td><td>0.0</td><td>0.00</td><td>0.00</td><td>0:00</td></tr><tr class='tot'><td>Team</td><td>1</td><td>1</td><td>100%</td><td>1.4</td><td>1.42</td><td>1.42</td><td>1:25</td></tr></tbody></table></div>
+<p class="small muted">Calls per hour so far: Eden 1 call in the first 0.3 h of shift. "Answered" = Aircall answered_at is set.</p>
+<h2>Charts</h2><div class="charts">
+<div class="ch"><h4>Calls per hour (Israel time)</h4><canvas id="c1"></canvas></div>
+<div class="ch"><h4>Answered vs unanswered (rep calls)</h4><canvas id="c2"></canvas></div>
+<div class="ch"><h4>Talk time per rep (min)</h4><canvas id="c3"></canvas></div>
+<div class="ch"><h4>Duration distribution (rep calls)</h4><canvas id="c4"></canvas></div>
+</div>
+<h2>Call log</h2><div class="tbl"><table><thead><tr><th>Time (IL)</th><th>Rep</th><th>Direction</th><th>Number</th><th>Duration</th><th>Status</th><th>Call ID</th></tr></thead><tbody><tr><td>09:10:18</td><td><span class="muted">— no user —</span></td><td>inbound</td><td>+972 54-837-2424</td><td>0:09</td><td><span class="bad">Missed</span></td><td class='small muted'>4234167126</td></tr><tr><td>09:10:59</td><td><span class="muted">— no user —</span></td><td>inbound</td><td>+972 54-837-2424</td><td>1:04</td><td><span class="bad">Missed → voicemail</span></td><td class='small muted'>4234167977</td></tr><tr><td>09:23:47</td><td>Eden Dadi</td><td>outbound</td><td>+972 54-837-2424</td><td>1:25</td><td><span class="ok">Answered</span></td><td class='small muted'>4234184406</td></tr></tbody></table></div>
+<h2>Recommendations</h2>
+<h3>Eden Dadi</h3><div class="recs">
+<div class="rec warn"><div class="rh">Volume: 1 / 50 calls by 10:17</div><div class="rb">Shift started at 10:00. To hit 50 calls in a 7-hour shift Eden needs ~7–8 dials per hour; first dial logged at 09:23 IL, then nothing in the 10:00 hour so far. Push to get a dialing block going before 11:00.</div></div>
+<div class="rec good"><div class="rh">Connect rate: 1 / 1 answered</div><div class="rb">The one outbound call connected in 7 s and ran 1:25. Too early to read a trend — revisit in the end-of-day run.</div></div>
+<div class="rec"><div class="rh">Same number on both sides</div><div class="rb">Eden's 09:23 call went to +972 54-837-2424, the same number that called in twice at 09:10 with no agent (one reached voicemail). Good callback; log the outcome in the CRM so it isn't redialed blindly.</div></div>
+</div>
+<h3>Chaim</h3><div class="recs"><div class="rec"><div class="rh">Shift starts 14:00</div><div class="rb">No calls yet, as expected. Target for the 4-hour shift: ~12–13 dials/hour to reach 50.</div></div></div>
+<h3>Eliezer Lev</h3><div class="recs"><div class="rec"><div class="rh">Shift starts 17:00</div><div class="rb">No calls yet, as expected. 50 calls in 4.5 h needs ~11 dials/hour.</div></div></div>
+<h3>Team actions</h3><div class="recs">
+<div class="rec bad"><div class="rh">2 inbound calls with no user (09:10)</div><div class="rb">Both arrived before any rep was on shift; one left a voicemail. Consider routing pre-10:00 inbound calls to a callback queue or extending Eden's shift start, and make "listen to overnight voicemails" the first task of the day.</div></div>
+<div class="rec warn"><div class="rh">No CRM tags on any call</div><div class="rb">0 of 3 calls are tagged. Ask reps to tag outcome (interested / no answer / callback / not relevant) in Aircall so the daily report can measure quality, not just volume.</div></div>
+<div class="rec"><div class="rh">Transcript analysis unavailable</div><div class="rb">Aircall AI summary returned 403 and transcript returned 404 — the Conversation Intelligence add-on doesn't appear to be enabled, so call content wasn't analysed.</div></div>
+</div>
+<p class="small muted" style="margin-top:30px">Source: Aircall API (calls since 2026-10-13 00:00 IL). Previous reports are archived as sales-call-report-YYYY-MM-DD.html in this repo.</p>
+</div>
+<script>
+Chart.defaults.color='#8b93ad';Chart.defaults.borderColor='#242c48';
+const H=["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],hourly={"Eden Dadi": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Chaim": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Eliezer Lev": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Inbound (no user)": [0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]};
+const cols={"Eden Dadi":"#60a5fa","Chaim":"#a78bfa","Eliezer Lev":"#f472b6","Inbound (no user)":"#64748b"};
+new Chart(c1,{type:'bar',data:{labels:H,datasets:Object.keys(hourly).map(k=>({label:k,data:hourly[k],backgroundColor:cols[k]}))},options:{maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{precision:0}}}}});
+new Chart(c2,{type:'bar',data:{labels:["Eden Dadi", "Chaim", "Eliezer Lev"],datasets:[{label:'Answered',data:[1, 0, 0],backgroundColor:'#34d399'},{label:'Unanswered',data:[0, 0, 0],backgroundColor:'#f87171'}]},options:{maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{precision:0}}}}});
+new Chart(c3,{type:'bar',data:{labels:["Eden Dadi", "Chaim", "Eliezer Lev"],datasets:[{label:'Minutes',data:[1.42, 0.0, 0.0],backgroundColor:["#60a5fa", "#a78bfa", "#f472b6"]},{label:'Target',type:'line',data:[120,120,120],borderColor:'#fbbf24',borderDash:[6,4],pointRadius:0}]},options:{maintainAspectRatio:false,scales:{y:{beginAtZero:true}}}});
+new Chart(c4,{type:'bar',data:{labels:["<30s", "30\u201360s", "1\u20132m", "2\u20135m", "5m+"],datasets:[{label:'Calls',data:[0, 0, 1, 0, 0],backgroundColor:'#60a5fa'}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}}});
+</script></body></html>
