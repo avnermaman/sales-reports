@@ -1,70 +1,198 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DI Sales Call Report — 2026-10-13</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DI Sales Calls · 2026-10-13</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 <style>
-:root{--bg:#0b1020;--card:#141a2e;--line:#242c48;--txt:#e6e9f2;--mut:#8b93ad;--ok:#34d399;--bad:#f87171;--warn:#fbbf24;--info:#60a5fa}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:1200px;margin:0 auto;padding:24px 16px 60px}h1{margin:0 0 4px;font-size:26px}h2{margin:32px 0 12px;font-size:18px}h3{margin:20px 0 8px;font-size:15px}
-.muted{color:var(--mut)}.small{font-size:12px}.note{background:#1c2340;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:12px;color:var(--mut)}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
-.kpi .v{font-size:26px;font-weight:700}.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.tcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
-.tname{font-weight:700;margin-bottom:8px}.tlabel{font-size:13px;margin-top:6px}.bar{height:10px;background:#0f1428;border-radius:6px;overflow:hidden;margin:4px 0}.bar i{display:block;height:100%}
-.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:640px}th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase}
-tr.tot td{font-weight:700}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}.ok{color:var(--ok)}.bad{color:var(--bad)}
-.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}.ch{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;height:300px;position:relative}.ch h4{margin:0 0 6px;font-size:13px;color:var(--mut)}.ch canvas{max-height:250px}
-.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.rec{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--info);border-radius:10px;padding:12px 14px}
-.rec.warn{border-left-color:var(--warn)}.rec.good{border-left-color:var(--ok)}.rec.bad{border-left-color:var(--bad)}.rh{font-weight:700;margin-bottom:4px}.rb{color:#c7cce0;font-size:13px}
-@media(max-width:600px){.charts{grid-template-columns:1fr}.ch{height:280px}}
-</style></head><body><div class="wrap">
-<h1>Daily Sales Call Report</h1>
-<div class="muted">Developers Institute · DI Team line · <b>2026-10-13</b> · generated 10:17 Israel time (IDT, UTC+3)</div>
-<div class="note">⚠ Early-day snapshot: this report was generated at 10:17, 17 minutes into Eden's shift. Chaim (14:00) and Eliezer (17:00) haven't started yet, so target progress reflects the morning only. Aircall AI summaries/transcripts are not enabled on this account (403/404), so call content was not analysed.</div>
-<h2>Key metrics (team)</h2><div class="kpis">
-<div class="kpi"><div class="l">Rep calls</div><div class="v">1</div></div>
-<div class="kpi"><div class="l">Answered</div><div class="v">1 <span class="small muted">(100%)</span></div></div>
-<div class="kpi"><div class="l">Talk minutes</div><div class="v">1.4</div></div>
-<div class="kpi"><div class="l">Avg min / call</div><div class="v">1.42</div></div>
-<div class="kpi"><div class="l">Longest call</div><div class="v">1:25</div></div>
-<div class="kpi"><div class="l">Inbound, no user</div><div class="v">2</div></div>
-</div>
-<h2>Daily targets (50 calls · 120 min per rep)</h2><div class="tgrid"><div class="tcard"><div class="tname"><span class="dot" style="background:#60a5fa"></span>Eden Dadi <span class="small muted">· 10:00–17:00 · Shift in progress</span></div>
-<div class="tlabel">Calls: <b>1</b> / 50 (2%)</div><div class="bar"><i style="width:2.0%;background:var(--warn)"></i></div>
-<div class="tlabel">Minutes: <b>1.4</b> / 120 (1%)</div><div class="bar"><i style="width:1.1805555555555558%;background:var(--warn)"></i></div></div><div class="tcard"><div class="tname"><span class="dot" style="background:#a78bfa"></span>Chaim <span class="small muted">· 14:00–18:00 · Shift not started yet</span></div>
-<div class="tlabel">Calls: <b>0</b> / 50 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div>
-<div class="tlabel">Minutes: <b>0.0</b> / 120 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div></div><div class="tcard"><div class="tname"><span class="dot" style="background:#f472b6"></span>Eliezer Lev <span class="small muted">· 17:00–21:30 · Shift not started yet</span></div>
-<div class="tlabel">Calls: <b>0</b> / 50 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div>
-<div class="tlabel">Minutes: <b>0.0</b> / 120 (0%)</div><div class="bar"><i style="width:0.0%;background:var(--warn)"></i></div></div></div>
-<h2>Per-rep breakdown</h2><div class="tbl"><table><thead><tr><th>Rep</th><th>Calls</th><th>Answered</th><th>Rate</th><th>Minutes</th><th>Avg min/call</th><th>Avg min/answered</th><th>Longest</th></tr></thead><tbody><tr><td>Eden Dadi</td><td>1</td><td>1</td><td>100%</td><td>1.4</td><td>1.42</td><td>1.42</td><td>1:25</td></tr><tr><td>Chaim</td><td>0</td><td>0</td><td>0%</td><td>0.0</td><td>0.00</td><td>0.00</td><td>0:00</td></tr><tr><td>Eliezer Lev</td><td>0</td><td>0</td><td>0%</td><td>0.0</td><td>0.00</td><td>0.00</td><td>0:00</td></tr><tr class='tot'><td>Team</td><td>1</td><td>1</td><td>100%</td><td>1.4</td><td>1.42</td><td>1.42</td><td>1:25</td></tr></tbody></table></div>
-<p class="small muted">Calls per hour so far: Eden 1 call in the first 0.3 h of shift. "Answered" = Aircall answered_at is set.</p>
-<h2>Charts</h2><div class="charts">
-<div class="ch"><h4>Calls per hour (Israel time)</h4><canvas id="c1"></canvas></div>
-<div class="ch"><h4>Answered vs unanswered (rep calls)</h4><canvas id="c2"></canvas></div>
-<div class="ch"><h4>Talk time per rep (min)</h4><canvas id="c3"></canvas></div>
-<div class="ch"><h4>Duration distribution (rep calls)</h4><canvas id="c4"></canvas></div>
-</div>
-<h2>Call log</h2><div class="tbl"><table><thead><tr><th>Time (IL)</th><th>Rep</th><th>Direction</th><th>Number</th><th>Duration</th><th>Status</th><th>Call ID</th></tr></thead><tbody><tr><td>09:10:18</td><td><span class="muted">— no user —</span></td><td>inbound</td><td>+972 54-837-2424</td><td>0:09</td><td><span class="bad">Missed</span></td><td class='small muted'>4234167126</td></tr><tr><td>09:10:59</td><td><span class="muted">— no user —</span></td><td>inbound</td><td>+972 54-837-2424</td><td>1:04</td><td><span class="bad">Missed → voicemail</span></td><td class='small muted'>4234167977</td></tr><tr><td>09:23:47</td><td>Eden Dadi</td><td>outbound</td><td>+972 54-837-2424</td><td>1:25</td><td><span class="ok">Answered</span></td><td class='small muted'>4234184406</td></tr></tbody></table></div>
-<h2>Recommendations</h2>
-<h3>Eden Dadi</h3><div class="recs">
-<div class="rec warn"><div class="rh">Volume: 1 / 50 calls by 10:17</div><div class="rb">Shift started at 10:00. To hit 50 calls in a 7-hour shift Eden needs ~7–8 dials per hour; first dial logged at 09:23 IL, then nothing in the 10:00 hour so far. Push to get a dialing block going before 11:00.</div></div>
-<div class="rec good"><div class="rh">Connect rate: 1 / 1 answered</div><div class="rb">The one outbound call connected in 7 s and ran 1:25. Too early to read a trend — revisit in the end-of-day run.</div></div>
-<div class="rec"><div class="rh">Same number on both sides</div><div class="rb">Eden's 09:23 call went to +972 54-837-2424, the same number that called in twice at 09:10 with no agent (one reached voicemail). Good callback; log the outcome in the CRM so it isn't redialed blindly.</div></div>
-</div>
-<h3>Chaim</h3><div class="recs"><div class="rec"><div class="rh">Shift starts 14:00</div><div class="rb">No calls yet, as expected. Target for the 4-hour shift: ~12–13 dials/hour to reach 50.</div></div></div>
-<h3>Eliezer Lev</h3><div class="recs"><div class="rec"><div class="rh">Shift starts 17:00</div><div class="rb">No calls yet, as expected. 50 calls in 4.5 h needs ~11 dials/hour.</div></div></div>
-<h3>Team actions</h3><div class="recs">
-<div class="rec bad"><div class="rh">2 inbound calls with no user (09:10)</div><div class="rb">Both arrived before any rep was on shift; one left a voicemail. Consider routing pre-10:00 inbound calls to a callback queue or extending Eden's shift start, and make "listen to overnight voicemails" the first task of the day.</div></div>
-<div class="rec warn"><div class="rh">No CRM tags on any call</div><div class="rb">0 of 3 calls are tagged. Ask reps to tag outcome (interested / no answer / callback / not relevant) in Aircall so the daily report can measure quality, not just volume.</div></div>
-<div class="rec"><div class="rh">Transcript analysis unavailable</div><div class="rb">Aircall AI summary returned 403 and transcript returned 404 — the Conversation Intelligence add-on doesn't appear to be enabled, so call content wasn't analysed.</div></div>
-</div>
-<p class="small muted" style="margin-top:30px">Source: Aircall API (calls since 2026-10-13 00:00 IL). Previous reports are archived as sales-call-report-YYYY-MM-DD.html in this repo.</p>
-</div>
-<script>
-Chart.defaults.color='#8b93ad';Chart.defaults.borderColor='#242c48';
-const H=["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],hourly={"Eden Dadi": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Chaim": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Eliezer Lev": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "Inbound (no user)": [0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]};
-const cols={"Eden Dadi":"#60a5fa","Chaim":"#a78bfa","Eliezer Lev":"#f472b6","Inbound (no user)":"#64748b"};
-new Chart(c1,{type:'bar',data:{labels:H,datasets:Object.keys(hourly).map(k=>({label:k,data:hourly[k],backgroundColor:cols[k]}))},options:{maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{precision:0}}}}});
-new Chart(c2,{type:'bar',data:{labels:["Eden Dadi", "Chaim", "Eliezer Lev"],datasets:[{label:'Answered',data:[1, 0, 0],backgroundColor:'#34d399'},{label:'Unanswered',data:[0, 0, 0],backgroundColor:'#f87171'}]},options:{maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{precision:0}}}}});
-new Chart(c3,{type:'bar',data:{labels:["Eden Dadi", "Chaim", "Eliezer Lev"],datasets:[{label:'Minutes',data:[1.42, 0.0, 0.0],backgroundColor:["#60a5fa", "#a78bfa", "#f472b6"]},{label:'Target',type:'line',data:[120,120,120],borderColor:'#fbbf24',borderDash:[6,4],pointRadius:0}]},options:{maintainAspectRatio:false,scales:{y:{beginAtZero:true}}}});
-new Chart(c4,{type:'bar',data:{labels:["<30s", "30\u201360s", "1\u20132m", "2\u20135m", "5m+"],datasets:[{label:'Calls',data:[0, 0, 1, 0, 0],backgroundColor:'#60a5fa'}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}}});
+:root{--bg:#0b1020;--p:#141a2e;--p2:#1b2340;--b:#26304f;--t:#e6e9f2;--m:#8b93ad;--ok:#22c55e;--amb:#f59e0b;--red:#ef4444;--meet:#2dd4bf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}
+.w{max-width:1200px;margin:0 auto;padding:24px 16px}h1{margin:0;font-size:24px}h2{font-size:17px;margin:32px 0 12px}
+.hd{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:end}.m{color:var(--m)}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px}
+.sum div,.card,.tg,.cb,.rec{background:var(--p);border:1px solid var(--b);border-radius:12px;padding:14px}
+.sum b{display:block;font-size:22px}.sum span{color:var(--m);font-size:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}.card{border-top:3px solid var(--c)}
+.ch{display:flex;justify-content:space-between;align-items:center}.ch h3{margin:0;font-size:16px}.sub{color:var(--m);font-size:12px;margin:4px 0}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.kp div{background:var(--p2);border-radius:8px;padding:8px}
+.kp b{display:block;font-size:20px}.kp span{color:var(--m);font-size:11px}.meet{color:var(--meet)}
+.pill{font-size:11px;padding:2px 8px;border-radius:99px;font-weight:600;white-space:nowrap}.pill.ok{background:#14532d;color:#86efac}.pill.red{background:#5b1515;color:#fca5a5}.pill.gr{background:#2a3150;color:#aab}
+.tgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}.tgh{display:flex;justify-content:space-between;margin-bottom:6px}
+.bl{display:flex;justify-content:space-between;font-size:12px;margin-top:8px}.bl em{color:var(--m);font-style:normal}
+.bar{height:10px;background:var(--p2);border-radius:99px;overflow:hidden;margin-top:4px}.bar i{display:block;height:100%}
+i.ok{background:var(--ok)}i.amb{background:var(--amb)}i.red{background:var(--red)}.okt{color:var(--ok)}.ambt{color:var(--amb)}.redt{color:var(--red)}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}.cb h4{margin:0 0 8px;font-size:13px;color:var(--m)}.cv{position:relative;height:260px}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}.rec{border-left:4px solid var(--m)}.rec.red{border-left-color:var(--red)}.rec.amb{border-left-color:var(--amb)}.rec.ok{border-left-color:var(--ok)}
+.rec h4{margin:0 0 6px}.rec p{margin:6px 0;color:#c5cadb}.rec .hl{color:var(--t);font-weight:600}
+.tw{overflow-x:auto;background:var(--p);border:1px solid var(--b);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--b);white-space:nowrap}th{color:var(--m);font-weight:600;position:sticky;top:0;background:var(--p)}
+.note{font-size:12px;color:var(--m);margin-top:24px}
+.prov{background:#3b2a0a;border:1px solid #f59e0b;color:#fcd34d;border-radius:12px;padding:12px 14px;margin-top:16px}.pill.amb{background:#4a3410;color:#fcd34d}
+</style></head><body><div class="w">
+<div class="hd"><div><h1>DI Sales Call Report</h1><div class="m">Tuesday 13 October 2026 · DI Team line · times in Israel time (IDT)</div></div>
+<div class="m">Meet row for 2026-10-13: <b style="color:var(--amb)">pending (script runs at 21:45)</b></div></div>
+<div class="prov"><b>PROVISIONAL.</b> The Google Meet row for 2026-10-13 is not yet in the "SDR Meet real duration" sheet (last row: 2026-10-12, although the 21:45 script should already have written it). Totals and verdicts below use phone minutes only and will change once Meet minutes are added — they are not final.</div>
+<div class="sum"><div><b>98</b><span>Outbound dials</span></div><div><b>53 <small class="m">(54.1%)</small></b><span>Answered</span></div>
+<div><b>23</b><span>Conversations ≥60 s</span></div><div><b>124.8</b><span>Phone talk min</span></div><div><b class="meet">pending</b><span>Meet min (prospect present)</span></div>
+<div><b>124.8+</b><span>Total conversation min (provisional)</span></div><div><b style="color:var(--red)">11</b><span>Missed inbound (no user)</span></div></div>
+<h2>Reps</h2><div class="cards">
+<div class="card" style="--c:#60a5fa"><div class="ch"><h3>Eden Dadi</h3><span class="pill amb">Provisional · not met yet</span></div>
+<div class="sub">Shift 10:00–17:00 · first/last dial 09:23–17:01</div>
+<div class="kp"><div><b>23</b><span>Dials</span></div><div><b>12</b><span>Answered (52.2%)</span></div><div><b>3</b><span>Convos ≥60 s</span></div>
+<div><b>33.3</b><span>Phone min</span></div><div><b class="meet">pending</b><span>Meet min</span></div><div><b>33.3+</b><span>Total conv. min (prov.)</span></div></div>
+<div class="sub">Avg 2.8 min/answered · longest 18.2 min · 7 answered calls under 25 s · inbound answered: 2 (2.0 min, not in total)</div></div>
+<div class="card" style="--c:#f59e0b"><div class="ch"><h3>Chaim Sand</h3><span class="pill amb">Provisional · not met yet</span></div>
+<div class="sub">Shift 14:00–18:00 · first/last dial 12:11–17:30</div>
+<div class="kp"><div><b>38</b><span>Dials</span></div><div><b>21</b><span>Answered (55.3%)</span></div><div><b>9</b><span>Convos ≥60 s</span></div>
+<div><b>55.4</b><span>Phone min</span></div><div><b class="meet">pending</b><span>Meet min</span></div><div><b>55.4+</b><span>Total conv. min (prov.)</span></div></div>
+<div class="sub">Avg 2.6 min/answered · longest 16.9 min · 6 answered calls under 25 s · inbound answered: 0 (0.0 min, not in total)</div></div>
+<div class="card" style="--c:#a78bfa"><div class="ch"><h3>Eliezer Lev</h3><span class="pill amb">Provisional · not met yet</span></div>
+<div class="sub">Shift 16:00–20:30 · first/last dial 16:09–19:19</div>
+<div class="kp"><div><b>37</b><span>Dials</span></div><div><b>20</b><span>Answered (54.1%)</span></div><div><b>11</b><span>Convos ≥60 s</span></div>
+<div><b>36.1</b><span>Phone min</span></div><div><b class="meet">pending</b><span>Meet min</span></div><div><b>36.1+</b><span>Total conv. min (prov.)</span></div></div>
+<div class="sub">Avg 1.8 min/answered · longest 6.8 min · 4 answered calls under 25 s · inbound answered: 1 (1.5 min, not in total)</div></div>
+</div><h2>Daily Targets <span class="m" style="font-size:13px;font-weight:400">(provisional — Meet pending)</span></h2><div class="tgs">
+<div class="tg"><div class="tgh"><b>Eden Dadi</b><span class="pill amb">Provisional · not met yet</span></div>
+<div class="bl"><span>Calls 23 / 50</span><span class="redt">46%</span></div><div class="bar"><i class="red" style="width:46%"></i></div>
+<div class="bl"><span>Conversation min 33.3 / 120 <em>(phone 33.3 + Meet pending)</em></span><span class="redt">28%</span></div><div class="bar"><i class="red" style="width:28%"></i></div></div>
+<div class="tg"><div class="tgh"><b>Chaim Sand</b><span class="pill amb">Provisional · not met yet</span></div>
+<div class="bl"><span>Calls 38 / 30</span><span class="okt">127%</span></div><div class="bar"><i class="ok" style="width:100%"></i></div>
+<div class="bl"><span>Conversation min 55.4 / 60 <em>(phone 55.4 + Meet pending)</em></span><span class="ambt">92%</span></div><div class="bar"><i class="amb" style="width:92%"></i></div></div>
+<div class="tg"><div class="tgh"><b>Eliezer Lev</b><span class="pill amb">Provisional · not met yet</span></div>
+<div class="bl"><span>Calls 37 / 30</span><span class="okt">123%</span></div><div class="bar"><i class="ok" style="width:100%"></i></div>
+<div class="bl"><span>Conversation min 36.1 / 60 <em>(phone 36.1 + Meet pending)</em></span><span class="ambt">60%</span></div><div class="bar"><i class="amb" style="width:60%"></i></div></div>
+</div><h2>Charts</h2><div class="charts">
+<div class="cb"><h4>Outbound dials per hour (IL time)</h4><div class="cv"><canvas id="c1"></canvas></div></div>
+<div class="cb"><h4>Answered vs unanswered dials</h4><div class="cv"><canvas id="c2"></canvas></div></div>
+<div class="cb"><h4>Conversation minutes: phone + Google Meet (Meet pending)</h4><div class="cv"><canvas id="c3"></canvas></div></div>
+<div class="cb"><h4>Answered-call duration distribution</h4><div class="cv"><canvas id="c4"></canvas></div></div></div>
+<h2>Recommendations</h2><div class="recs">
+<div class="rec red"><h4>Eden Dadi</h4><p class="hl">Volume: 23/50 dials (46%), 33.3/120 phone min (28%) + Meet pending.</p><p>No dial between 13:56 and 16:16 — a 139-min gap inside her 10:00–17:00 shift. If the Meet row shows no prospect meeting in that window, block 14:00–16:00 as power-dial time: at her 13:00-hour pace (8 dials/hour) it is worth ~18 more dials. Also 2 dials went to placeholder numbers (+972 52-000-0000, +972 4-444-4444) — clean those leads in the CRM.</p></div>
+<div class="rec amb"><h4>Chaim Sand</h4><p class="hl">Calls met: 38/30 (127%); phone 55.4/60 min (92%), Meet pending.</p><p>058-520-9761 got 7 outbound dials (14:49–17:15, one answered for 1 s) while the same prospect called DI Team back 3 times (15:33, 15:39, 15:46) and reached no one — 10 touches, zero conversation. This number also called back unanswered yesterday. Next time a lead calls back, answer the inbound on DI Team or send a WhatsApp with a fixed time slot instead of re-dialing.</p></div>
+<div class="rec amb"><h4>Eliezer Lev</h4><p class="hl">Calls met: 37/30 (123%); phone 36.1/60 min (60%), Meet pending.</p><p>Last dial at 19:19 for a shift ending at 20:30 — 71 min with no calls, plus a 34-min gap 17:52–18:26. At his ~12 dials/hour pace that window is ~14 more dials and, at his 54% connect rate and 1.8 min/answered, ~13 phone min. Avg talk per answered call is the team's lowest (1.8 min): aim to book a Meet on every live conversation.</p></div></div>
+<h2>Team-level actions</h2><div class="recs"><div class="rec red"><h4>Missed inbound callbacks (no user assigned)</h4><p class="hl">11 inbound calls on DI Team rang with no user; 5 of them were never called back.</p>
+<p>Not called back: 050-847-4744 (13:38), 054-351-1318 (15:22, 6 min after Chaim's unanswered dial — also missed twice yesterday), 058-520-9761 ×3 (15:33–15:46, Chaim's lead) and 058-780-8559 (18:01, Chaim's lead, after his shift — also missed yesterday at 16:56). Called back OK: 054-837-2424 and 03-523-7976 (Eden), +33 6 03 24 53 63 (Eden/Eliezer), 054-320-9626 (Eliezer). Route DI Team inbound to whoever is on shift (ring-all) and assign a daily callback owner.</p></div>
+<div class="rec amb"><h4>CRM tagging</h4><p class="hl">0 of 98 outbound calls carry an Aircall tag or contact link.</p><p>Every call has empty tags and contact = null, so outcomes (no answer / callback / meeting booked / not interested) can't be tracked. Make a disposition tag mandatory after each call.</p></div>
+<div class="rec amb"><h4>Meet sheet not updated</h4><p class="hl">No row for 2026-10-13 in "SDR Meet real duration" as of 10:00 on 14 Oct.</p><p>The 21:45 script should have written it last night; check that it ran. Until it does, every verdict on this page is provisional.</p></div>
+<div class="rec gr"><h4>Transcript analysis unavailable</h4><p>aircall_get_transcript returned 404 and aircall_get_summary 403 (AI add-on not enabled), so no call-content coaching this time.</p></div></div>
+<h2>Call log</h2><div class="tw"><table><thead><tr><th>Time</th><th>Rep</th><th>Direction</th><th>Number</th><th>Status</th><th>Ring</th><th>Talk</th></tr></thead><tbody>
+<tr><td>09:10</td><td>—</td><td>Inbound</td><td>+972 54-837-2424</td><td><span class="pill red">Missed · no user</span></td><td>9 s</td><td>—</td></tr>
+<tr><td>09:10</td><td>—</td><td>Inbound</td><td>+972 54-837-2424</td><td><span class="pill red">Missed · no user</span></td><td>64 s</td><td>—</td></tr>
+<tr><td>09:23</td><td>Eden Dadi</td><td>Outbound</td><td>+972 54-837-2424</td><td><span class="pill ok">Answered</span></td><td>7 s</td><td>1:18</td></tr>
+<tr><td>10:24</td><td>—</td><td>Inbound</td><td>+972 3-523-7976</td><td><span class="pill red">Missed · no user</span></td><td>10 s</td><td>—</td></tr>
+<tr><td>10:30</td><td>Eden Dadi</td><td>Outbound</td><td>+972 3-523-7976</td><td><span class="pill ok">Answered</span></td><td>1 s</td><td>0:06</td></tr>
+<tr><td>10:50</td><td>Eden Dadi</td><td>Outbound</td><td>+972 52-674-7864</td><td><span class="pill gr">No answer</span></td><td>14 s</td><td>—</td></tr>
+<tr><td>10:53</td><td>Eden Dadi</td><td>Outbound</td><td>+972 52-674-7864</td><td><span class="pill gr">No answer</span></td><td>13 s</td><td>—</td></tr>
+<tr><td>11:20</td><td>Eden Dadi</td><td>Outbound</td><td>+972 58-772-4742</td><td><span class="pill gr">No answer</span></td><td>29 s</td><td>—</td></tr>
+<tr><td>11:21</td><td>Eden Dadi</td><td>Outbound</td><td>+972 55-772-3237</td><td><span class="pill gr">No answer</span></td><td>5 s</td><td>—</td></tr>
+<tr><td>11:27</td><td>Eden Dadi</td><td>Outbound</td><td>+972 54-510-2922</td><td><span class="pill gr">No answer</span></td><td>14 s</td><td>—</td></tr>
+<tr><td>11:51</td><td>Eden Dadi</td><td>Outbound</td><td>+972 55-771-0616</td><td><span class="pill ok">Answered</span></td><td>20 s</td><td>18:15</td></tr>
+<tr><td>12:11</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-662-5724</td><td><span class="pill ok">Answered</span></td><td>4 s</td><td>13:52</td></tr>
+<tr><td>12:25</td><td>Eden Dadi</td><td>Inbound</td><td>+972 50-307-6368</td><td><span class="pill ok">Answered</span></td><td>39 s</td><td>0:47</td></tr>
+<tr><td>12:30</td><td>Eden Dadi</td><td>Outbound</td><td>+972 54-241-8421</td><td><span class="pill ok">Answered</span></td><td>11 s</td><td>0:35</td></tr>
+<tr><td>12:48</td><td>Eden Dadi</td><td>Outbound</td><td>+972 55-772-0072</td><td><span class="pill ok">Answered</span></td><td>4 s</td><td>11:55</td></tr>
+<tr><td>13:18</td><td>Eden Dadi</td><td>Outbound</td><td>+972 55-772-0072</td><td><span class="pill ok">Answered</span></td><td>3 s</td><td>0:05</td></tr>
+<tr><td>13:34</td><td>Eden Dadi</td><td>Inbound</td><td>+972 58-448-9152</td><td><span class="pill ok">Answered</span></td><td>35 s</td><td>1:15</td></tr>
+<tr><td>13:38</td><td>—</td><td>Inbound</td><td>+972 50-847-4744</td><td><span class="pill red">Missed · no user</span></td><td>9 s</td><td>—</td></tr>
+<tr><td>13:43</td><td>Eden Dadi</td><td>Outbound</td><td>+972 54-546-4305</td><td><span class="pill gr">No answer</span></td><td>27 s</td><td>—</td></tr>
+<tr><td>13:48</td><td>Eden Dadi</td><td>Outbound</td><td>+972 50-511-9355</td><td><span class="pill gr">No answer</span></td><td>31 s</td><td>—</td></tr>
+<tr><td>13:49</td><td>Eden Dadi</td><td>Outbound</td><td>+972 52-000-0000</td><td><span class="pill gr">No answer</span></td><td>5 s</td><td>—</td></tr>
+<tr><td>13:51</td><td>Eden Dadi</td><td>Outbound</td><td>+972 58-788-0028</td><td><span class="pill gr">No answer</span></td><td>38 s</td><td>—</td></tr>
+<tr><td>13:52</td><td>Eden Dadi</td><td>Outbound</td><td>+972 4-444-4444</td><td><span class="pill gr">No answer</span></td><td>5 s</td><td>—</td></tr>
+<tr><td>13:53</td><td>Eden Dadi</td><td>Outbound</td><td>+972 52-738-0492</td><td><span class="pill gr">No answer</span></td><td>22 s</td><td>—</td></tr>
+<tr><td>13:56</td><td>Eden Dadi</td><td>Outbound</td><td>+972 55-772-0072</td><td><span class="pill ok">Answered</span></td><td>4 s</td><td>0:43</td></tr>
+<tr><td>14:45</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-898-1983</td><td><span class="pill ok">Answered</span></td><td>7 s</td><td>1:40</td></tr>
+<tr><td>14:49</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-520-9761</td><td><span class="pill gr">No answer</span></td><td>12 s</td><td>—</td></tr>
+<tr><td>14:51</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-780-8559</td><td><span class="pill ok">Answered</span></td><td>16 s</td><td>1:30</td></tr>
+<tr><td>14:55</td><td>Chaim Sand</td><td>Outbound</td><td>+972 53-723-6884</td><td><span class="pill ok">Answered</span></td><td>9 s</td><td>0:15</td></tr>
+<tr><td>14:58</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-780-8559</td><td><span class="pill ok">Answered</span></td><td>17 s</td><td>0:38</td></tr>
+<tr><td>15:04</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-520-9761</td><td><span class="pill gr">No answer</span></td><td>10 s</td><td>—</td></tr>
+<tr><td>15:12</td><td>Chaim Sand</td><td>Outbound</td><td>+972 53-431-0103</td><td><span class="pill ok">Answered</span></td><td>7 s</td><td>1:41</td></tr>
+<tr><td>15:16</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-351-1318</td><td><span class="pill gr">No answer</span></td><td>35 s</td><td>—</td></tr>
+<tr><td>15:19</td><td>Chaim Sand</td><td>Outbound</td><td>+972 53-807-3802</td><td><span class="pill gr">No answer</span></td><td>37 s</td><td>—</td></tr>
+<tr><td>15:20</td><td>Chaim Sand</td><td>Outbound</td><td>+972 50-457-7663</td><td><span class="pill gr">No answer</span></td><td>44 s</td><td>—</td></tr>
+<tr><td>15:22</td><td>—</td><td>Inbound</td><td>+972 54-351-1318</td><td><span class="pill red">Missed · no user</span></td><td>5 s</td><td>—</td></tr>
+<tr><td>15:22</td><td>Chaim Sand</td><td>Outbound</td><td>+972 53-628-7227</td><td><span class="pill ok">Answered</span></td><td>6 s</td><td>0:27</td></tr>
+<tr><td>15:24</td><td>Chaim Sand</td><td>Outbound</td><td>+972 50-456-3765</td><td><span class="pill ok">Answered</span></td><td>10 s</td><td>0:27</td></tr>
+<tr><td>15:30</td><td>Chaim Sand</td><td>Outbound</td><td>+972 52-911-9630</td><td><span class="pill ok">Answered</span></td><td>5 s</td><td>0:29</td></tr>
+<tr><td>15:32</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-520-9761</td><td><span class="pill gr">No answer</span></td><td>6 s</td><td>—</td></tr>
+<tr><td>15:32</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-520-9761</td><td><span class="pill ok">Answered</span></td><td>6 s</td><td>0:01</td></tr>
+<tr><td>15:33</td><td>—</td><td>Inbound</td><td>+972 58-520-9761</td><td><span class="pill red">Missed · no user</span></td><td>7 s</td><td>—</td></tr>
+<tr><td>15:35</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-550-1162</td><td><span class="pill ok">Answered</span></td><td>9 s</td><td>0:36</td></tr>
+<tr><td>15:38</td><td>Chaim Sand</td><td>Outbound</td><td>+972 52-583-9545</td><td><span class="pill gr">No answer</span></td><td>39 s</td><td>—</td></tr>
+<tr><td>15:39</td><td>—</td><td>Inbound</td><td>+972 58-520-9761</td><td><span class="pill red">Missed · no user</span></td><td>45 s</td><td>—</td></tr>
+<tr><td>15:39</td><td>Chaim Sand</td><td>Outbound</td><td>+972 52-489-4803</td><td><span class="pill gr">No answer</span></td><td>34 s</td><td>—</td></tr>
+<tr><td>15:40</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-974-0402</td><td><span class="pill gr">No answer</span></td><td>11 s</td><td>—</td></tr>
+<tr><td>15:41</td><td>Chaim Sand</td><td>Outbound</td><td>+1 929-793-8656</td><td><span class="pill ok">Answered</span></td><td>6 s</td><td>0:04</td></tr>
+<tr><td>15:41</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-751-4356</td><td><span class="pill ok">Answered</span></td><td>22 s</td><td>0:01</td></tr>
+<tr><td>15:42</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-981-1129</td><td><span class="pill gr">No answer</span></td><td>27 s</td><td>—</td></tr>
+<tr><td>15:43</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-635-1000</td><td><span class="pill ok">Answered</span></td><td>9 s</td><td>5:12</td></tr>
+<tr><td>15:46</td><td>—</td><td>Inbound</td><td>+972 58-520-9761</td><td><span class="pill red">Missed · no user</span></td><td>74 s</td><td>—</td></tr>
+<tr><td>15:51</td><td>Chaim Sand</td><td>Outbound</td><td>+972 53-302-5346</td><td><span class="pill gr">No answer</span></td><td>23 s</td><td>—</td></tr>
+<tr><td>15:55</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-520-9761</td><td><span class="pill gr">No answer</span></td><td>8 s</td><td>—</td></tr>
+<tr><td>15:58</td><td>Chaim Sand</td><td>Outbound</td><td>+972 55-772-3226</td><td><span class="pill ok">Answered</span></td><td>4 s</td><td>0:01</td></tr>
+<tr><td>15:59</td><td>Chaim Sand</td><td>Outbound</td><td>+972 50-497-9511</td><td><span class="pill gr">No answer</span></td><td>33 s</td><td>—</td></tr>
+<tr><td>16:09</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 58-448-9152</td><td><span class="pill ok">Answered</span></td><td>23 s</td><td>0:35</td></tr>
+<tr><td>16:15</td><td>Eliezer Lev</td><td>Outbound</td><td>+94 70 153 0347</td><td><span class="pill gr">No answer</span></td><td>36 s</td><td>—</td></tr>
+<tr><td>16:16</td><td>Eden Dadi</td><td>Outbound</td><td>+32 497 92 60 04</td><td><span class="pill ok">Answered</span></td><td>5 s</td><td>0:05</td></tr>
+<tr><td>16:16</td><td>Eden Dadi</td><td>Outbound</td><td>+32 477 70 81 84</td><td><span class="pill ok">Answered</span></td><td>3 s</td><td>0:07</td></tr>
+<tr><td>16:16</td><td>Chaim Sand</td><td>Outbound</td><td>+972 54-670-2403</td><td><span class="pill ok">Answered</span></td><td>7 s</td><td>0:32</td></tr>
+<tr><td>16:18</td><td>Chaim Sand</td><td>Outbound</td><td>+972 52-526-6277</td><td><span class="pill ok">Answered</span></td><td>15 s</td><td>1:37</td></tr>
+<tr><td>16:18</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 50-312-5341</td><td><span class="pill ok">Answered</span></td><td>15 s</td><td>2:21</td></tr>
+<tr><td>16:18</td><td>Eden Dadi</td><td>Outbound</td><td>+33 7 69 01 93 98</td><td><span class="pill ok">Answered</span></td><td>2 s</td><td>0:05</td></tr>
+<tr><td>16:19</td><td>Eden Dadi</td><td>Outbound</td><td>+33 6 03 24 53 63</td><td><span class="pill ok">Answered</span></td><td>2 s</td><td>0:04</td></tr>
+<tr><td>16:22</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 50-319-8640</td><td><span class="pill gr">No answer</span></td><td>11 s</td><td>—</td></tr>
+<tr><td>16:25</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-781-6685</td><td><span class="pill ok">Answered</span></td><td>16 s</td><td>2:16</td></tr>
+<tr><td>16:38</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-244-6271</td><td><span class="pill gr">No answer</span></td><td>71 s</td><td>—</td></tr>
+<tr><td>16:41</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-660-8460</td><td><span class="pill gr">No answer</span></td><td>58 s</td><td>—</td></tr>
+<tr><td>16:44</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-520-9761</td><td><span class="pill gr">No answer</span></td><td>19 s</td><td>—</td></tr>
+<tr><td>16:47</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-883-9521</td><td><span class="pill gr">No answer</span></td><td>53 s</td><td>—</td></tr>
+<tr><td>16:47</td><td>Chaim Sand</td><td>Outbound</td><td>+972 50-273-5770</td><td><span class="pill gr">No answer</span></td><td>60 s</td><td>—</td></tr>
+<tr><td>16:49</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 58-359-1616</td><td><span class="pill gr">No answer</span></td><td>66 s</td><td>—</td></tr>
+<tr><td>16:52</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 58-584-4522</td><td><span class="pill ok">Answered</span></td><td>9 s</td><td>6:49</td></tr>
+<tr><td>16:55</td><td>Chaim Sand</td><td>Outbound</td><td>+972 50-451-5666</td><td><span class="pill gr">No answer</span></td><td>10 s</td><td>—</td></tr>
+<tr><td>16:58</td><td>—</td><td>Inbound</td><td>+33 6 03 24 53 63</td><td><span class="pill red">Missed · no user</span></td><td>47 s</td><td>—</td></tr>
+<tr><td>17:01</td><td>Eden Dadi</td><td>Outbound</td><td>+33 6 03 24 53 63</td><td><span class="pill ok">Answered</span></td><td>21 s</td><td>0:02</td></tr>
+<tr><td>17:02</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-550-1162</td><td><span class="pill ok">Answered</span></td><td>7 s</td><td>0:05</td></tr>
+<tr><td>17:04</td><td>Chaim Sand</td><td>Outbound</td><td>+972 55-936-1661</td><td><span class="pill ok">Answered</span></td><td>9 s</td><td>7:07</td></tr>
+<tr><td>17:04</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 58-448-9152</td><td><span class="pill ok">Answered</span></td><td>11 s</td><td>3:48</td></tr>
+<tr><td>17:15</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-520-9761</td><td><span class="pill gr">No answer</span></td><td>11 s</td><td>—</td></tr>
+<tr><td>17:15</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 50-679-2147</td><td><span class="pill gr">No answer</span></td><td>71 s</td><td>—</td></tr>
+<tr><td>17:19</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 52-855-2005</td><td><span class="pill gr">No answer</span></td><td>4 s</td><td>—</td></tr>
+<tr><td>17:21</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-881-3467</td><td><span class="pill gr">No answer</span></td><td>52 s</td><td>—</td></tr>
+<tr><td>17:25</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 58-779-6881</td><td><span class="pill ok">Answered</span></td><td>52 s</td><td>0:29</td></tr>
+<tr><td>17:28</td><td>Eliezer Lev</td><td>Inbound</td><td>+33 6 03 24 53 63</td><td><span class="pill ok">Answered</span></td><td>41 s</td><td>1:28</td></tr>
+<tr><td>17:30</td><td>Chaim Sand</td><td>Outbound</td><td>+972 58-550-1162</td><td><span class="pill ok">Answered</span></td><td>7 s</td><td>16:51</td></tr>
+<tr><td>17:33</td><td>Eliezer Lev</td><td>Outbound</td><td>+91 83370 42609</td><td><span class="pill gr">No answer</span></td><td>23 s</td><td>—</td></tr>
+<tr><td>17:38</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 52-602-6543</td><td><span class="pill ok">Answered</span></td><td>12 s</td><td>0:48</td></tr>
+<tr><td>17:41</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 53-494-9113</td><td><span class="pill ok">Answered</span></td><td>5 s</td><td>0:08</td></tr>
+<tr><td>17:43</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 52-328-1747</td><td><span class="pill ok">Answered</span></td><td>10 s</td><td>0:49</td></tr>
+<tr><td>17:45</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-698-1932</td><td><span class="pill ok">Answered</span></td><td>14 s</td><td>4:41</td></tr>
+<tr><td>17:52</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 55-968-9796</td><td><span class="pill gr">No answer</span></td><td>27 s</td><td>—</td></tr>
+<tr><td>18:01</td><td>—</td><td>Inbound</td><td>+972 58-780-8559</td><td><span class="pill red">Missed · no user</span></td><td>16 s</td><td>—</td></tr>
+<tr><td>18:26</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 50-581-4896</td><td><span class="pill ok">Answered</span></td><td>7 s</td><td>0:11</td></tr>
+<tr><td>18:28</td><td>Eliezer Lev</td><td>Outbound</td><td>+33 6 59 26 80 50</td><td><span class="pill ok">Answered</span></td><td>10 s</td><td>0:04</td></tr>
+<tr><td>18:29</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 52-633-2632</td><td><span class="pill gr">No answer</span></td><td>71 s</td><td>—</td></tr>
+<tr><td>18:32</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 55-286-1809</td><td><span class="pill gr">No answer</span></td><td>14 s</td><td>—</td></tr>
+<tr><td>18:35</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 53-629-3477</td><td><span class="pill ok">Answered</span></td><td>13 s</td><td>1:46</td></tr>
+<tr><td>18:39</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 53-275-8336</td><td><span class="pill gr">No answer</span></td><td>33 s</td><td>—</td></tr>
+<tr><td>18:46</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-971-0995</td><td><span class="pill gr">No answer</span></td><td>48 s</td><td>—</td></tr>
+<tr><td>18:48</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 55-929-8036</td><td><span class="pill ok">Answered</span></td><td>28 s</td><td>0:29</td></tr>
+<tr><td>18:50</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-931-1865</td><td><span class="pill gr">No answer</span></td><td>14 s</td><td>—</td></tr>
+<tr><td>18:53</td><td>Eliezer Lev</td><td>Outbound</td><td>+1 845-925-3400</td><td><span class="pill ok">Answered</span></td><td>4 s</td><td>4:00</td></tr>
+<tr><td>19:00</td><td>Eliezer Lev</td><td>Outbound</td><td>+33 6 28 54 73 93</td><td><span class="pill ok">Answered</span></td><td>23 s</td><td>0:04</td></tr>
+<tr><td>19:02</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 50-824-6940</td><td><span class="pill ok">Answered</span></td><td>13 s</td><td>1:12</td></tr>
+<tr><td>19:06</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 52-449-2121</td><td><span class="pill ok">Answered</span></td><td>8 s</td><td>2:01</td></tr>
+<tr><td>19:11</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-642-0905</td><td><span class="pill ok">Answered</span></td><td>10 s</td><td>1:10</td></tr>
+<tr><td>19:13</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-320-9626</td><td><span class="pill ok">Answered</span></td><td>5 s</td><td>3:24</td></tr>
+<tr><td>19:17</td><td>—</td><td>Inbound</td><td>+972 54-320-9626</td><td><span class="pill red">Missed · no user</span></td><td>13 s</td><td>—</td></tr>
+<tr><td>19:17</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-320-9626</td><td><span class="pill ok">Answered</span></td><td>14 s</td><td>1:15</td></tr>
+<tr><td>19:19</td><td>Eliezer Lev</td><td>Outbound</td><td>+972 54-320-9626</td><td><span class="pill gr">No answer</span></td><td>11 s</td><td>—</td></tr>
+</tbody></table></div>
+<p class="note">Talk time = ended_at − answered_at on answered calls (ringing excluded); answered_at/ended_at were available for every call (no fallback to duration). Conversation minutes = outbound phone talk + Google Meet minutes with a prospect present (sheet "SDR Meet real duration") — Meet pending for 2026-10-13, so totals are provisional. Answered inbound minutes (not in totals): Eden 2.0 min (2 calls), Eliezer 1.5 min (1 call). Amber = 60–99% of a minimum, red = below 60%. Chaim's 12:11 call falls before his 14:00 shift and is counted. PSTB-line calls (Julia Elbaz) excluded. Generated automatically from Aircall.</p>
+</div><script>
+const D={"hours": ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"], "perhour": {"Eden": [1, 3, 4, 2, 8, 0, 0, 4, 1, 0, 0, 0], "Chaim": [0, 0, 0, 1, 0, 5, 22, 6, 4, 0, 0, 0], "Eliezer": [0, 0, 0, 0, 0, 0, 0, 9, 11, 10, 7, 0]}, "reps": ["Eden Dadi", "Chaim Sand", "Eliezer Lev"], "cols": ["#60a5fa", "#f59e0b", "#a78bfa"], "ans": [12, 21, 20], "unans": [11, 17, 17], "phone": [33.3, 55.4, 36.1], "meet": [0, 0, 0], "buckets": ["< 25 s", "25\u201360 s", "1\u20133 min", "3\u201310 min", "10+ min"], "dist": [[7, 2, 1, 0, 2], [6, 6, 5, 2, 2], [4, 5, 6, 5, 0]]};Chart.defaults.color='#8b93ad';Chart.defaults.borderColor='#26304f';Chart.register(ChartDataLabels);Chart.defaults.plugins.datalabels.display=false;
+const o={responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}}};
+new Chart(c1,{type:'bar',data:{labels:D.hours,datasets:D.reps.map((r,i)=>({label:r,data:D.perhour[Object.keys(D.perhour)[i]],backgroundColor:D.cols[i]}))},options:{...o,scales:{x:{stacked:true},y:{stacked:true,ticks:{precision:0}}}}});
+new Chart(c2,{type:'bar',data:{labels:D.reps,datasets:[{label:'Answered',data:D.ans,backgroundColor:'#22c55e'},{label:'Unanswered',data:D.unans,backgroundColor:'#475069'}]},options:{...o,scales:{x:{stacked:true},y:{stacked:true}}}});
+new Chart(c3,{type:'bar',data:{labels:D.reps,datasets:[{label:'Phone min',data:D.phone,backgroundColor:'#60a5fa',datalabels:{display:true,color:'#0b1020',font:{weight:'bold'},formatter:v=>v>4?v:''}},{label:'Meet min (pending)',data:D.meet,backgroundColor:'#2dd4bf',datalabels:{display:true,color:'#0b1020',font:{weight:'bold'},formatter:(v,ctx)=>'Meet pending'}}]},options:{...o,indexAxis:'y',scales:{x:{stacked:true},y:{stacked:true}}}});
+new Chart(c4,{type:'bar',data:{labels:D.buckets,datasets:D.reps.map((r,i)=>({label:r,data:D.dist[i],backgroundColor:D.cols[i]}))},options:{...o,scales:{y:{ticks:{precision:0}}}}});
 </script></body></html>
